@@ -43,52 +43,56 @@ function Index() {
   return (
     <div>
       {/* Cinematic Hero with Real Exterior Facade */}
-      <section className="relative min-h-[520px] overflow-hidden bg-black py-20 lg:min-h-[580px] flex items-center">
+      <section className="relative min-h-[580px] overflow-hidden bg-black py-20 lg:min-h-[660px] flex items-center">
         <div className="absolute inset-0">
           <img
             src="/property/exterior-facade.jpeg"
             alt="Shooting House Exterior Facade"
-            className="h-full w-full object-cover opacity-35"
+            className="h-full w-full object-cover object-center"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-background via-black/70 to-black/85" />
+          {/* Directional left gradient ensures high text contrast on the left while leaving the house and entrance vivid and visible on the center and right */}
+          <div className="absolute inset-0 bg-gradient-to-r from-black/95 via-black/60 via-45% to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-transparent to-black/30" />
         </div>
 
-        <div className="relative z-10 mx-auto w-full max-w-6xl px-4 text-center">
-          <div className="inline-flex items-center gap-2 rounded-full border border-amber-500/40 bg-black/60 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-amber-400 backdrop-blur-md">
-            <MapPin className="h-3.5 w-3.5 text-amber-400" />
-            <span>4/5 Varghese Avenue, Ashok Nagar, Vadapalani</span>
-          </div>
+        <div className="relative z-10 mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="max-w-xl text-left">
+            <div className="inline-flex items-center gap-2 rounded-full border border-amber-500/40 bg-black/70 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-amber-400 backdrop-blur-md shadow-md">
+              <MapPin className="h-3.5 w-3.5 text-amber-400" />
+              <span>4/5 Varghese Avenue, Ashok Nagar, Vadapalani</span>
+            </div>
 
-          <h1 className="mt-5 font-display text-3xl font-extrabold tracking-tight text-white sm:text-5xl md:text-6xl">
-            {t("heroTitle")}
-          </h1>
+            <h1 className="mt-5 font-display text-3xl font-extrabold tracking-tight text-white drop-shadow-md sm:text-5xl md:text-6xl leading-[1.1]">
+              {t("heroTitle")}
+            </h1>
 
-          <p className="mx-auto mt-5 max-w-2xl text-sm font-medium leading-relaxed text-zinc-300 sm:text-base">
-            {t("heroSubtitle")}
-          </p>
+            <p className="mt-5 max-w-lg text-sm font-medium leading-relaxed text-zinc-200 drop-shadow sm:text-base">
+              {t("heroSubtitle")}
+            </p>
 
-          <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
-            <a
-              href="#video-tour"
-              className="inline-flex items-center gap-2 rounded-md bg-amber-500 px-6 py-3.5 text-sm font-bold uppercase tracking-wide text-black shadow-lg transition-transform hover:-translate-y-0.5 hover:bg-amber-400"
-            >
-              <Play className="h-4 w-4 fill-black" />
-              {t("watchVideo")}
-            </a>
-            <a
-              href="#property-spaces"
-              className="inline-flex items-center gap-2 rounded-md border border-border bg-black/60 px-6 py-3.5 text-sm font-bold uppercase tracking-wide text-white backdrop-blur-md transition-colors hover:border-amber-400 hover:bg-black/80"
-            >
-              <Home className="h-4 w-4 text-amber-400" />
-              {t("viewOurWork")}
-            </a>
-            <Link
-              to="/contact"
-              className="inline-flex items-center gap-2 rounded-md border border-amber-500/60 bg-amber-500/10 px-6 py-3.5 text-sm font-bold uppercase tracking-wide text-amber-300 backdrop-blur-md transition-all hover:bg-amber-500 hover:text-black"
-            >
-              <CalendarCheck className="h-4 w-4" />
-              {t("bookRecce")}
-            </Link>
+            <div className="mt-8 flex flex-wrap items-center justify-start gap-4">
+              <a
+                href="#video-tour"
+                className="inline-flex items-center gap-2 rounded-md bg-amber-500 px-6 py-3.5 text-sm font-bold uppercase tracking-wide text-black shadow-lg transition-transform hover:-translate-y-0.5 hover:bg-amber-400"
+              >
+                <Play className="h-4 w-4 fill-black" />
+                {t("watchVideo")}
+              </a>
+              <a
+                href="#property-spaces"
+                className="inline-flex items-center gap-2 rounded-md border border-border bg-black/70 px-6 py-3.5 text-sm font-bold uppercase tracking-wide text-white backdrop-blur-md transition-colors hover:border-amber-400 hover:bg-black/90"
+              >
+                <Home className="h-4 w-4 text-amber-400" />
+                {t("viewOurWork")}
+              </a>
+              <Link
+                to="/contact"
+                className="inline-flex items-center gap-2 rounded-md border border-amber-500/60 bg-amber-500/20 px-6 py-3.5 text-sm font-bold uppercase tracking-wide text-amber-300 backdrop-blur-md transition-all hover:bg-amber-500 hover:text-black"
+              >
+                <CalendarCheck className="h-4 w-4" />
+                {t("bookRecce")}
+              </Link>
+            </div>
           </div>
         </div>
       </section>
