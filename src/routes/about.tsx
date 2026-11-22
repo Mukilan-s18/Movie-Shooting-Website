@@ -78,8 +78,8 @@ function AboutPage() {
             </p>
             <p>
               The house has a proven production track record, having been chosen as the filming location for
-              popular Tamil productions including the feature film <strong className="text-foreground">Tourist Family</strong> (starring M. Sasikumar and Simran),
-              the JioHotstar web series <strong className="text-foreground">Brothers and Sisters</strong>, and the acclaimed series <strong className="text-foreground">Parimala & Co</strong>.
+              popular Tamil productions including the feature films <strong className="text-foreground">Tourist Family</strong> (starring M. Sasikumar and Simran)
+              and <strong className="text-foreground">Parimala & Co</strong>, alongside the JioHotstar web series <strong className="text-foreground">Brothers and Sisters</strong>.
             </p>
           </div>
 

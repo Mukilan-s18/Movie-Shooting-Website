@@ -97,7 +97,7 @@ function PropertySpacesPage() {
 
           <div className="mt-4 rounded-md border border-border bg-card p-3 text-xs text-muted-foreground flex flex-wrap items-center justify-between gap-3">
             <span>
-              <strong className="text-primary uppercase tracking-wider text-[11px]">Camera-Tested Track Record:</strong> Filming location for the feature film <strong className="text-foreground">Tourist Family</strong> (starring M. Sasikumar &amp; Simran), the JioHotstar web series <strong className="text-foreground">Brothers and Sisters</strong>, and <strong className="text-foreground">Parimala &amp; Co</strong>.
+              <strong className="text-primary uppercase tracking-wider text-[11px]">Camera-Tested Track Record:</strong> Filming location for the feature films <strong className="text-foreground">Tourist Family</strong> (starring M. Sasikumar &amp; Simran) and <strong className="text-foreground">Parimala &amp; Co</strong>, alongside the JioHotstar web series <strong className="text-foreground">Brothers and Sisters</strong>.
             </span>
             <Link to="/gallery" className="shrink-0 font-bold text-primary hover:underline">
               View Reference Stills →

@@ -128,7 +128,7 @@ export const movieReferences = [
   {
     id: "m-parimala-banner",
     title: "Parimala & Co",
-    place: "Popular OTT Web Series",
+    place: "Tamil Film",
     category: "Movies & Series",
     image: "/references/parimala.jpg",
     note: "Featured On-Screen House",
@@ -136,7 +136,7 @@ export const movieReferences = [
   {
     id: "m-parimala-still",
     title: "Parimala & Co",
-    place: "Popular OTT Web Series",
+    place: "Tamil Film",
     category: "Movies & Series",
     image: "/references/parimala-and-co.jpg",
     note: "House Interior Sequence",
@@ -144,7 +144,7 @@ export const movieReferences = [
   {
     id: "m-parimala-jayaram",
     title: "Parimala & Co",
-    place: "Popular OTT Web Series (Jayaram)",
+    place: "Tamil Film (Jayaram)",
     category: "Movies & Series",
     image: "/references/images-2.jpg",
     note: "Living Hall Scene Still",
@@ -152,7 +152,7 @@ export const movieReferences = [
   {
     id: "m-parimala-window",
     title: "Parimala & Co",
-    place: "Popular OTT Web Series",
+    place: "Tamil Film",
     category: "Movies & Series",
     image: "/references/images-3.jpg",
     note: "Window Grill Shoot Sequence",
@@ -160,7 +160,7 @@ export const movieReferences = [
   {
     id: "m-parimala-sisters",
     title: "Parimala & Co",
-    place: "Popular OTT Web Series",
+    place: "Tamil Film",
     category: "Movies & Series",
     image: "/references/images-4.jpg",
     note: "Interior Hall Sequence Still",

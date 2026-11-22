@@ -263,7 +263,7 @@ function Index() {
         <div className="mx-auto max-w-6xl px-4">
           <SectionHeading
             title="Featured in Movies & Web Series"
-            subtitle="Actual Tamil films and web series shot on location at our house, including Tourist Family, Brothers and Sisters, and Parimala & Co."
+            subtitle="Actual Tamil feature films and web series shot on location at our house, including Tourist Family, Parimala & Co, and Brothers and Sisters."
           />
 
           <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
