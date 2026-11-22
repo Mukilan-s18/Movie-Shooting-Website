@@ -200,6 +200,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "geo.position", content: "13.0336;80.2114" },
       { name: "ICBM", content: "13.0336, 80.2114" },
       { property: "og:type", content: "website" },
+      { property: "og:url", content: "https://vadapalanishootinghouse.com/" },
       { property: "og:site_name", content: "Vadapalani Shooting House" },
       { property: "og:locale", content: "en_IN" },
       {
@@ -232,6 +233,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       },
     ],
     links: [
+      {
+        rel: "canonical",
+        href: "https://vadapalanishootinghouse.com/",
+      },
       {
         rel: "icon",
         href: "data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎥</text></svg>",

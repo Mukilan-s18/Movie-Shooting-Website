@@ -24,6 +24,14 @@ export const Route = createFileRoute("/about")({
         content:
           "2-floor movie shooting house in 4/5 Varghese Avenue, Ashok Nagar, Vadapalani, Chennai. Empty big entrance, 2 BHK on each floor, suitable for middle class to rich house setups.",
       },
+      { property: "og:title", content: "About The Property - Vadapalani Shooting House" },
+      { property: "og:url", content: "https://vadapalanishootinghouse.com/about" },
+    ],
+    links: [
+      {
+        rel: "canonical",
+        href: "https://vadapalanishootinghouse.com/about",
+      },
     ],
   }),
   component: AboutPage,

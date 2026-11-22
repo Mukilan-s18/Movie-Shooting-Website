@@ -41,6 +41,14 @@ export const Route = createFileRoute("/contact")({
         content:
           "Book movie shoot dates or schedule a location recce at 4/5 Varghese Avenue, Ashok Nagar, Vadapalani, Chennai. Call 70108 33853 / 883504143.",
       },
+      { property: "og:title", content: "Contact & Recce Booking - Vadapalani Shooting House" },
+      { property: "og:url", content: "https://vadapalanishootinghouse.com/contact" },
+    ],
+    links: [
+      {
+        rel: "canonical",
+        href: "https://vadapalanishootinghouse.com/contact",
+      },
     ],
     scripts: [{ type: "application/ld+json", children: JSON.stringify(jsonLd) }],
   }),
@@ -284,6 +292,8 @@ function ContactPage() {
                   placeholder="e.g. 70108 33853"
                   value={form.phone}
                   onChange={(e) => setForm({ ...form, phone: e.target.value })}
+                  pattern="[0-9+\s-]{10,15}"
+                  title="Please enter a valid 10-digit mobile or WhatsApp phone number"
                   required
                   className={field}
                 />
