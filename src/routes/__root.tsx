@@ -80,23 +80,23 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       {
-        title: "Movie Shooting House Rental - Chennai",
+        title: "Movie Shooting House Rental - Vadapalani, Chennai",
       },
       {
         name: "description",
         content:
-          "Private movie shooting house in Chennai available for feature films, web series, television serials, and commercial shoots.",
+          "2-floor movie shooting house at 4/5 Varghese Avenue, Ashok Nagar, Vadapalani, Chennai. Empty big entrance, 2 BHK on each floor, suitable for middle class to rich house setups.",
       },
       { name: "author", content: "Movie Shooting House" },
       { property: "og:type", content: "website" },
       {
         property: "og:title",
-        content: "Movie Shooting House Rental - Chennai",
+        content: "Movie Shooting House Rental - Vadapalani, Chennai",
       },
       {
         property: "og:description",
         content:
-          "Private residential property in Chennai available for film and commercial shoots.",
+          "2-floor independent house in Vadapalani / Ashok Nagar with empty big entrance, 2 BHK each floor, suitable for middle class to rich house setups.",
       },
       { name: "twitter:card", content: "summary_large_image" },
     ],

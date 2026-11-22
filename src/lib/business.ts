@@ -1,34 +1,44 @@
 export const business = {
   name: "Movie Shooting House",
   shortName: "Shooting House",
-  owner: "Location Manager",
-  tagline: "Private House & Property for Movie, TV Serial, Web Series & Commercial Shoots",
-  phonePrimary: "9840154321",
-  phonePrimaryDisplay: "98401 54321",
-  phoneSecondary: "9444467890",
-  phoneSecondaryDisplay: "94444 67890",
+  owner: "Location Coordinator",
+  tagline: "2-Floor Independent House with Empty Big Entrance · 2 BHK Each Floor · Suitable for Middle Class to Rich House Setups",
+  phonePrimary: "7010833853",
+  phonePrimaryDisplay: "70108 33853",
+  phoneSecondary: "883504143",
+  phoneSecondaryDisplay: "883504143",
   email: "shootinghouse.chennai@gmail.com",
   addressLines: [
-    "Chennai, Tamil Nadu",
+    "4/5 Varghese Avenue, Ashok Nagar,",
+    "Vadapalani, Chennai.",
   ],
   city: "Chennai",
+  area: "Ashok Nagar / Vadapalani",
   state: "Tamil Nadu",
   mapsUrl:
-    "https://www.google.com/maps",
+    "https://www.google.com/maps/search/?api=1&query=4%2F5+Varghese+Avenue+Ashok+Nagar+Vadapalani+Chennai",
   videoTour: {
     localSrc: "/video/tour.mp4",
     youtubeUrl: "",
     duration: "Property Walkthrough Video",
   },
+  keyHighlights: {
+    floors: "2 Floors (Ground + 1st Floor)",
+    layout: "2 BHK on Each Floor",
+    entrance: "Empty Big Entrance Area",
+    suitability: "Middle Class to Rich House Setups",
+    location: "Ashok Nagar, Vadapalani (Chennai Cinema Hub)",
+  },
 } as const;
 
-export const whatsappUrl = `https://wa.me/91${business.phonePrimary}?text=${encodeURIComponent(
-  "Hello, I would like to enquire about movie shooting availability and location recce for this property.",
+export const whatsappUrl = `https://wa.me/917010833853?text=${encodeURIComponent(
+  "Hello, I would like to enquire about shooting availability and recce for the movie shooting house at 4/5 Varghese Avenue, Ashok Nagar, Vadapalani, Chennai.",
 )}`;
 
 export type PropertySpace = {
   id: string;
   title: string;
+  subtitle?: string;
   description: string;
   image: string;
 };
@@ -36,26 +46,30 @@ export type PropertySpace = {
 export const propertySpaces: PropertySpace[] = [
   {
     id: "exterior-facade",
-    title: "Exterior Facade",
-    description: "Front exterior view of the house and entrance gate, suitable for arrival shots and outdoor sequences.",
+    title: "Empty Big Entrance & Facade",
+    subtitle: "Spacious Front Entrance",
+    description: "Wide empty entrance area providing plenty of clearance for camera positioning, equipment loading, vehicle arrival shots, and exterior scenes.",
     image: "/property/exterior-facade.jpeg",
   },
   {
     id: "living-hall",
     title: "Living Hall",
-    description: "Spacious interior living hall with tiled flooring, ample space for camera setup, lighting, and cast movements.",
+    subtitle: "Adaptable for Middle Class to Rich Setups",
+    description: "Spacious hall on the 2 BHK floor layout. Easily dressable to represent authentic middle-class family homes or upscale rich household interiors.",
     image: "/property/living-hall.jpeg",
   },
   {
     id: "dining-hall",
     title: "Dining Hall",
-    description: "Dedicated dining space connecting the living and kitchen areas, ideal for family and conversational scenes.",
+    subtitle: "Connected Gathering Space",
+    description: "Dedicated dining area connecting the hall and kitchen, ideal for conversation scenes, family dining moments, and casual dialogue sequences.",
     image: "/property/dining-hall.jpeg",
   },
   {
     id: "kitchen",
     title: "Kitchen",
-    description: "Complete kitchen area with cooking counters, storage cupboards, and natural lighting.",
+    subtitle: "Complete Kitchen Setup",
+    description: "Functional kitchen space with cooking countertops, storage cabinets, and natural window lighting for authentic domestic and cooking scenes.",
     image: "/property/kitchen.jpeg",
   },
 ];
@@ -63,29 +77,29 @@ export const propertySpaces: PropertySpace[] = [
 export const propertyGallery = [
   {
     id: "g-facade",
-    title: "Exterior Facade",
+    title: "Empty Big Entrance & Exterior",
     place: "Front Entrance",
-    category: "Exterior",
+    category: "Entrance",
     image: "/property/exterior-facade.jpeg",
   },
   {
     id: "g-living",
     title: "Living Hall",
-    place: "Ground Floor",
+    place: "2 BHK Floor Layout",
     category: "Living Hall",
     image: "/property/living-hall.jpeg",
   },
   {
     id: "g-dining",
     title: "Dining Hall",
-    place: "Ground Floor",
+    place: "Dining Space",
     category: "Dining Hall",
     image: "/property/dining-hall.jpeg",
   },
   {
     id: "g-kitchen",
-    title: "Kitchen",
-    place: "Ground Floor",
+    title: "Kitchen Area",
+    place: "Kitchen",
     category: "Kitchen",
     image: "/property/kitchen.jpeg",
   },

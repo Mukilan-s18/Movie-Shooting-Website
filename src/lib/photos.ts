@@ -21,7 +21,7 @@ export const fallbackPhotos: Photo[] = propertyGallery.map((g) => ({
 }));
 
 export const photoCategories = [
-  "Exterior",
+  "Entrance",
   "Living Hall",
   "Dining Hall",
   "Kitchen",

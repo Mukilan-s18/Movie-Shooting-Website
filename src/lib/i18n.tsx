@@ -16,23 +16,23 @@ export const translations: Translations = {
   about: { en: "About", ta: "எங்களை பற்றி" },
   contact: { en: "Book Shoot / Recce", ta: "முன்பதிவு செய்ய" },
   heroBadge: {
-    en: "Private Movie Shooting House",
-    ta: "திரைப்பட படப்பிடிப்பு இல்லம்",
+    en: "Vadapalani · Ashok Nagar, Chennai",
+    ta: "வடபழனி · அசோக் நகர், சென்னை",
   },
   heroTitle: {
-    en: "Private Film Shooting House Rental",
-    ta: "திரைப்பட படப்பிடிப்பு இல்ல வாடகை",
+    en: "Movie Shooting House in Vadapalani",
+    ta: "வடபழனி திரைப்பட படப்பிடிப்பு இல்லம்",
   },
   heroSubtitle: {
-    en: "Private residential property available for movies, web series, television serials, and advertisement shoots.",
-    ta: "திரைப்படங்கள், இணைய தொடர்கள் மற்றும் தொலைக்காட்சி தொடர்களுக்கான படப்பிடிப்பு இல்லம்.",
+    en: "2-Floor independent house with an empty big entrance. 2 BHK on each floor — versatile for middle class to rich house setups for movies, TV serials, and web series.",
+    ta: "2 தளங்கள் கொண்ட தனி இல்லம் - விசாலமான முன் நுழைவு வாயில், ஒவ்வொரு தளத்திலும் 2 BHK அமைப்பு. நடுத்தர வர்க்கம் முதல் பணக்கார குடும்ப காட்சிகள் வரை படம்பிடிக்க ஏற்றது.",
   },
   viewOurWork: { en: "View Property Spaces", ta: "வீட்டின் பகுதிகளைப் பார்க்கவும்" },
   watchVideo: { en: "Watch Video Tour", ta: "வீடியோ டூர் பார்க்கவும்" },
   bookRecce: { en: "Book Location Recce", ta: "லொகேஷன் பார்க்க முன்பதிவு செய்க" },
   ourServices: { en: "Property Spaces", ta: "வீட்டின் முக்கிய பகுதிகள்" },
   latestWorks: { en: "Property Photos", ta: "புகைப்பட தொகுப்பு" },
-  callManager: { en: "Call Location Manager", ta: "லொகேஷன் மேனேஜரை அழைக்கவும்" },
+  callManager: { en: "Call for Booking", ta: "அழைக்க" },
   whatsappUs: { en: "WhatsApp for Recce", ta: "வாட்ஸ்அப் மூலம் தொடர்புகொள்ள" },
 };
 

@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { Mail, MapPin, Phone, Clapperboard, Clock } from "lucide-react";
+import { Mail, MapPin, Phone } from "lucide-react";
 import { business } from "@/lib/business";
 import { Logo } from "./Logo";
 
@@ -40,32 +40,28 @@ export function Footer() {
 
         <div>
           <h4 className="font-display text-sm font-bold uppercase tracking-wider text-amber-500">
-            Shooting Shifts
+            Property Details
           </h4>
           <ul className="mt-4 space-y-2 text-xs text-muted-foreground">
-            <li className="flex items-start gap-1.5">
-              <Clock className="mt-0.5 h-3.5 w-3.5 shrink-0 text-amber-500" />
-              <span>
-                <strong className="text-foreground">Day Shift:</strong> 06:00 AM – 06:00 PM
-              </span>
+            <li className="flex items-center gap-2">
+              <span className="h-1.5 w-1.5 rounded-full bg-amber-500 shrink-0" />
+              <span>2 Floors (Ground + 1st Floor)</span>
             </li>
-            <li className="flex items-start gap-1.5">
-              <Clock className="mt-0.5 h-3.5 w-3.5 shrink-0 text-amber-500" />
-              <span>
-                <strong className="text-foreground">Night Shift:</strong> 06:00 PM – 06:00 AM
-              </span>
+            <li className="flex items-center gap-2">
+              <span className="h-1.5 w-1.5 rounded-full bg-amber-500 shrink-0" />
+              <span>Empty Big Entrance Area</span>
             </li>
-            <li className="flex items-start gap-1.5">
-              <Clock className="mt-0.5 h-3.5 w-3.5 shrink-0 text-amber-500" />
-              <span>
-                <strong className="text-foreground">Full Day:</strong> Continuous schedule
-              </span>
+            <li className="flex items-center gap-2">
+              <span className="h-1.5 w-1.5 rounded-full bg-amber-500 shrink-0" />
+              <span>2 BHK on Each Floor</span>
             </li>
-            <li className="flex items-start gap-1.5">
-              <Clapperboard className="mt-0.5 h-3.5 w-3.5 shrink-0 text-amber-500" />
-              <span>
-                <strong className="text-foreground">Location Recce:</strong> By appointment
-              </span>
+            <li className="flex items-center gap-2">
+              <span className="h-1.5 w-1.5 rounded-full bg-amber-500 shrink-0" />
+              <span>Middle Class to Rich Setups</span>
+            </li>
+            <li className="flex items-center gap-2">
+              <span className="h-1.5 w-1.5 rounded-full bg-amber-500 shrink-0" />
+              <span>Vadapalani / Ashok Nagar, Chennai</span>
             </li>
           </ul>
         </div>

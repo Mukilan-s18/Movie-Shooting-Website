@@ -65,11 +65,11 @@ export function Header() {
           </Link>
 
           <a
-            href={`tel:+91${business.phonePrimary}`}
+            href="tel:7010833853"
             className="inline-flex items-center gap-1.5 text-xs font-bold text-foreground transition-colors hover:text-amber-500"
           >
             <Phone className="h-3.5 w-3.5 text-amber-500" />
-            {business.phonePrimaryDisplay}
+            70108 33853
           </a>
         </nav>
 
@@ -124,11 +124,11 @@ export function Header() {
               Book Location Recce
             </Link>
             <a
-              href={`tel:+91${business.phonePrimary}`}
+              href={`tel:${business.phonePrimary}`}
               className="flex items-center justify-center gap-2 rounded-md border border-border py-2 text-sm font-semibold text-foreground"
             >
               <Phone className="h-4 w-4 text-amber-500" />
-              Call Location Manager: {business.phonePrimaryDisplay}
+              Call: {business.phonePrimaryDisplay} / {business.phoneSecondaryDisplay}
             </a>
           </div>
         </nav>

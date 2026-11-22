@@ -8,7 +8,7 @@ import {
   Loader2,
   CalendarCheck,
   Clock,
-  Play,
+  Building,
 } from "lucide-react";
 import { toast } from "sonner";
 import { SectionHeading } from "@/components/site/SectionHeading";
@@ -23,9 +23,8 @@ const jsonLd = {
   email: business.email,
   address: {
     "@type": "PostalAddress",
-    streetAddress: "Plot No. 18, Golden Beach Road, Injambakkam, ECR",
+    streetAddress: "4/5 Varghese Avenue, Ashok Nagar, Vadapalani",
     addressLocality: "Chennai",
-    postalCode: "600115",
     addressRegion: "Tamil Nadu",
     addressCountry: "IN",
   },
@@ -36,21 +35,12 @@ export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
       {
-        title: "Book Shoot / Recce - Cinewood Film Shooting Villa, Chennai",
+        title: "Contact & Recce Booking - Movie Shooting House Vadapalani",
       },
       {
         name: "description",
         content:
-          "Book movie shoot dates or schedule a location recce at Cinewood Shooting Villa in Chennai. Contact Location Manager at 98401 54321 / 94444 67890. ECR Injambakkam, Chennai.",
-      },
-      {
-        property: "og:title",
-        content: "Book Movie Shoot / Location Recce - Cinewood Shooting Villa",
-      },
-      {
-        property: "og:description",
-        content:
-          "Enquire about movie shoot dates, shifts, and recce visits for this single private shooting villa.",
+          "Book movie shoot dates or schedule a location recce at 4/5 Varghese Avenue, Ashok Nagar, Vadapalani, Chennai. Call 70108 33853 / 883504143.",
       },
     ],
     scripts: [{ type: "application/ld+json", children: JSON.stringify(jsonLd) }],
@@ -66,8 +56,7 @@ function ContactPage() {
     phone: "",
     email: "",
     date: "",
-    shift: "Day Shift (06:00 AM – 06:00 PM)",
-    crewSize: "30 – 60 Members",
+    requirement: "Full Day Shoot",
     spacesRequired: [] as string[],
     message: "",
   });
@@ -87,7 +76,7 @@ function ContactPage() {
     setLoading(true);
 
     try {
-      const formattedMessage = `Production: ${form.productionHouse || "Independent"} | Type: ${form.projectType} | Shift: ${form.shift} | Crew: ${form.crewSize} | Spaces: ${form.spacesRequired.join(", ") || "Full Property"} | Notes: ${form.message}`;
+      const formattedMessage = `Production: ${form.productionHouse || "Independent"} | Type: ${form.projectType} | Requirement: ${form.requirement} | Spaces: ${form.spacesRequired.join(", ") || "Full House"} | Notes: ${form.message}`;
 
       const { error } = await supabase.from("contact_messages").insert({
         name: form.name,
@@ -97,12 +86,12 @@ function ContactPage() {
       });
 
       if (error) {
-        console.warn("Supabase insert warning:", error);
+        console.warn("Supabase insert note:", error);
       }
 
-      toast.success("Shoot / Recce Enquiry Received!", {
+      toast.success("Enquiry Received!", {
         description:
-          "Our Location Manager will contact you within 2 hours to confirm date availability.",
+          "We will contact you shortly to confirm date availability.",
       });
 
       setForm({
@@ -112,15 +101,14 @@ function ContactPage() {
         phone: "",
         email: "",
         date: "",
-        shift: "Day Shift (06:00 AM – 06:00 PM)",
-        crewSize: "30 – 60 Members",
+        requirement: "Full Day Shoot",
         spacesRequired: [],
         message: "",
       });
     } catch (err: any) {
       console.error(err);
-      toast.error("Notice: Enquiry submitted or redirecting to WhatsApp", {
-        description: "You can also message our Location Manager directly on WhatsApp.",
+      toast.error("Notice: Enquiry received or contact via WhatsApp", {
+        description: "You can also message directly on WhatsApp.",
       });
     } finally {
       setLoading(false);
@@ -135,7 +123,7 @@ function ContactPage() {
       <div className="border-b border-border bg-card py-14">
         <SectionHeading
           title="Book a Shoot or Recce"
-          subtitle="Reserve shooting dates, book the entire shooting house, or schedule an in-person technical location recce with our Location Manager."
+          subtitle="Reserve shooting dates or schedule an in-person walkthrough at 4/5 Varghese Avenue, Ashok Nagar, Vadapalani, Chennai."
         />
       </div>
 
@@ -144,61 +132,52 @@ function ContactPage() {
         <div className="lg:col-span-5">
           <div className="rounded-xl border border-border bg-card p-6 shadow-sm">
             <span className="rounded bg-amber-500/10 px-2 py-0.5 text-xs font-bold uppercase text-amber-500">
-              Single Private Property
+              Vadapalani · Chennai
             </span>
-            <h2 className="mt-3 font-display text-2xl font-black text-foreground">
+            <h2 className="mt-3 font-display text-2xl font-bold text-foreground">
               {business.name}
             </h2>
-            <p className="mt-1 text-xs text-muted-foreground">{business.owner}</p>
+            <p className="mt-1 text-xs text-muted-foreground">
+              2-Floor House · Empty Big Entrance · 2 BHK Each Floor
+            </p>
 
             <ul className="mt-6 space-y-4 text-xs text-foreground">
               <li className="flex gap-3">
                 <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-amber-500" />
                 <div>
-                  <strong className="block text-foreground">Property Location:</strong>
-                  <span className="text-muted-foreground">{business.addressLines.join(" ")}</span>
+                  <strong className="block text-foreground">Location Address:</strong>
+                  <span className="text-muted-foreground">
+                    4/5 Varghese Avenue, Ashok Nagar, Vadapalani, Chennai.
+                  </span>
                 </div>
               </li>
 
               <li className="flex gap-3">
                 <Phone className="mt-0.5 h-4 w-4 shrink-0 text-amber-500" />
                 <div>
-                  <strong className="block text-foreground">Location Manager (Call / Recce):</strong>
+                  <strong className="block text-foreground">Contact for Recce & Booking:</strong>
                   <a
-                    href={`tel:+91${business.phonePrimary}`}
-                    className="font-medium text-amber-500 hover:underline"
+                    href="tel:7010833853"
+                    className="font-bold text-amber-500 hover:underline"
                   >
-                    +91 {business.phonePrimaryDisplay}
+                    70108 33853
                   </a>
                   {" · "}
                   <a
-                    href={`tel:+91${business.phoneSecondary}`}
-                    className="font-medium text-amber-500 hover:underline"
+                    href="tel:883504143"
+                    className="font-bold text-amber-500 hover:underline"
                   >
-                    +91 {business.phoneSecondaryDisplay}
+                    883504143
                   </a>
                 </div>
               </li>
 
               <li className="flex gap-3">
-                <Mail className="mt-0.5 h-4 w-4 shrink-0 text-amber-500" />
+                <Building className="mt-0.5 h-4 w-4 shrink-0 text-amber-500" />
                 <div>
-                  <strong className="block text-foreground">Production Office Email:</strong>
-                  <a
-                    href={`mailto:${business.email}`}
-                    className="text-muted-foreground hover:text-amber-500 hover:underline"
-                  >
-                    {business.email}
-                  </a>
-                </div>
-              </li>
-
-              <li className="flex gap-3">
-                <Clock className="mt-0.5 h-4 w-4 shrink-0 text-amber-500" />
-                <div>
-                  <strong className="block text-foreground">Shooting Shifts:</strong>
+                  <strong className="block text-foreground">Property Details:</strong>
                   <span className="text-muted-foreground">
-                    Day Shift (6 AM – 6 PM) · Night Shift (6 PM – 6 AM) · 24-Hr Continuous
+                    2 Floors · Empty Big Entrance · 2 BHK Each Floor · Middle Class to Rich Setups
                   </span>
                 </div>
               </li>
@@ -207,7 +186,7 @@ function ContactPage() {
             <div className="mt-8 border-t border-border pt-6">
               <p className="text-xs font-semibold text-foreground">Instant Availability Check</p>
               <p className="mt-1 text-xs text-muted-foreground">
-                Connect directly with our team via WhatsApp for immediate date lock and recce timing.
+                Connect directly on WhatsApp for immediate recce scheduling.
               </p>
               <a
                 href={whatsappUrl}
@@ -215,7 +194,7 @@ function ContactPage() {
                 rel="noreferrer"
                 className="mt-4 flex w-full items-center justify-center gap-2 rounded-md bg-[#25D366] py-2.5 text-xs font-bold text-white shadow transition-transform hover:-translate-y-0.5"
               >
-                <MessageCircle className="h-4 w-4" /> WhatsApp Location Manager
+                <MessageCircle className="h-4 w-4" /> WhatsApp: 70108 33853
               </a>
             </div>
           </div>
@@ -227,21 +206,21 @@ function ContactPage() {
             onSubmit={send}
             className="rounded-xl border border-border bg-card p-6 shadow-sm md:p-8"
           >
-            <h3 className="font-display text-xl font-black text-foreground">
-              Production Booking & Recce Request
+            <h3 className="font-display text-xl font-bold text-foreground">
+              Shoot / Recce Booking Request
             </h3>
             <p className="mt-1 text-xs text-muted-foreground">
-              Submit your project details below to reserve shooting shifts or book an in-person recce.
+              Submit your project details to check date availability.
             </p>
 
             <div className="mt-6 grid gap-4 sm:grid-cols-2">
               <div>
                 <label className="text-[11px] font-bold uppercase tracking-wider text-muted-foreground">
-                  Production Banner / Company
+                  Production Banner / Name
                 </label>
                 <input
                   type="text"
-                  placeholder="e.g. Lotus Film Productions"
+                  placeholder="Production company or project name"
                   value={form.productionHouse}
                   onChange={(e) => setForm({ ...form, productionHouse: e.target.value })}
                   className={field}
@@ -259,14 +238,11 @@ function ContactPage() {
                   required
                 >
                   <option value="Feature Film">Feature Film</option>
+                  <option value="Television Serial">Television Serial</option>
                   <option value="OTT Web Series">OTT Web Series</option>
                   <option value="TV Commercial (Ad Film)">TV Commercial (Ad Film)</option>
-                  <option value="Television Serial">Television Serial</option>
-                  <option value="Music Video">Music Video</option>
-                  <option value="Celebrity / Fashion Photoshoot">
-                    Celebrity / Fashion Photoshoot
-                  </option>
                   <option value="Short Film / Pilot">Short Film / Pilot</option>
+                  <option value="Other">Other Shoot</option>
                 </select>
               </div>
 
@@ -276,7 +252,7 @@ function ContactPage() {
                 </label>
                 <input
                   type="text"
-                  placeholder="e.g. Ramesh (Production Executive)"
+                  placeholder="Your Name"
                   value={form.name}
                   onChange={(e) => setForm({ ...form, name: e.target.value })}
                   required
@@ -286,11 +262,11 @@ function ContactPage() {
 
               <div>
                 <label className="text-[11px] font-bold uppercase tracking-wider text-muted-foreground">
-                  Mobile Number (WhatsApp Preferred) *
+                  Phone Number (WhatsApp) *
                 </label>
                 <input
                   type="tel"
-                  placeholder="e.g. 98401 23456"
+                  placeholder="e.g. 70108 33853"
                   value={form.phone}
                   onChange={(e) => setForm({ ...form, phone: e.target.value })}
                   required
@@ -300,7 +276,7 @@ function ContactPage() {
 
               <div>
                 <label className="text-[11px] font-bold uppercase tracking-wider text-muted-foreground">
-                  Planned Shoot Date *
+                  Shoot Date *
                 </label>
                 <input
                   type="date"
@@ -313,69 +289,35 @@ function ContactPage() {
 
               <div>
                 <label className="text-[11px] font-bold uppercase tracking-wider text-muted-foreground">
-                  Shoot Shift / Type *
+                  Shoot Requirement *
                 </label>
                 <select
-                  value={form.shift}
-                  onChange={(e) => setForm({ ...form, shift: e.target.value })}
+                  value={form.requirement}
+                  onChange={(e) => setForm({ ...form, requirement: e.target.value })}
                   className={field}
                   required
                 >
-                  <option value="Day Shift (06:00 AM – 06:00 PM)">
-                    Day Shift (06:00 AM – 06:00 PM)
-                  </option>
-                  <option value="Night Shift (06:00 PM – 06:00 AM)">
-                    Night Shift (06:00 PM – 06:00 AM)
-                  </option>
-                  <option value="Full 24-Hour Continuous Block">
-                    Full 24-Hour Continuous Block
-                  </option>
+                  <option value="Full Day Shoot">Full Day Shoot</option>
+                  <option value="Half Day Shoot">Half Day Shoot</option>
                   <option value="Multi-Day Schedule">Multi-Day Schedule</option>
-                  <option value="Location Recce (Scouting Visit)">
-                    Location Recce (Scouting Visit)
+                  <option value="Location Recce (Walkthrough)">
+                    Location Recce (Walkthrough)
                   </option>
                 </select>
-              </div>
-
-              <div>
-                <label className="text-[11px] font-bold uppercase tracking-wider text-muted-foreground">
-                  Estimated Crew Size
-                </label>
-                <select
-                  value={form.crewSize}
-                  onChange={(e) => setForm({ ...form, crewSize: e.target.value })}
-                  className={field}
-                >
-                  <option value="Under 30 Members">Under 30 Members</option>
-                  <option value="30 – 60 Members">30 – 60 Members</option>
-                  <option value="60 – 100 Members">60 – 100 Members</option>
-                  <option value="100+ Members">100+ Members</option>
-                </select>
-              </div>
-
-              <div>
-                <label className="text-[11px] font-bold uppercase tracking-wider text-muted-foreground">
-                  Email Address
-                </label>
-                <input
-                  type="email"
-                  placeholder="production@studio.com"
-                  value={form.email}
-                  onChange={(e) => setForm({ ...form, email: e.target.value })}
-                  className={field}
-                />
               </div>
             </div>
 
             {/* Spaces Required */}
             <div className="mt-5">
               <label className="text-[11px] font-bold uppercase tracking-wider text-muted-foreground">
-                Specific Property Areas Required (Select all that apply)
+                Areas Needed
               </label>
               <div className="mt-2 grid grid-cols-2 gap-2 text-xs sm:grid-cols-3">
                 {[
-                  "Entire Property",
-                  "Exterior Facade",
+                  "Entire House (2 Floors)",
+                  "Ground Floor (2 BHK)",
+                  "First Floor (2 BHK)",
+                  "Empty Big Entrance",
                   "Living Hall",
                   "Dining Hall",
                   "Kitchen",
@@ -398,11 +340,11 @@ function ContactPage() {
 
             <div className="mt-5">
               <label className="text-[11px] font-bold uppercase tracking-wider text-muted-foreground">
-                Special Requirements or Notes
+                Message / Notes
               </label>
               <textarea
                 rows={3}
-                placeholder="Mention crane/jib access, smoke/haze requirements, electrical load notes, or recce timing..."
+                placeholder="Mention scene requirements, recce timing, or specific setup needs..."
                 value={form.message}
                 onChange={(e) => setForm({ ...form, message: e.target.value })}
                 className={field}
@@ -416,11 +358,8 @@ function ContactPage() {
                 className="inline-flex items-center gap-2 rounded-md bg-amber-500 px-6 py-3 text-xs font-bold uppercase tracking-wide text-black transition-colors hover:bg-amber-400 disabled:opacity-50"
               >
                 {loading ? <Loader2 className="h-4 w-4 animate-spin" /> : <CalendarCheck className="h-4 w-4" />}
-                Submit Shoot / Recce Request
+                Submit Request
               </button>
-              <span className="text-[11px] text-muted-foreground hidden sm:inline">
-                We respond within 2 hours
-              </span>
             </div>
           </form>
         </div>

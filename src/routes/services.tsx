@@ -2,7 +2,12 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import {
   CalendarCheck,
   Play,
-  ArrowRight,
+  Building,
+  DoorOpen,
+  Home,
+  Sparkles,
+  MapPin,
+  Phone,
 } from "lucide-react";
 import { SectionHeading } from "@/components/site/SectionHeading";
 import { business, propertySpaces, whatsappUrl } from "@/lib/business";
@@ -11,12 +16,12 @@ export const Route = createFileRoute("/services")({
   head: () => ({
     meta: [
       {
-        title: "Property Spaces - Movie Shooting House Rental",
+        title: "Property Spaces - 2-Floor Shooting House in Vadapalani",
       },
       {
         name: "description",
         content:
-          "Available property spaces for movie and web series shoots: Exterior Facade, Living Hall, Dining Hall, and Kitchen.",
+          "2-floor movie shooting house in 4/5 Varghese Avenue, Ashok Nagar, Vadapalani, Chennai. Empty big entrance, 2 BHK on each floor, suitable for middle class to rich house setups.",
       },
     ],
   }),
@@ -29,25 +34,28 @@ function PropertySpacesPage() {
       {/* Header banner */}
       <div className="border-b border-border bg-card py-14">
         <SectionHeading
-          title="Property Spaces"
-          subtitle="Explore the areas available for filming at this property."
+          title="Property Spaces & Layout"
+          subtitle="2-floor independent house with an empty big entrance and 2 BHK layout on each floor in Vadapalani, Chennai."
         />
       </div>
 
       <div className="mx-auto max-w-6xl px-4 py-14">
         {/* Quick Property Overview Card */}
         <div className="mb-12 rounded-xl border border-amber-500/40 bg-card p-6 shadow-sm sm:p-8">
-          <div className="flex flex-wrap items-center justify-between gap-4">
+          <div className="flex flex-wrap items-center justify-between gap-4 border-b border-border pb-6">
             <div>
               <span className="rounded bg-amber-500/10 px-2 py-0.5 text-xs font-bold uppercase text-amber-500">
-                Private Property
+                Independent House
               </span>
               <h2 className="mt-2 font-display text-2xl font-bold text-foreground">
                 {business.name}
               </h2>
-              <p className="text-xs text-muted-foreground">{business.addressLines.join(" ")}</p>
+              <p className="mt-1 text-xs text-muted-foreground flex items-center gap-1.5">
+                <MapPin className="h-3.5 w-3.5 text-amber-500" />
+                {business.addressLines.join(" ")}
+              </p>
             </div>
-            <div className="flex gap-3">
+            <div className="flex flex-wrap gap-3">
               <Link
                 to="/"
                 hash="video-tour"
@@ -61,6 +69,29 @@ function PropertySpacesPage() {
               >
                 <CalendarCheck className="h-3.5 w-3.5 text-amber-500" /> Book Recce
               </Link>
+            </div>
+          </div>
+
+          <div className="mt-6 grid grid-cols-2 gap-4 text-xs sm:grid-cols-4">
+            <div className="rounded border border-border/60 bg-background p-3">
+              <Building className="h-4 w-4 text-amber-500" />
+              <strong className="block mt-1 text-foreground">2 Floors</strong>
+              <span className="text-muted-foreground">Ground + 1st Floor</span>
+            </div>
+            <div className="rounded border border-border/60 bg-background p-3">
+              <DoorOpen className="h-4 w-4 text-amber-500" />
+              <strong className="block mt-1 text-foreground">Empty Big Entrance</strong>
+              <span className="text-muted-foreground">Spacious Frontage</span>
+            </div>
+            <div className="rounded border border-border/60 bg-background p-3">
+              <Home className="h-4 w-4 text-amber-500" />
+              <strong className="block mt-1 text-foreground">2 BHK Each Floor</strong>
+              <span className="text-muted-foreground">Independent Units</span>
+            </div>
+            <div className="rounded border border-border/60 bg-background p-3">
+              <Sparkles className="h-4 w-4 text-amber-500" />
+              <strong className="block mt-1 text-foreground">Middle Class to Rich</strong>
+              <span className="text-muted-foreground">Versatile Setups</span>
             </div>
           </div>
         </div>
@@ -89,6 +120,11 @@ function PropertySpacesPage() {
               {/* Details */}
               <div className="flex flex-col lg:w-1/2">
                 <h3 className="font-display text-2xl font-bold text-foreground">{space.title}</h3>
+                {space.subtitle && (
+                  <span className="text-xs font-semibold text-amber-500 mt-1">
+                    {space.subtitle}
+                  </span>
+                )}
                 <p className="mt-3 text-xs leading-relaxed text-muted-foreground sm:text-sm">
                   {space.description}
                 </p>
@@ -101,10 +137,10 @@ function PropertySpacesPage() {
                     <CalendarCheck className="h-3.5 w-3.5" /> Book Recce for This Space
                   </Link>
                   <a
-                    href={`tel:+91${business.phonePrimary}`}
+                    href="tel:7010833853"
                     className="inline-flex items-center gap-1.5 rounded-md border border-border px-4 py-2 text-xs font-semibold text-foreground transition-colors hover:bg-muted"
                   >
-                    Call Manager: {business.phonePrimaryDisplay}
+                    <Phone className="h-3.5 w-3.5 text-amber-500" /> Call: 70108 33853
                   </a>
                 </div>
               </div>
@@ -118,7 +154,9 @@ function PropertySpacesPage() {
             Schedule a Recce Walkthrough
           </h3>
           <p className="mt-2 text-xs leading-relaxed text-muted-foreground sm:text-sm">
-            Contact us to arrange an in-person visit to inspect lighting, power points, and camera angles.
+            Address: 4/5 Varghese Avenue, Ashok Nagar, Vadapalani, Chennai.
+            <br />
+            Contact: <strong>70108 33853</strong> / <strong>883504143</strong>
           </p>
           <div className="mt-6 flex flex-wrap justify-center gap-3">
             <Link

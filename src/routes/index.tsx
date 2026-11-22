@@ -6,7 +6,12 @@ import {
   Film,
   Play,
   Home,
-  Clock,
+  MapPin,
+  Phone,
+  CheckCircle2,
+  Building,
+  DoorOpen,
+  Sparkles,
 } from "lucide-react";
 import { SectionHeading } from "@/components/site/SectionHeading";
 import { Reveal } from "@/components/site/Reveal";
@@ -19,12 +24,12 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       {
-        title: "Movie Shooting House Rental - Chennai",
+        title: "Movie Shooting House - Vadapalani, Ashok Nagar, Chennai",
       },
       {
         name: "description",
         content:
-          "Private movie shooting house available for feature films, OTT web series, television serials, and commercial shoots in Chennai.",
+          "2-floor movie shooting house in 4/5 Varghese Avenue, Ashok Nagar, Vadapalani, Chennai. Empty big entrance, 2 BHK on each floor, suitable for middle class to rich house setups.",
       },
     ],
   }),
@@ -50,8 +55,8 @@ function Index() {
 
         <div className="relative z-10 mx-auto w-full max-w-6xl px-4 text-center">
           <div className="inline-flex items-center gap-2 rounded-full border border-amber-500/40 bg-black/60 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-amber-400 backdrop-blur-md">
-            <Film className="h-3.5 w-3.5 text-amber-400" />
-            <span>{t("heroBadge")}</span>
+            <MapPin className="h-3.5 w-3.5 text-amber-400" />
+            <span>4/5 Varghese Avenue, Ashok Nagar, Vadapalani</span>
           </div>
 
           <h1 className="mt-5 font-display text-3xl font-extrabold tracking-tight text-white sm:text-5xl md:text-6xl">
@@ -88,12 +93,46 @@ function Index() {
         </div>
       </section>
 
+      {/* Real Property Specs Bar */}
+      <section className="border-b border-border bg-card py-6">
+        <div className="mx-auto grid max-w-6xl grid-cols-2 gap-4 px-4 text-center md:grid-cols-4">
+          <div className="border-r border-border/60 last:border-0 p-2">
+            <Building className="mx-auto h-5 w-5 text-amber-500" />
+            <p className="mt-2 font-display text-lg font-bold text-foreground md:text-xl">
+              2 Floors
+            </p>
+            <p className="text-xs text-muted-foreground">Ground + 1st Floor</p>
+          </div>
+          <div className="border-r border-border/60 last:border-0 p-2">
+            <DoorOpen className="mx-auto h-5 w-5 text-amber-500" />
+            <p className="mt-2 font-display text-lg font-bold text-foreground md:text-xl">
+              Empty Big Entrance
+            </p>
+            <p className="text-xs text-muted-foreground">Spacious Frontage & Gate</p>
+          </div>
+          <div className="border-r border-border/60 last:border-0 p-2">
+            <Home className="mx-auto h-5 w-5 text-amber-500" />
+            <p className="mt-2 font-display text-lg font-bold text-foreground md:text-xl">
+              2 BHK Each Floor
+            </p>
+            <p className="text-xs text-muted-foreground">Independent Living Layouts</p>
+          </div>
+          <div className="p-2">
+            <Sparkles className="mx-auto h-5 w-5 text-amber-500" />
+            <p className="mt-2 font-display text-lg font-bold text-foreground md:text-xl">
+              Middle Class to Rich
+            </p>
+            <p className="text-xs text-muted-foreground">Versatile House Setups</p>
+          </div>
+        </div>
+      </section>
+
       {/* Property Video Tour Section */}
       <section id="video-tour" className="scroll-mt-20 border-b border-border bg-card/40 py-16">
         <div className="mx-auto max-w-6xl px-4">
           <SectionHeading
             title="Property Video Tour"
-            subtitle="Watch the complete walkthrough video of the house."
+            subtitle="Watch the complete walkthrough video of the 2-floor house."
           />
           <div className="mt-10">
             <VideoTour />
@@ -106,7 +145,7 @@ function Index() {
         <div className="mx-auto max-w-6xl px-4">
           <SectionHeading
             title="Property Spaces"
-            subtitle="Explore the areas available for filming inside this property."
+            subtitle="Spacious layout suitable for middle class to rich household scenes."
           />
 
           <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
@@ -128,11 +167,16 @@ function Index() {
                     <h3 className="font-display text-lg font-bold text-foreground group-hover:text-amber-500 transition-colors">
                       {space.title}
                     </h3>
+                    {space.subtitle && (
+                      <span className="text-[11px] font-semibold text-amber-500">
+                        {space.subtitle}
+                      </span>
+                    )}
                     <p className="mt-2 text-xs leading-relaxed text-muted-foreground">
                       {space.description}
                     </p>
 
-                    <div className="mt-auto pt-4 border-t border-border mt-4 flex items-center justify-between">
+                    <div className="mt-auto pt-4 border-t border-border flex items-center justify-between">
                       <Link
                         to="/contact"
                         className="inline-flex items-center gap-1.5 text-xs font-bold text-amber-500 hover:text-amber-400"
@@ -148,48 +192,108 @@ function Index() {
         </div>
       </section>
 
-      {/* Shooting Shifts (Clean & Honest) */}
-      <section className="border-t border-border bg-card/40 py-16">
+      {/* Location Callout Banner */}
+      <section className="border-y border-border bg-card py-12">
+        <div className="mx-auto max-w-5xl px-4">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-6 rounded-xl border border-amber-500/30 bg-background p-6 shadow-sm">
+            <div>
+              <span className="rounded bg-amber-500/10 px-2 py-0.5 text-xs font-bold uppercase text-amber-500">
+                Prime Film Hub Location
+              </span>
+              <h3 className="mt-2 font-display text-xl font-bold text-foreground">
+                4/5 Varghese Avenue, Ashok Nagar, Vadapalani, Chennai
+              </h3>
+              <p className="mt-1 text-xs text-muted-foreground">
+                Conveniently located in Vadapalani / Ashok Nagar, Chennai's primary film production district.
+              </p>
+              <div className="mt-3 flex flex-wrap gap-4 text-xs">
+                <span>
+                  <strong>Phone:</strong>{" "}
+                  <a href="tel:7010833853" className="text-amber-500 hover:underline">
+                    70108 33853
+                  </a>
+                  {" · "}
+                  <a href="tel:883504143" className="text-amber-500 hover:underline">
+                    883504143
+                  </a>
+                </span>
+              </div>
+            </div>
+
+            <div className="flex flex-wrap gap-3 shrink-0">
+              <a
+                href={business.mapsUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-2 rounded-md border border-border px-4 py-2.5 text-xs font-semibold text-foreground hover:bg-muted"
+              >
+                <MapPin className="h-4 w-4 text-amber-500" /> Open in Maps
+              </a>
+              <Link
+                to="/contact"
+                className="inline-flex items-center gap-2 rounded-md bg-amber-500 px-4 py-2.5 text-xs font-bold text-black hover:bg-amber-400"
+              >
+                <CalendarCheck className="h-4 w-4" /> Book Recce
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* House Details & Filming Features */}
+      <section className="border-t border-border bg-card/60 py-16">
         <div className="mx-auto max-w-6xl px-4">
           <SectionHeading
-            title="Shooting Shifts"
-            subtitle="Flexible timings for your shoot schedule."
+            title="House Details & Features"
+            subtitle="Spacious 2-floor layout tailored for film, television serial, and web series productions."
           />
 
-          <div className="mt-10 grid gap-6 md:grid-cols-3">
-            <div className="rounded-lg border border-border bg-card p-6 shadow-sm">
-              <span className="rounded bg-amber-500/10 px-2 py-0.5 text-xs font-bold uppercase text-amber-500">
-                Day Shift
-              </span>
-              <h3 className="mt-3 font-display text-xl font-bold text-foreground">
-                06:00 AM – 06:00 PM
+          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            <div className="rounded-xl border border-border bg-card p-6 shadow-sm">
+              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-amber-500/10 text-amber-500">
+                <Building className="h-5 w-5" />
+              </div>
+              <h3 className="mt-4 font-display text-lg font-bold text-foreground">
+                2 Floors Structure
               </h3>
-              <p className="mt-2 text-xs text-muted-foreground">
-                12-hour daytime shooting block for daylight indoor and outdoor sequences.
+              <p className="mt-2 text-xs leading-relaxed text-muted-foreground">
+                Independent Ground + 1st floor building offering ample depth and multi-angle scene setups.
               </p>
             </div>
 
-            <div className="relative rounded-lg border-2 border-amber-500 bg-card p-6 shadow-md">
-              <span className="rounded bg-amber-500/10 px-2 py-0.5 text-xs font-bold uppercase text-amber-500">
-                Night Shift
-              </span>
-              <h3 className="mt-3 font-display text-xl font-bold text-foreground">
-                06:00 PM – 06:00 AM
+            <div className="rounded-xl border border-border bg-card p-6 shadow-sm">
+              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-amber-500/10 text-amber-500">
+                <DoorOpen className="h-5 w-5" />
+              </div>
+              <h3 className="mt-4 font-display text-lg font-bold text-foreground">
+                Empty Big Entrance
               </h3>
-              <p className="mt-2 text-xs text-muted-foreground">
-                12-hour overnight shooting block for night interior and mood sequences.
+              <p className="mt-2 text-xs leading-relaxed text-muted-foreground">
+                Wide open frontage and entrance area for camera tracks, lighting gear, vehicle arrival, and exterior scenes.
               </p>
             </div>
 
-            <div className="rounded-lg border border-border bg-card p-6 shadow-sm">
-              <span className="rounded bg-amber-500/10 px-2 py-0.5 text-xs font-bold uppercase text-amber-500">
-                Full 24-Hour / Multi-Day
-              </span>
-              <h3 className="mt-3 font-display text-xl font-bold text-foreground">
-                Full 24-Hour Block
+            <div className="rounded-xl border border-border bg-card p-6 shadow-sm">
+              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-amber-500/10 text-amber-500">
+                <Home className="h-5 w-5" />
+              </div>
+              <h3 className="mt-4 font-display text-lg font-bold text-foreground">
+                2 BHK Each Floor
               </h3>
-              <p className="mt-2 text-xs text-muted-foreground">
-                Continuous shooting schedule or multi-day consecutive dates.
+              <p className="mt-2 text-xs leading-relaxed text-muted-foreground">
+                Two separate 2 BHK units (living hall, dining area, kitchen, rooms) for parallel scene setups.
+              </p>
+            </div>
+
+            <div className="rounded-xl border border-border bg-card p-6 shadow-sm">
+              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-amber-500/10 text-amber-500">
+                <Sparkles className="h-5 w-5" />
+              </div>
+              <h3 className="mt-4 font-display text-lg font-bold text-foreground">
+                Middle Class to Rich Setups
+              </h3>
+              <p className="mt-2 text-xs leading-relaxed text-muted-foreground">
+                Highly adaptable interior aesthetic that easily dresses for modest middle-class homes or upscale affluent houses.
               </p>
             </div>
           </div>
@@ -241,7 +345,7 @@ function Index() {
           Interested in Shooting Here?
         </h2>
         <p className="mx-auto mt-2 max-w-xl text-xs leading-relaxed text-muted-foreground sm:text-sm">
-          Call or message us to schedule an in-person recce and check date availability for your project.
+          Call <strong>70108 33853</strong> / <strong>883504143</strong> to schedule an in-person recce at 4/5 Varghese Avenue, Ashok Nagar, Vadapalani.
         </p>
         <div className="mt-6 flex flex-wrap justify-center gap-4">
           <Link
@@ -256,7 +360,7 @@ function Index() {
             rel="noreferrer"
             className="inline-flex items-center gap-2 rounded-md border border-border bg-card px-6 py-3 text-sm font-semibold text-foreground transition-colors hover:border-amber-500"
           >
-            WhatsApp Location Manager
+            WhatsApp for Recce
           </a>
         </div>
       </section>
