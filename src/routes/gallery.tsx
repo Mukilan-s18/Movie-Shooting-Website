@@ -35,7 +35,7 @@ function GalleryPage() {
 
   return (
     <div>
-      <div className="border-b border-border bg-card py-14">
+      <div className="border-b border-border bg-muted py-14">
         <SectionHeading
           title="Property Photos & Video Tour"
           subtitle="Watch the walkthrough video tour and view photos of the shooting house."
@@ -53,10 +53,10 @@ function GalleryPage() {
                 setActive(c);
                 setOpenIndex(null);
               }}
-              className={`inline-flex items-center gap-1.5 rounded-md border px-4 py-2 text-xs font-semibold transition-all ${
+              className={`inline-flex items-center gap-1.5 rounded border px-4 py-2 text-xs font-semibold transition-all ${
                 active === c
-                  ? "border-amber-500 bg-amber-500 text-black shadow-sm"
-                  : "border-border text-foreground hover:border-amber-500/60 hover:text-amber-500"
+                  ? "border-primary bg-primary text-primary-foreground shadow-sm"
+                  : "border-border text-foreground hover:border-gold hover:text-primary"
               }`}
             >
               {c === "Video Tour" && <Play className="h-3 w-3 fill-current" />}
@@ -67,7 +67,7 @@ function GalleryPage() {
 
         {/* Video Tour Section in Gallery */}
         {(active === "All" || active === "Video Tour") && (
-          <div className="mt-10 rounded-xl border border-amber-500/30 bg-card p-6 shadow-md">
+          <div className="mt-10 rounded-lg border border-border bg-card p-6 shadow-sm">
             <div className="mb-6 flex flex-wrap items-center justify-between gap-3 border-b border-border pb-4">
               <div>
                 <span className="rounded bg-amber-500/10 px-2 py-0.5 text-xs font-bold uppercase text-amber-500">

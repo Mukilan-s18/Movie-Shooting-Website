@@ -32,7 +32,7 @@ export const Route = createFileRoute("/about")({
 function AboutPage() {
   return (
     <div>
-      <div className="border-b border-border bg-card py-14">
+      <div className="border-b border-border bg-muted py-14">
         <SectionHeading
           title="About The Shooting House"
           subtitle="2-floor independent house in Vadapalani / Ashok Nagar, Chennai, available for film, TV serial, and web series shoots."
@@ -41,7 +41,7 @@ function AboutPage() {
 
       {/* Property Overview */}
       <section className="mx-auto grid max-w-5xl items-center gap-10 px-4 py-14 md:grid-cols-2">
-        <div className="relative overflow-hidden rounded-xl bg-muted shadow-md">
+        <div className="relative overflow-hidden rounded-lg bg-muted shadow-md">
           <img
             src="/property/exterior-facade.jpeg"
             alt="Shooting House Exterior Facade"
@@ -52,10 +52,10 @@ function AboutPage() {
           />
         </div>
         <div>
-          <span className="text-xs font-bold uppercase tracking-widest text-amber-500">
+          <span className="text-xs font-bold uppercase tracking-widest text-primary">
             Ashok Nagar · Vadapalani, Chennai
           </span>
-          <h2 className="mt-2 font-display text-3xl font-bold text-foreground">
+          <h2 className="mt-2 font-display text-3xl font-bold text-primary">
             2-Floor Independent House
           </h2>
           <div className="mt-4 space-y-3 text-xs leading-relaxed text-muted-foreground sm:text-sm">

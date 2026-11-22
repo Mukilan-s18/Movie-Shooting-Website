@@ -122,7 +122,7 @@ function ContactPage() {
 
   return (
     <div>
-      <div className="border-b border-border bg-card py-14">
+      <div className="border-b border-border bg-muted py-14">
         <SectionHeading
           title="Book a Shoot or Recce"
           subtitle="Reserve shooting dates or schedule an in-person walkthrough at 4/5 Varghese Avenue, Ashok Nagar, Vadapalani, Chennai."
@@ -370,7 +370,7 @@ function ContactPage() {
               <button
                 type="submit"
                 disabled={loading}
-                className="inline-flex items-center gap-2 rounded-md bg-amber-500 px-6 py-3 text-xs font-bold uppercase tracking-wide text-black transition-colors hover:bg-amber-400 disabled:opacity-50"
+                className="inline-flex items-center gap-2 rounded bg-primary px-6 py-3 text-xs font-bold uppercase tracking-wide text-primary-foreground shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:opacity-95 disabled:opacity-50"
               >
                 {loading ? <Loader2 className="h-4 w-4 animate-spin" /> : <CalendarCheck className="h-4 w-4" />}
                 Submit Request

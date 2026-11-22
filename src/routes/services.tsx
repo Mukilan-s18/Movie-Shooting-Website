@@ -32,7 +32,7 @@ function PropertySpacesPage() {
   return (
     <div>
       {/* Header banner */}
-      <div className="border-b border-border bg-card py-14">
+      <div className="border-b border-border bg-muted py-14">
         <SectionHeading
           title="Property Spaces & Layout"
           subtitle="2-floor independent house with an empty big entrance and 2 BHK layout on each floor in Vadapalani, Chennai."
@@ -95,11 +95,11 @@ function PropertySpacesPage() {
             </div>
           </div>
 
-          <div className="mt-4 rounded-md border border-amber-500/30 bg-amber-500/5 p-3 text-xs text-muted-foreground flex flex-wrap items-center justify-between gap-3">
+          <div className="mt-4 rounded-md border border-border bg-card p-3 text-xs text-muted-foreground flex flex-wrap items-center justify-between gap-3">
             <span>
-              🎥 <strong className="text-foreground">Camera-Tested Track Record:</strong> Filming location for the feature film <strong className="text-amber-500">Tourist Family</strong> (starring M. Sasikumar & Simran), the JioHotstar web series <strong className="text-amber-500">Brothers and Sisters</strong>, and <strong className="text-amber-500">Parimala & Co</strong>.
+              <strong className="text-primary uppercase tracking-wider text-[11px]">Camera-Tested Track Record:</strong> Filming location for the feature film <strong className="text-foreground">Tourist Family</strong> (starring M. Sasikumar &amp; Simran), the JioHotstar web series <strong className="text-foreground">Brothers and Sisters</strong>, and <strong className="text-foreground">Parimala &amp; Co</strong>.
             </span>
-            <Link to="/gallery" className="shrink-0 font-bold text-amber-500 hover:underline">
+            <Link to="/gallery" className="shrink-0 font-bold text-primary hover:underline">
               View Reference Stills →
             </Link>
           </div>
@@ -158,27 +158,27 @@ function PropertySpacesPage() {
         </div>
 
         {/* Bottom CTA */}
-        <div className="mt-14 rounded-xl border border-amber-500/40 bg-gradient-to-r from-amber-500/10 via-card to-amber-500/10 p-8 text-center">
-          <h3 className="font-display text-2xl font-bold text-foreground">
+        <div className="mt-14 rounded-xl border border-border bg-muted p-8 text-center shadow-sm sm:p-12">
+          <h3 className="font-display text-2xl font-bold text-primary sm:text-3xl">
             Schedule a Recce Walkthrough
           </h3>
-          <p className="mt-2 text-xs leading-relaxed text-muted-foreground sm:text-sm">
+          <p className="mx-auto mt-2 max-w-xl text-xs leading-relaxed text-muted-foreground sm:text-sm">
             Address: 4/5 Varghese Avenue, Ashok Nagar, Vadapalani, Chennai.
             <br />
             Contact: <strong>70108 33853</strong> / <strong>883504143</strong>
           </p>
-          <div className="mt-6 flex flex-wrap justify-center gap-3">
+          <div className="mt-6 flex flex-wrap justify-center gap-4">
             <Link
               to="/contact"
-              className="rounded-md bg-amber-500 px-6 py-3 text-sm font-bold text-black transition-colors hover:bg-amber-400"
+              className="inline-flex items-center gap-2 rounded-md bg-accent px-6 py-3 text-sm font-semibold text-accent-foreground shadow-sm transition-transform hover:-translate-y-0.5 hover:opacity-90"
             >
-              Book Recce
+              <CalendarCheck className="h-4 w-4" /> Book Recce
             </Link>
             <a
               href={whatsappUrl}
               target="_blank"
               rel="noreferrer"
-              className="rounded-md border border-border bg-card px-6 py-3 text-sm font-semibold text-foreground hover:border-amber-500"
+              className="inline-flex items-center gap-2 rounded-md border border-primary px-6 py-3 text-sm font-semibold text-primary transition-colors hover:bg-primary hover:text-primary-foreground"
             >
               WhatsApp Us
             </a>

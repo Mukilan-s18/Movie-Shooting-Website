@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { useState } from "react";
-import { Menu, Phone, X, CalendarCheck, Play } from "lucide-react";
+import { Menu, Phone, X, CalendarCheck, Play, Languages } from "lucide-react";
 import { Logo } from "./Logo";
 import { business } from "@/lib/business";
 import { useI18n } from "@/lib/i18n";
@@ -15,11 +15,11 @@ const linkKeys = [
 
 export function Header() {
   const [open, setOpen] = useState(false);
-  const { t } = useI18n();
+  const { t, lang, setLang } = useI18n();
 
   return (
-    <header className="sticky top-0 z-40 border-b border-border bg-background/90 backdrop-blur-md">
-      <div className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-2 md:py-2.5">
+    <header className="sticky top-0 z-40 border-b border-border bg-background/95 backdrop-blur-md">
+      <div className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-2.5">
         <Link to="/" onClick={() => setOpen(false)} aria-label={business.name} className="shrink-0">
           <Logo compact />
         </Link>
@@ -30,8 +30,8 @@ export function Header() {
               key={l.to}
               to={l.to}
               activeOptions={{ exact: l.to === "/" }}
-              activeProps={{ className: "text-amber-500 font-bold" }}
-              className="text-xs font-semibold uppercase tracking-wider text-foreground/80 whitespace-nowrap transition-colors hover:text-amber-500"
+              activeProps={{ className: "text-primary font-bold" }}
+              className="text-xs font-semibold uppercase tracking-wider text-foreground/80 whitespace-nowrap transition-colors hover:text-primary"
             >
               {t(l.key as any)}
             </Link>
@@ -39,14 +39,24 @@ export function Header() {
 
           <a
             href="/#video-tour"
-            className="inline-flex items-center gap-1 text-xs font-bold uppercase tracking-wider text-amber-500 whitespace-nowrap transition-colors hover:text-amber-400"
+            className="inline-flex items-center gap-1 text-xs font-bold uppercase tracking-wider text-primary whitespace-nowrap transition-colors hover:text-primary/80"
           >
-            <Play className="h-2.5 w-2.5 fill-amber-500" /> Video Tour
+            <Play className="h-2.5 w-2.5 fill-primary" /> Video Tour
           </a>
+
+          <button
+            type="button"
+            onClick={() => setLang(lang === "en" ? "ta" : "en")}
+            className="inline-flex items-center gap-1 rounded border border-border bg-card px-2 py-1 text-[11px] font-semibold text-foreground transition-colors hover:border-gold hover:text-primary"
+            aria-label="Toggle language between English and Tamil"
+          >
+            <Languages className="h-3 w-3 text-gold" />
+            <span>{lang === "en" ? "தமிழ்" : "English"}</span>
+          </button>
 
           <Link
             to="/contact"
-            className="inline-flex items-center gap-1.5 rounded-md bg-amber-500 px-3 py-1.5 text-xs font-bold uppercase tracking-wider text-black shadow-sm whitespace-nowrap transition-opacity hover:opacity-95"
+            className="inline-flex items-center gap-1.5 rounded bg-primary px-3 py-1.5 text-xs font-bold uppercase tracking-wider text-primary-foreground shadow-sm whitespace-nowrap transition-all duration-300 hover:-translate-y-0.5 hover:opacity-95"
           >
             <CalendarCheck className="h-3.5 w-3.5" />
             Book Recce
@@ -54,9 +64,9 @@ export function Header() {
 
           <a
             href="tel:7010833853"
-            className="hidden lg:inline-flex items-center gap-1.5 text-xs font-bold text-foreground whitespace-nowrap transition-colors hover:text-amber-500"
+            className="hidden lg:inline-flex items-center gap-1.5 text-xs font-bold text-foreground whitespace-nowrap transition-colors hover:text-primary"
           >
-            <Phone className="h-3.5 w-3.5 text-amber-500" />
+            <Phone className="h-3.5 w-3.5 text-gold" />
             70108 33853
           </a>
         </nav>
@@ -64,9 +74,18 @@ export function Header() {
         <div className="flex items-center gap-2 md:hidden">
           <button
             type="button"
+            onClick={() => setLang(lang === "en" ? "ta" : "en")}
+            className="inline-flex items-center gap-1 rounded border border-border bg-card px-2 py-1 text-[11px] font-semibold text-foreground"
+            aria-label="Toggle language between English and Tamil"
+          >
+            <Languages className="h-3 w-3 text-gold" />
+            <span>{lang === "en" ? "தமிழ்" : "English"}</span>
+          </button>
+          <button
+            type="button"
             onClick={() => setOpen((v) => !v)}
             aria-label="Toggle menu"
-            className="rounded-md border border-border p-2 text-foreground"
+            className="rounded border border-border p-2 text-foreground"
           >
             {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
           </button>
@@ -81,7 +100,7 @@ export function Header() {
               to={l.to}
               onClick={() => setOpen(false)}
               activeOptions={{ exact: l.to === "/" }}
-              activeProps={{ className: "text-amber-500 font-bold" }}
+              activeProps={{ className: "text-primary font-bold" }}
               className="block border-b border-border/60 py-3 text-sm font-semibold uppercase tracking-wide text-foreground/80 last:border-0"
             >
               {t(l.key as any)}
@@ -90,24 +109,24 @@ export function Header() {
           <a
             href="/#video-tour"
             onClick={() => setOpen(false)}
-            className="block border-b border-border/60 py-3 text-sm font-bold uppercase tracking-wide text-amber-500"
+            className="block border-b border-border/60 py-3 text-sm font-bold uppercase tracking-wide text-primary"
           >
-            ▶ Video Tour
+            Video Tour
           </a>
           <div className="mt-3 flex flex-col gap-2 pt-2">
             <Link
               to="/contact"
               onClick={() => setOpen(false)}
-              className="flex items-center justify-center gap-2 rounded-md bg-amber-500 py-2.5 text-sm font-bold text-black"
+              className="flex items-center justify-center gap-2 rounded bg-primary py-2.5 text-sm font-bold text-primary-foreground"
             >
               <CalendarCheck className="h-4 w-4" />
               Book Location Recce
             </Link>
             <a
               href={`tel:${business.phonePrimary}`}
-              className="flex items-center justify-center gap-2 rounded-md border border-border py-2 text-sm font-semibold text-foreground"
+              className="flex items-center justify-center gap-2 rounded border border-border py-2 text-sm font-semibold text-foreground"
             >
-              <Phone className="h-4 w-4 text-amber-500" />
+              <Phone className="h-4 w-4 text-gold" />
               Call: {business.phonePrimaryDisplay} / {business.phoneSecondaryDisplay}
             </a>
           </div>
