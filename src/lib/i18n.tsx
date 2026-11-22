@@ -24,7 +24,7 @@ export const translations: Translations = {
     ta: "வடபழனி திரைப்பட படப்பிடிப்பு இல்லம்",
   },
   heroSubtitle: {
-    en: "2-Floor independent house with an empty big entrance. 2 BHK on each floor — versatile for middle class to rich house setups for movies, TV serials, and web series.",
+    en: "2-Floor independent house with an empty big entrance. 2 BHK on each floor, versatile for middle class to rich house setups for movies, TV serials, and web series.",
     ta: "2 தளங்கள் கொண்ட தனி இல்லம் - விசாலமான முன் நுழைவு வாயில், ஒவ்வொரு தளத்திலும் 2 BHK அமைப்பு. நடுத்தர வர்க்கம் முதல் பணக்கார குடும்ப காட்சிகள் வரை படம்பிடிக்க ஏற்றது.",
   },
   viewOurWork: { en: "View Property Spaces", ta: "வீட்டின் பகுதிகளைப் பார்க்கவும்" },

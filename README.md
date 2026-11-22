@@ -1,38 +1,18 @@
-# Cinewood Film Shooting House & Studios
+# Movie Shooting House Rental - Vadapalani, Chennai
 
-A production-grade, high-performance web application for renting movie shooting houses, vintage heritage bungalows, and pre-rigged multi-set film studios in Chennai. Built with **React 19**, **TanStack Router / Start**, **Tailwind CSS v4**, **Vite**, and **Supabase**.
+A production-grade web application for the movie shooting house located at **4/5 Varghese Avenue, Ashok Nagar, Vadapalani, Chennai**. Built with **React 19**, **TanStack Router / Start**, **Tailwind CSS v4**, **Vite**, and **Supabase**.
 
 ---
 
-## 🎬 Key Features
+## 🎬 Property Highlights
 
-- **Film Shooting Sets & Locations**:
-  - Grand Chettinad Courtyard Mansion
-  - Ultra-Modern Luxury Villa with Pool
-  - Pre-Erected Police Station & Lockup Set
-  - Courtroom & Judge Chamber Set
-  - Corporate Boardroom & Executive Suite
-  - Hospital Emergency Ward & ICU Set
-  - Rustic Village Farmhouse & Courtyard
-  - Skyline Rooftop & Open-Air Terrace
-  - 4 AC Vanity Green Rooms & Crew Mess
-
-- **Film Production Facilities**:
-  - 100 KVA Silent Caterpillar Generator power backup
-  - Sound-treated interiors for sync-sound recording
-  - 50+ Vehicles & heavy generator truck parking
-  - High clearance ceilings with rigging points for lighting grids
-  - Day Shift (6 AM – 6 PM), Night Shift (6 PM – 6 AM), and 24-Hour continuous shooting slots
-  - Location recce (scouting) scheduling & booking enquiry flow
-
-- **Bilingual Experience**:
-  - Seamless English & Tamil (தமிழ்) language switcher with localized film production terminology.
-
-- **Interactive Gallery & Lightbox**:
-  - Filterable by set categories with full-screen zoom and inspection for cinematographers and art directors.
-
-- **Production Enquiry & Recce Booking**:
-  - Detailed inquiry form capturing production banner, format (feature, OTT, TVC, music video), shifts, crew size, and required sets.
+- **2-Floor Independent House**: Ground Floor + First Floor layout.
+- **Empty Big Entrance**: Spacious frontage and wide gate access suitable for production vehicles, camera tracks, and lighting gear.
+- **2 BHK on Each Floor**: Independent halls, bedrooms, and kitchen spaces versatile for middle class to rich household cinematic setups.
+- **Filming Credits**: Featured filming location for the popular web series *Parimala & Co* and multiple feature film productions.
+- **Location**: 4/5 Varghese Avenue, Ashok Nagar, Vadapalani, Chennai (heart of Chennai's cinema hub).
+- **Contact Numbers**: 70108 33853 and 883504143.
+- **Official Email**: Pranav280806@gmail.com.
 
 ---
 
@@ -47,25 +27,8 @@ npm install
 ```bash
 npm run dev
 ```
-Open [http://localhost:3000](http://localhost:3000) (or the port shown in your terminal) to explore the site.
 
 ### 3. Build for Production
 ```bash
 npm run build
 ```
-
-### 4. Preview Production Build
-```bash
-npm run preview
-```
-
----
-
-## 🛠️ Tech Stack
-
-- **Framework**: React 19 + Vite
-- **Routing**: TanStack Router / TanStack Start
-- **Styling**: Tailwind CSS v4 + tw-animate-css
-- **Icons**: Lucide React
-- **Notifications**: Sonner
-- **Backend**: Supabase (Database, Storage & Auth for Admin Media Management)
