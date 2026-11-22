@@ -7,10 +7,8 @@ import {
   Phone,
   Loader2,
   CalendarCheck,
-  Clapperboard,
   Clock,
-  ShieldCheck,
-  CheckCircle2,
+  Play,
 } from "lucide-react";
 import { toast } from "sonner";
 import { SectionHeading } from "@/components/site/SectionHeading";
@@ -25,7 +23,7 @@ const jsonLd = {
   email: business.email,
   address: {
     "@type": "PostalAddress",
-    streetAddress: "Plot No. 18 & 20, Golden Beach Road, Injambakkam, ECR",
+    streetAddress: "Plot No. 18, Golden Beach Road, Injambakkam, ECR",
     addressLocality: "Chennai",
     postalCode: "600115",
     addressRegion: "Tamil Nadu",
@@ -38,21 +36,21 @@ export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
       {
-        title: "Book Shoot / Recce - Cinewood Film Studios & Shooting House, Chennai",
+        title: "Book Shoot / Recce - Cinewood Film Shooting Villa, Chennai",
       },
       {
         name: "description",
         content:
-          "Book movie shooting houses, standing sets, and location recce in Chennai. Contact Location Manager at 98401 54321 / 94444 67890. ECR Injambakkam, Chennai.",
+          "Book movie shoot dates or schedule a location recce at Cinewood Shooting Villa in Chennai. Contact Location Manager at 98401 54321 / 94444 67890. ECR Injambakkam, Chennai.",
       },
       {
         property: "og:title",
-        content: "Book Movie Shoot / Location Recce - Cinewood Studios Chennai",
+        content: "Book Movie Shoot / Location Recce - Cinewood Shooting Villa",
       },
       {
         property: "og:description",
         content:
-          "Enquire about movie shoot dates, day/night shifts, standing sets, and recce visits.",
+          "Enquire about movie shoot dates, shifts, and recce visits for this single private shooting villa.",
       },
     ],
     scripts: [{ type: "application/ld+json", children: JSON.stringify(jsonLd) }],
@@ -70,17 +68,17 @@ function ContactPage() {
     date: "",
     shift: "Day Shift (06:00 AM – 06:00 PM)",
     crewSize: "30 – 60 Members",
-    setsRequired: [] as string[],
+    spacesRequired: [] as string[],
     message: "",
   });
   const [loading, setLoading] = useState(false);
 
-  const toggleSet = (setName: string) => {
+  const toggleSpace = (spaceName: string) => {
     setForm((prev) => ({
       ...prev,
-      setsRequired: prev.setsRequired.includes(setName)
-        ? prev.setsRequired.filter((s) => s !== setName)
-        : [...prev.setsRequired, setName],
+      spacesRequired: prev.spacesRequired.includes(spaceName)
+        ? prev.spacesRequired.filter((s) => s !== spaceName)
+        : [...prev.spacesRequired, spaceName],
     }));
   };
 
@@ -89,7 +87,7 @@ function ContactPage() {
     setLoading(true);
 
     try {
-      const formattedMessage = `Production: ${form.productionHouse || "Independent"} | Type: ${form.projectType} | Shift: ${form.shift} | Crew: ${form.crewSize} | Sets: ${form.setsRequired.join(", ") || "General"} | Notes: ${form.message}`;
+      const formattedMessage = `Production: ${form.productionHouse || "Independent"} | Type: ${form.projectType} | Shift: ${form.shift} | Crew: ${form.crewSize} | Spaces: ${form.spacesRequired.join(", ") || "Full Property"} | Notes: ${form.message}`;
 
       const { error } = await supabase.from("contact_messages").insert({
         name: form.name,
@@ -104,7 +102,7 @@ function ContactPage() {
 
       toast.success("Shoot / Recce Enquiry Received!", {
         description:
-          "Our Location Manager will contact you within 2 hours to confirm availability.",
+          "Our Location Manager will contact you within 2 hours to confirm date availability.",
       });
 
       setForm({
@@ -116,7 +114,7 @@ function ContactPage() {
         date: "",
         shift: "Day Shift (06:00 AM – 06:00 PM)",
         crewSize: "30 – 60 Members",
-        setsRequired: [],
+        spacesRequired: [],
         message: "",
       });
     } catch (err: any) {
@@ -137,7 +135,7 @@ function ContactPage() {
       <div className="border-b border-border bg-card py-14">
         <SectionHeading
           title="Book a Shoot or Recce"
-          subtitle="Reserve shooting dates, lock standing sets, or schedule an in-person technical location recce with our Location Manager."
+          subtitle="Reserve shooting dates, book the entire shooting house, or schedule an in-person technical location recce with our Location Manager."
         />
       </div>
 
@@ -146,7 +144,7 @@ function ContactPage() {
         <div className="lg:col-span-5">
           <div className="rounded-xl border border-border bg-card p-6 shadow-sm">
             <span className="rounded bg-amber-500/10 px-2 py-0.5 text-xs font-bold uppercase text-amber-500">
-              Direct Production Desk
+              Single Private Property
             </span>
             <h2 className="mt-3 font-display text-2xl font-black text-foreground">
               {business.name}
@@ -157,7 +155,7 @@ function ContactPage() {
               <li className="flex gap-3">
                 <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-amber-500" />
                 <div>
-                  <strong className="block text-foreground">Studio & Sets Address:</strong>
+                  <strong className="block text-foreground">Property Location:</strong>
                   <span className="text-muted-foreground">{business.addressLines.join(" ")}</span>
                 </div>
               </li>
@@ -207,9 +205,9 @@ function ContactPage() {
             </ul>
 
             <div className="mt-8 border-t border-border pt-6">
-              <p className="text-xs font-semibold text-foreground">Need Instant Confirmation?</p>
+              <p className="text-xs font-semibold text-foreground">Instant Availability Check</p>
               <p className="mt-1 text-xs text-muted-foreground">
-                Connect directly with our team via WhatsApp for instant date availability check.
+                Connect directly with our team via WhatsApp for immediate date lock and recce timing.
               </p>
               <a
                 href={whatsappUrl}
@@ -217,7 +215,7 @@ function ContactPage() {
                 rel="noreferrer"
                 className="mt-4 flex w-full items-center justify-center gap-2 rounded-md bg-[#25D366] py-2.5 text-xs font-bold text-white shadow transition-transform hover:-translate-y-0.5"
               >
-                <MessageCircle className="h-4 w-4" /> Chat on WhatsApp
+                <MessageCircle className="h-4 w-4" /> WhatsApp Location Manager
               </a>
             </div>
           </div>
@@ -233,8 +231,7 @@ function ContactPage() {
               Production Booking & Recce Request
             </h3>
             <p className="mt-1 text-xs text-muted-foreground">
-              Fill in your shoot details below. We verify generator capacity, parking slots, and set
-              availability before confirming.
+              Submit your project details below to reserve shooting shifts or book an in-person recce.
             </p>
 
             <div className="mt-6 grid gap-4 sm:grid-cols-2">
@@ -370,22 +367,20 @@ function ContactPage() {
               </div>
             </div>
 
-            {/* Sets Selection Checkboxes */}
+            {/* Spaces Required */}
             <div className="mt-5">
               <label className="text-[11px] font-bold uppercase tracking-wider text-muted-foreground">
-                Sets / Spaces Required (Select all that apply)
+                Specific Property Areas Required (Select all that apply)
               </label>
               <div className="mt-2 grid grid-cols-2 gap-2 text-xs sm:grid-cols-3">
                 {[
-                  "Chettinad Mansion",
-                  "Modern Luxury Villa",
-                  "Police Station & Lockup",
-                  "Courtroom & Bench",
-                  "Corporate Boardroom",
-                  "Hospital & ICU Ward",
-                  "Skyline Rooftop",
-                  "Rustic Farmhouse",
-                  "Star Vanity Suites",
+                  "Entire Villa (Full House)",
+                  "Double-Height Living Hall",
+                  "Master Bedroom & Balcony",
+                  "Island Kitchen & Dining",
+                  "Lawn, Verandah & Porch",
+                  "Skyline Rooftop Terrace",
+                  "AC Star Vanity Green Room",
                 ].map((s) => (
                   <label
                     key={s}
@@ -393,8 +388,8 @@ function ContactPage() {
                   >
                     <input
                       type="checkbox"
-                      checked={form.setsRequired.includes(s)}
-                      onChange={() => toggleSet(s)}
+                      checked={form.spacesRequired.includes(s)}
+                      onChange={() => toggleSpace(s)}
                       className="accent-amber-500"
                     />
                     <span className="text-foreground">{s}</span>

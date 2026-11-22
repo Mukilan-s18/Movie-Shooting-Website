@@ -1,260 +1,201 @@
-import villaExterior from "@/assets/villa-exterior.jpg";
-import chettinadCourtyard from "@/assets/chettinad-courtyard.jpg";
-import modernLiving from "@/assets/modern-living.jpg";
-import policeStation from "@/assets/police-station.jpg";
-import courtroomSet from "@/assets/courtroom-set.jpg";
-import corporateBoardroom from "@/assets/corporate-boardroom.jpg";
-import hospitalSet from "@/assets/hospital-set.jpg";
-import terraceSkyline from "@/assets/terrace-skyline.jpg";
-import makeupSuite from "@/assets/makeup-suite.jpg";
-import rusticFarmhouse from "@/assets/rustic-farmhouse.jpg";
-
 export const business = {
-  name: "Cinewood Film Studios & Shooting House",
-  shortName: "Cinewood Studios",
-  owner: "R. Balaji (Location Manager & Production Coordinator)",
-  tagline: "Premium Movie Shooting House, Heritage Villa & Multi-Set Studios in Chennai",
+  name: "Cinewood Film Shooting Villa",
+  shortName: "Cinewood Villa",
+  owner: "R. Balaji (Location Manager)",
+  tagline: "Exclusive Private Bungalow & Shooting Villa in Chennai for Feature Films, OTT & Ad Shoots",
   phonePrimary: "9840154321",
   phonePrimaryDisplay: "98401 54321",
   phoneSecondary: "9444467890",
   phoneSecondaryDisplay: "94444 67890",
-  email: "cinewoodstudios.chennai@gmail.com",
+  email: "cinewoodvilla.chennai@gmail.com",
   addressLines: [
-    "Plot No. 18 & 20, Golden Beach Road,",
+    "Plot No. 18, Golden Beach Road,",
     "Injambakkam, ECR, Chennai - 600 115.",
   ],
   city: "Chennai",
   state: "Tamil Nadu",
   mapsUrl:
     "https://www.google.com/maps/search/?api=1&query=Golden+Beach+Road+Injambakkam+ECR+Chennai+600115",
-  stats: {
-    filmsShot: "65+",
-    uniqueSets: "8+",
-    generatorCapacity: "100 KVA",
-    parkingCapacity: "50+ Vans",
-    totalFootprint: "15,000+ sq.ft.",
+  videoTour: {
+    // Local video placed at public/video/tour.mp4
+    localSrc: "/video/tour.mp4",
+    // Or paste a YouTube / Vimeo embed URL here (e.g. "https://www.youtube.com/embed/dQw4w9WgXcQ")
+    youtubeUrl: "",
+    duration: "3:45 mins Walkthrough",
+  },
+  propertySpecs: {
+    plotArea: "7,500 sq.ft.",
+    builtUpArea: "5,800 sq.ft.",
+    floors: "Ground + 1st Floor + Open Terrace",
+    powerBackup: "100 KVA Silent Genset",
+    parking: "15+ Production Vans & Cars",
+    sound: "Sync-Sound Acoustic Insulated",
+    acUnits: "100% Air-Conditioned Interiors",
   },
 } as const;
 
 export const whatsappUrl = `https://wa.me/91${business.phonePrimary}?text=${encodeURIComponent(
-  "Hello Cinewood Studios, I would like to enquire about shooting house availability and book a location recce for our upcoming film project.",
+  "Hello Cinewood Villa, I would like to enquire about shooting availability and book a location recce for our upcoming film project.",
 )}`;
 
-export const images = {
-  villaExterior,
-  chettinadCourtyard,
-  modernLiving,
-  policeStation,
-  courtroomSet,
-  corporateBoardroom,
-  hospitalSet,
-  terraceSkyline,
-  makeupSuite,
-  rusticFarmhouse,
-};
-
-export type Service = {
+export type PropertySpace = {
+  id: string;
   title: string;
+  area: string;
+  ceiling: string;
   description: string;
   image: string;
-  category: string;
-  specs: {
-    area: string;
-    ceiling: string;
-    power: string;
-    sound: string;
-  };
-  suitableFor: string;
+  suitableScenes: string;
+  features: string[];
 };
 
-export const services: Service[] = [
+export const propertySpaces: PropertySpace[] = [
   {
-    title: "Grand Chettinad Courtyard Mansion",
+    id: "living-hall",
+    title: "Grand Double-Height Living Hall",
+    area: "1,600 sq.ft.",
+    ceiling: "16 ft clearance",
     description:
-      "4,500 sq.ft. authentic heritage mansion with Burma teak pillars, Athangudi floor tiles, open-to-sky central courtyard, and vintage carved wooden doors. Ideal for family dramas, wedding scenes, and period films.",
-    image: chettinadCourtyard,
-    category: "Mansion & Courtyard",
-    specs: {
-      area: "4,500 sq.ft.",
-      ceiling: "16 ft clearance",
-      power: "3-Phase 63A",
-      sound: "Sync-sound treated",
-    },
-    suitableFor: "Feature Films, Family Sequences, Period Dramas, Wedding Scenes",
+      "Expansive central hall featuring 16-foot high ceilings, designer chandelier, floating wooden staircase, polished marble flooring, and floor-to-ceiling glass walls providing rich natural fill light.",
+    image: "/property/living-hall.jpg",
+    suitableScenes: "Family drama, rich protagonist home, confrontation scenes, party sequences",
+    features: [
+      "16 ft high ceiling for overhead light grids",
+      "Large double doors for dolly tracks & jibs",
+      "Silent inverter AC units for sync-sound recording",
+      "Multiple 32A power drop sockets",
+    ],
   },
   {
-    title: "Ultra-Modern Luxury Villa",
+    id: "master-bedroom",
+    title: "Master Bedroom Suite & Balcony",
+    area: "650 sq.ft.",
+    ceiling: "11 ft clearance",
     description:
-      "Architecturally designed two-storey contemporary villa featuring expansive double-height glass walls, private swimming pool, floating wooden staircase, and open Italian kitchen.",
-    image: villaExterior,
-    category: "Modern Luxury Villa",
-    specs: {
-      area: "3,800 sq.ft.",
-      ceiling: "14 ft clearance",
-      power: "3-Phase 63A",
-      sound: "Acoustic insulated",
-    },
-    suitableFor: "OTT Web Series, Corporate Thrillers, High-End Commercials, Celebrity Shoots",
+      "Spacious master bedroom with modern king-size wooden bed, warm ambient cove lighting, wooden paneling, private dressing closet, and wide sliding doors opening to an airy private balcony.",
+    image: "/property/master-bedroom.jpg",
+    suitableScenes: "Romantic scenes, bedroom conversations, song tracks, emotional moments",
+    features: [
+      "Attached private balcony overlooking green lawn",
+      "Natural morning & evening diffused light",
+      "Attached luxury bathroom with modern bathtub",
+      "Sound-damped doors and windows",
+    ],
   },
   {
-    title: "Pre-Erected Police Station & Lockup Set",
+    id: "kitchen-dining",
+    title: "Open Island Kitchen & Dining Space",
+    area: "550 sq.ft.",
+    ceiling: "11 ft clearance",
     description:
-      "Permanent, ready-to-shoot police station featuring an Inspector's chamber, iron-bar lockup cells, interrogation room with focused overhead lighting, and vintage case register archives.",
-    image: policeStation,
-    category: "Police & Court Sets",
-    specs: {
-      area: "2,200 sq.ft.",
-      ceiling: "12 ft clearance",
-      power: "32A Single & 3-Phase",
-      sound: "Zero external noise",
-    },
-    suitableFor: "Action Movies, Crime Thrillers, Interrogation Climax, OTT Series",
+      "Contemporary open-plan kitchen with granite central island, designer bar stools, chimney, modern cabinetry, and an adjoining 8-seater wooden dining table setup.",
+    image: "/property/kitchen-dining.jpg",
+    suitableScenes: "Breakfast conversations, mother-child dialogues, cooking scenes, casual arguments",
+    features: [
+      "Functional cooking island with clean countertops",
+      "Wide camera turnaround space around the dining table",
+      "Soft down-lighting with dimmer controls",
+      "Pantry storage area for props",
+    ],
   },
   {
-    title: "Judicial Courtroom & Judge Chamber",
+    id: "lawn-garden",
+    title: "Lawn, Verandah & Front Porch",
+    area: "2,500 sq.ft.",
+    ceiling: "Open Sky",
     description:
-      "Full-scale courtroom set fitted with teak judge's bench, witness box, advocate stations, legal book racks, and spectator seating. Configurable for civil or criminal trials.",
-    image: courtroomSet,
-    category: "Police & Court Sets",
-    specs: {
-      area: "2,500 sq.ft.",
-      ceiling: "15 ft clearance",
-      power: "3-Phase 63A",
-      sound: "Echo-damped acoustic walls",
-    },
-    suitableFor: "Courtroom Dramas, Climax Arguments, Web Series Episodes",
+      "Beautifully manicured lush green lawn bordered by tropical palms, stone walkways, wide covered car porch for hero/heroine vehicle arrival shots, and a relaxed sitting verandah.",
+    image: "/property/lawn-garden.jpg",
+    suitableScenes: "Car arrival shots, walking conversations, garden fights, outdoor party setups",
+    features: [
+      "Wide porch accommodating luxury cars for drive-in shots",
+      "Direct power drops for outdoor HMI daylight fixtures",
+      "Privacy compound wall preventing bystander interference",
+      "Clean stone paved walkways for track & dolly",
+    ],
   },
   {
-    title: "Executive Boardroom & CEO Cabin",
+    id: "terrace",
+    title: "Panoramic Skyline Rooftop Terrace",
+    area: "2,000 sq.ft.",
+    ceiling: "Open Sky",
     description:
-      "Sleek corporate office set with an 18-seater glass conference table, leather ergonomic seating, presentation wall, and panoramic glass-walled managing director cabin.",
-    image: corporateBoardroom,
-    category: "Interiors & Hall",
-    specs: {
-      area: "1,800 sq.ft.",
-      ceiling: "11 ft clearance",
-      power: "32A Single Phase",
-      sound: "Fully silent AC interior",
-    },
-    suitableFor: "Corporate TVCs, Business Drama, Interview Shoots",
+      "Unobstructed open-air terrace with 360-degree skyline views, wooden pergola, coastal breeze, and perimeter parapet walls. Unbeatable for sunset silhouettes and dramatic climax sequences.",
+    image: "/property/terrace.jpg",
+    suitableScenes: "Romantic song sequences, sunset conversations, night mood tracks, climax action",
+    features: [
+      "Unobstructed 360-degree horizon with no tall neighboring buildings",
+      "Heavy power lines routed up for night balloon lights & skypanels",
+      "Pergola seating with warm outdoor string lights",
+      "Safe high parapet wall for camera crane positioning",
+    ],
   },
   {
-    title: "Hospital Ward & Intensive Care (ICU) Set",
+    id: "makeup-room",
+    title: "Air-Conditioned Star Makeup & Green Room",
+    area: "350 sq.ft.",
+    ceiling: "10 ft clearance",
     description:
-      "Realistic medical set featuring a multi-bed recovery ward with divider curtains, medical gas lines, authentic monitor props, doctor's consultation desk, and sterile corridor.",
-    image: hospitalSet,
-    category: "Interiors & Hall",
-    specs: {
-      area: "2,000 sq.ft.",
-      ceiling: "11 ft clearance",
-      power: "32A Silent Line",
-      sound: "Sync-sound compliant",
-    },
-    suitableFor: "Hospital Dramas, Emergency Sequences, Emotional Family Scenes",
-  },
-  {
-    title: "Scenic Rooftop & Open-Air Skyline Terrace",
-    description:
-      "Panoramic open-sky terrace with unobstructed horizons, designer pergola, mood lights, and coastal breeze. Ideal for romantic songs, dialogue tracks, and action setups.",
-    image: terraceSkyline,
-    category: "Terrace & Outdoor",
-    specs: {
-      area: "3,200 sq.ft.",
-      ceiling: "Open Sky",
-      power: "Heavy outdoor power drops",
-      sound: "Unobstructed audio line",
-    },
-    suitableFor: "Song Sequences, Climax Confrontations, Sunset & Night Mood Shoots",
-  },
-  {
-    title: "Rustic Village Farmhouse & Verandah",
-    description:
-      "Traditional red-clay tiled cottage with mud-wash verandas, carved pillars, cattle shed backdrop, open well, and coconut palms for authentic rural sequences.",
-    image: rusticFarmhouse,
-    category: "Terrace & Outdoor",
-    specs: {
-      area: "3,000 sq.ft.",
-      ceiling: "12 ft tiled slant",
-      power: "32A 3-Phase",
-      sound: "Quiet garden ambiance",
-    },
-    suitableFor: "Rural Cinema, Folk Songs, Native Village Backgrounds",
-  },
-  {
-    title: "Star Vanity Suites & Crew Mess Hall",
-    description:
-      "4 spacious air-conditioned green rooms equipped with professional daylight vanity mirrors, private changing booths, star lounges, and a 100-crew shaded catering dining hall.",
-    image: makeupSuite,
-    category: "Makeup & Green Room",
-    specs: {
-      area: "2,400 sq.ft.",
-      ceiling: "10 ft AC suites",
-      power: "Continuous generator grid",
-      sound: "Private dressing area",
-    },
-    suitableFor: "Lead Actors, Celebrity Wardrobe, Crew Catering, Production Office",
+      "Dedicated air-conditioned artist suite equipped with professional 5500K daylight-balanced vanity mirrors, private changing booth, comfortable lounge seating, wardrobe racks, and attached private washroom.",
+    image: "/property/makeup-room.jpg",
+    suitableScenes: "Lead artist preparation, costume changes, production coordinator base",
+    features: [
+      "Twin 5500K high-CRI illuminated vanity mirrors",
+      "Heavy-duty wardrobe racks & clothes steamer",
+      "Private attached clean restroom and shower",
+      "Ultra-quiet AC with continuous generator power backup",
+    ],
   },
 ];
 
-export const galleryItems = [
+export const propertyGallery = [
   {
-    image: chettinadCourtyard,
-    title: "Chettinad Central Courtyard",
-    place: "Main Heritage Floor",
-    category: "Mansion & Courtyard",
+    id: "g-hero",
+    title: "Villa Front View & Private Compound",
+    place: "Exterior Facade",
+    category: "Exterior & Lawn",
+    image: "/property/hero.jpg",
   },
   {
-    image: villaExterior,
-    title: "Contemporary Villa & Poolside",
-    place: "Modern Wing",
-    category: "Modern Luxury Villa",
+    id: "g-living",
+    title: "Double-Height Living Room",
+    place: "Ground Floor",
+    category: "Living Hall",
+    image: "/property/living-hall.jpg",
   },
   {
-    image: modernLiving,
-    title: "Grand Double-Height Living Room",
-    place: "Villa Interior",
-    category: "Modern Luxury Villa",
+    id: "g-bed",
+    title: "Master Suite & Private Balcony",
+    place: "First Floor",
+    category: "Bedrooms",
+    image: "/property/master-bedroom.jpg",
   },
   {
-    image: policeStation,
-    title: "Police Station & Lockup Cell",
-    place: "Floor 2 Standing Set",
-    category: "Police & Court Sets",
+    id: "g-kitchen",
+    title: "Modern Island Kitchen & Dining",
+    place: "Ground Floor",
+    category: "Kitchen & Dining",
+    image: "/property/kitchen-dining.jpg",
   },
   {
-    image: courtroomSet,
-    title: "Judicial Courtroom & Witness Box",
-    place: "Studio Floor 1",
-    category: "Police & Court Sets",
+    id: "g-lawn",
+    title: "Landscaped Lawn & Car Porch",
+    place: "Front Yard",
+    category: "Exterior & Lawn",
+    image: "/property/lawn-garden.jpg",
   },
   {
-    image: corporateBoardroom,
-    title: "Corporate Boardroom & Cabin",
-    place: "Commercial Studio Wing",
-    category: "Interiors & Hall",
-  },
-  {
-    image: hospitalSet,
-    title: "Hospital Emergency & ICU Ward",
-    place: "Medical Standing Set",
-    category: "Interiors & Hall",
-  },
-  {
-    image: terraceSkyline,
-    title: "360-Degree Skyline Rooftop",
+    id: "g-terrace",
+    title: "Panoramic Skyline Rooftop",
     place: "Terrace Level",
     category: "Terrace & Outdoor",
+    image: "/property/terrace.jpg",
   },
   {
-    image: rusticFarmhouse,
-    title: "Village Verandah & Coconut Grove",
-    place: "Outdoor Backlot",
-    category: "Terrace & Outdoor",
-  },
-  {
-    image: makeupSuite,
-    title: "Air-Conditioned Vanity Green Rooms",
-    place: "Artist Wing",
+    id: "g-makeup",
+    title: "AC Artist Green Room & Vanity Mirrors",
+    place: "First Floor",
     category: "Makeup & Green Room",
+    image: "/property/makeup-room.jpg",
   },
 ];

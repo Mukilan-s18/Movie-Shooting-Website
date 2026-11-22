@@ -11,21 +11,21 @@ export const Route = createFileRoute("/gallery")({
   head: () => ({
     meta: [
       {
-        title: "Photo & Video Gallery - Cinewood Movie Shooting House, Chennai",
+        title: "Property Photo Gallery - Cinewood Movie Shooting Villa, Chennai",
       },
       {
         name: "description",
         content:
-          "High-resolution photos of movie shooting sets in Chennai: Chettinad courtyard, modern villa, police station, courtroom, boardroom, ICU ward, and skyline terrace.",
+          "High-resolution photos of Cinewood Film Shooting Villa in Chennai: double-height living hall, master bedroom suite, island kitchen, lawn, and skyline terrace.",
       },
       {
         property: "og:title",
-        content: "Cinewood Studios - Movie Shooting Sets & Location Gallery",
+        content: "Cinewood Villa - Movie Shooting House Photo Gallery",
       },
       {
         property: "og:description",
         content:
-          "High-resolution photos and video previews of film shooting floors and sets in Chennai.",
+          "High-resolution photos and video previews of our private film shooting villa in Chennai.",
       },
     ],
   }),

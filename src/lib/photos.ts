@@ -1,5 +1,5 @@
 import { supabase } from "@/integrations/supabase/client";
-import { galleryItems } from "@/lib/business";
+import { propertyGallery } from "@/lib/business";
 
 export type Photo = {
   id: string;
@@ -12,8 +12,8 @@ export type Photo = {
   sort_order?: number;
 };
 
-export const fallbackPhotos: Photo[] = galleryItems.map((g, i) => ({
-  id: `static-${i}`,
+export const fallbackPhotos: Photo[] = propertyGallery.map((g) => ({
+  id: g.id,
   title: g.title,
   place: g.place,
   category: g.category,
@@ -22,15 +22,15 @@ export const fallbackPhotos: Photo[] = galleryItems.map((g, i) => ({
 }));
 
 export const photoCategories = [
-  "Mansion & Courtyard",
-  "Modern Luxury Villa",
-  "Police & Court Sets",
-  "Interiors & Hall",
+  "Exterior & Lawn",
+  "Living Hall",
+  "Bedrooms",
+  "Kitchen & Dining",
   "Terrace & Outdoor",
   "Makeup & Green Room",
 ];
 
-/** Fetch gallery photos from the database, with signed URLs for each image. */
+/** Fetch gallery photos from database, fallback to local property images */
 export async function fetchPhotos(): Promise<Photo[]> {
   try {
     const { data, error } = await supabase
@@ -39,8 +39,7 @@ export async function fetchPhotos(): Promise<Photo[]> {
       .order("sort_order", { ascending: true })
       .order("created_at", { ascending: false });
 
-    if (error) throw error;
-    if (!data || data.length === 0) return fallbackPhotos;
+    if (error || !data || data.length === 0) return fallbackPhotos;
 
     const paths = data.map((row) => row.image_path);
     const { data: signed } = await supabase.storage
@@ -57,13 +56,12 @@ export async function fetchPhotos(): Promise<Photo[]> {
       title: row.title,
       place: row.place,
       category: row.category,
-      image: urlByPath.get(row.image_path) ?? "",
+      image: urlByPath.get(row.image_path) || row.image_path || "",
       path: row.image_path,
       media_type: row.media_type ?? "image",
       sort_order: row.sort_order,
     }));
   } catch (e) {
-    console.warn("Using fallback photo gallery data:", e);
     return fallbackPhotos;
   }
 }

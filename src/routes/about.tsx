@@ -1,6 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import {
-  Clapperboard,
   ShieldCheck,
   Zap,
   VolumeX,
@@ -10,29 +9,31 @@ import {
   Sparkles,
   CheckCircle2,
   CalendarCheck,
+  Play,
+  Home,
 } from "lucide-react";
 import { SectionHeading } from "@/components/site/SectionHeading";
-import { business, images } from "@/lib/business";
+import { business } from "@/lib/business";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
       {
-        title: "About & Technical Specs - Cinewood Film Shooting House, Chennai",
+        title: "About & Technical Specifications - Cinewood Shooting Villa",
       },
       {
         name: "description",
         content:
-          "Cinewood Film Studios & Shooting House in Chennai. Technical specifications: 100 KVA silent generator, sync-sound acoustic isolation, 16ft ceiling clearance, 50+ van parking on ECR.",
+          "Technical specifications of Cinewood Shooting Villa in Chennai: 7,500 sq.ft. plot, 100 KVA silent Caterpillar generator, sync-sound acoustic insulation, 16ft ceiling, 15+ van parking on ECR.",
       },
       {
         property: "og:title",
-        content: "About Cinewood Studios - Chennai's Premier Movie Shooting House",
+        content: "About Cinewood Shooting Villa - Movie House in Chennai",
       },
       {
         property: "og:description",
         content:
-          "Technical specs, floor area, power details, and connectivity of Cinewood Film Shooting House in Chennai.",
+          "Single property movie shooting house in Chennai with complete technical specs and floor details.",
       },
     ],
   }),
@@ -53,17 +54,17 @@ function AboutPage() {
     <div>
       <div className="border-b border-border bg-card py-14">
         <SectionHeading
-          title="About Cinewood Studios"
+          title="About The Shooting Villa"
           subtitle={`${business.name} · Managed by ${business.owner}. Built by film technicians for film crews.`}
         />
       </div>
 
-      {/* Story & Philosophy */}
+      {/* Property Overview */}
       <section className="mx-auto grid max-w-6xl items-center gap-10 px-4 py-14 md:grid-cols-2">
         <div className="relative overflow-hidden rounded-xl bg-muted shadow-md">
           <img
-            src={images.chettinadCourtyard}
-            alt="Chettinad central courtyard at Cinewood Studios"
+            src="/property/hero.jpg"
+            alt="Cinewood Shooting Villa Exterior"
             width={1200}
             height={800}
             loading="lazy"
@@ -72,40 +73,54 @@ function AboutPage() {
         </div>
         <div>
           <span className="text-xs font-bold uppercase tracking-widest text-amber-500">
-            Filmmaking Infrastructure
+            Single Private Property
           </span>
           <h2 className="mt-2 font-display text-3xl font-black text-foreground">
-            Zero Delays. Ready-to-Shoot Sets.
+            A Dedicated Film Shooting Villa
           </h2>
           <div className="mt-4 space-y-3 text-xs leading-relaxed text-muted-foreground sm:text-sm">
             <p>
-              Founded and managed by industry production veterans,{" "}
-              <strong className="text-foreground">{business.name}</strong> was created to eliminate
-              the high costs and logistical headaches of traditional outdoor shooting.
+              <strong className="text-foreground">{business.name}</strong> is an exclusive private
+              residence on East Coast Road (ECR), Chennai, dedicated specifically for feature films,
+              OTT web series, television serials, and high-end ad commercials.
             </p>
             <p>
-              Instead of losing valuable call-sheet hours shifting entire camera companies between
-              distant locations, our 15,000+ sq.ft. facility houses a traditional Chettinad courtyard
-              mansion, an ultra-modern luxury villa, a permanent police station with lockup, a
-              judicial courtroom, corporate suites, and hospital sets under one unified gated
-              compound.
+              Unlike residential houses with restrictive house rules or noise complaints, this
+              property is managed by experienced film location coordinators. The entire 7,500 sq.ft.
+              gated compound is your private domain during your shoot dates.
             </p>
             <p>
-              Equipped with a dedicated 100 KVA silent Caterpillar generator, heavy-duty 3-phase
-              power lines, sync-sound acoustic isolation, and star vanity suites, we provide an
-              uninterrupted production environment for feature films, OTT web series, TV
-              commercials, and television serials.
+              From the 16-foot double-height living hall to the open-air skyline terrace and
+              manicured garden, every room offers clean camera angles, sync-sound acoustic
+              isolation, 100 KVA silent Caterpillar generator backup, and high-load 3-phase power
+              connections.
             </p>
+          </div>
+
+          <div className="mt-6 flex flex-wrap gap-3">
+            <Link
+              to="/"
+              hash="video-tour"
+              className="inline-flex items-center gap-1.5 rounded-md bg-amber-500 px-4 py-2 text-xs font-bold text-black hover:bg-amber-400"
+            >
+              <Play className="h-3.5 w-3.5 fill-black" /> Watch Video Tour
+            </Link>
+            <Link
+              to="/services"
+              className="inline-flex items-center gap-1.5 rounded-md border border-border px-4 py-2 text-xs font-semibold text-foreground hover:bg-muted"
+            >
+              <Home className="h-3.5 w-3.5 text-amber-500" /> View Room Dimensions
+            </Link>
           </div>
         </div>
       </section>
 
-      {/* Technical Specifications Sheet */}
+      {/* Technical Specifications */}
       <section className="border-y border-border bg-card py-16">
         <div className="mx-auto max-w-6xl px-4">
           <SectionHeading
             title="Technical Specifications"
-            subtitle="Engineered to meet the exact electrical, acoustic, and rigging requirements of modern digital cinema cameras."
+            subtitle="Engineered to meet the exact electrical, acoustic, and rigging requirements of modern digital cinema production."
           />
 
           <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -118,9 +133,9 @@ function AboutPage() {
               </h3>
               <ul className="mt-3 space-y-2 text-xs text-muted-foreground">
                 <li>• 100 KVA acoustic silent Caterpillar Genset</li>
-                <li>• 3-Phase 63A & 32A distribution boxes on all floors</li>
-                <li>• Industrial Camlock drops for heavy lighting</li>
-                <li>• Dedicated earth pits tested for sensitive audio</li>
+                <li>• 3-Phase 63A & 32A distribution panels on each floor</li>
+                <li>• Camlock drops for heavy HMIs and Skypanels</li>
+                <li>• Dedicated earth pits tested for zero audio hum</li>
               </ul>
             </div>
 
@@ -133,24 +148,9 @@ function AboutPage() {
               </h3>
               <ul className="mt-3 space-y-2 text-xs text-muted-foreground">
                 <li>• Double-glazed laminated soundproof window glass</li>
-                <li>• Heavy compound sound barrier walls</li>
+                <li>• Thick compound perimeter barrier walls</li>
                 <li>• Ultra-quiet ductless inverter air-conditioning</li>
                 <li>• Sync-sound certified for high-gain boom mics</li>
-              </ul>
-            </div>
-
-            <div className="rounded-xl border border-border bg-background p-6">
-              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-amber-500/10 text-amber-500">
-                <Clapperboard className="h-5 w-5" />
-              </div>
-              <h3 className="mt-4 font-display text-base font-bold text-foreground">
-                Ceiling & Lighting Rigging
-              </h3>
-              <ul className="mt-3 space-y-2 text-xs text-muted-foreground">
-                <li>• 12 to 16 ft high interior ceiling clearances</li>
-                <li>• Load-tested structural ceiling anchor points</li>
-                <li>• Easy installation for soft-boxes, sky panels, grids</li>
-                <li>• High-clearance double doors for dolly tracks</li>
               </ul>
             </div>
 
@@ -159,12 +159,12 @@ function AboutPage() {
                 <Sparkles className="h-5 w-5" />
               </div>
               <h3 className="mt-4 font-display text-base font-bold text-foreground">
-                Star Vanity & Green Rooms
+                Star Vanity Suite
               </h3>
               <ul className="mt-3 space-y-2 text-xs text-muted-foreground">
-                <li>• 4 Private air-conditioned artist suites</li>
+                <li>• Air-conditioned private green room for lead artists</li>
                 <li>• 5500K daylight-balanced vanity makeup mirrors</li>
-                <li>• Private attached sanitary washrooms & shower</li>
+                <li>• Attached sanitary washroom & shower</li>
                 <li>• Wardrobe steamer & costume hanging racks</li>
               </ul>
             </div>
@@ -177,9 +177,9 @@ function AboutPage() {
                 Parking & Loading Bay
               </h3>
               <ul className="mt-3 space-y-2 text-xs text-muted-foreground">
-                <li>• 50+ Vehicle capacity inside secured gates</li>
-                <li>• Wide gates accommodating 407 & generator trucks</li>
-                <li>• Dedicated equipment offload ramp to all floors</li>
+                <li>• 15+ Vehicles & production vans parking inside gate</li>
+                <li>• Wide gates accommodating 407 & equipment trucks</li>
+                <li>• Step-free offload ramp directly to ground floor</li>
                 <li>• Safe overnight parking for camera vanity vans</li>
               </ul>
             </div>
@@ -189,13 +189,28 @@ function AboutPage() {
                 <ShieldCheck className="h-5 w-5" />
               </div>
               <h3 className="mt-4 font-display text-base font-bold text-foreground">
-                Safety & Shoot Clearances
+                Permissions & Support
               </h3>
               <ul className="mt-3 space-y-2 text-xs text-muted-foreground">
                 <li>• Single-window local police & authority NOC support</li>
-                <li>• Certified fire extinguishers on every floor</li>
+                <li>• Fire extinguishers installed on all levels</li>
                 <li>• Smoke & haze machine permitted with prior intimation</li>
                 <li>• 24/7 CCTV surveillance & on-site security guards</li>
+              </ul>
+            </div>
+
+            <div className="rounded-xl border border-border bg-background p-6">
+              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-amber-500/10 text-amber-500">
+                <Clock className="h-5 w-5" />
+              </div>
+              <h3 className="mt-4 font-display text-base font-bold text-foreground">
+                Flexible Call-Sheet Shifts
+              </h3>
+              <ul className="mt-3 space-y-2 text-xs text-muted-foreground">
+                <li>• Day Shift: 06:00 AM – 06:00 PM (12 hrs)</li>
+                <li>• Night Shift: 06:00 PM – 06:00 AM (12 hrs)</li>
+                <li>• Full 24-Hour Continuous & Multi-Day blocks</li>
+                <li>• Prior art-department setup & pre-rigging allowed</li>
               </ul>
             </div>
           </div>

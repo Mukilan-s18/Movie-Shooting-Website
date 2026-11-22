@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { useState } from "react";
-import { Menu, Phone, X, Languages, CalendarCheck } from "lucide-react";
+import { Menu, Phone, X, Languages, CalendarCheck, Play } from "lucide-react";
 import { Logo } from "./Logo";
 import { ThemeToggle } from "./ThemeToggle";
 import { business } from "@/lib/business";
@@ -37,6 +37,14 @@ export function Header() {
               {t(l.key as any)}
             </Link>
           ))}
+
+          <a
+            href="/#video-tour"
+            className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wide text-amber-500 transition-colors hover:text-amber-400"
+          >
+            <Play className="h-3 w-3 fill-amber-500" /> Video Tour
+          </a>
+
           <button
             onClick={() => setLang(lang === "en" ? "ta" : "en")}
             className="inline-flex h-9 items-center justify-center gap-1.5 rounded-md border border-border px-2.5 text-xs font-semibold text-foreground transition-colors hover:bg-muted"
@@ -45,7 +53,9 @@ export function Header() {
             <Languages className="h-3.5 w-3.5 text-amber-500" />{" "}
             {lang === "en" ? "தமிழ்" : "English"}
           </button>
+
           <ThemeToggle />
+
           <Link
             to="/contact"
             className="inline-flex items-center gap-1.5 rounded-md bg-amber-500 px-3.5 py-2 text-xs font-bold uppercase tracking-wide text-black shadow-sm transition-opacity hover:opacity-95"
@@ -53,6 +63,7 @@ export function Header() {
             <CalendarCheck className="h-4 w-4" />
             Book Recce
           </Link>
+
           <a
             href={`tel:+91${business.phonePrimary}`}
             className="inline-flex items-center gap-1.5 text-xs font-bold text-foreground transition-colors hover:text-amber-500"
@@ -96,6 +107,13 @@ export function Header() {
               {t(l.key as any)}
             </Link>
           ))}
+          <a
+            href="/#video-tour"
+            onClick={() => setOpen(false)}
+            className="block border-b border-border/60 py-3 text-sm font-bold uppercase tracking-wide text-amber-500"
+          >
+            ▶ Video Tour
+          </a>
           <div className="mt-3 flex flex-col gap-2 pt-2">
             <Link
               to="/contact"

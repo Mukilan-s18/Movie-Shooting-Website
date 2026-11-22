@@ -12,16 +12,17 @@ import {
   Film,
   Truck,
   Users,
-  Maximize2,
   CheckCircle2,
+  Play,
+  Home,
 } from "lucide-react";
 import { SectionHeading } from "@/components/site/SectionHeading";
 import { Reveal } from "@/components/site/Reveal";
 import { CountUp } from "@/components/site/CountUp";
-import { HeroSlideshow } from "@/components/site/HeroSlideshow";
 import { Lightbox } from "@/components/site/Lightbox";
 import { Testimonials } from "@/components/site/Testimonials";
-import { business, services, whatsappUrl } from "@/lib/business";
+import { VideoTour } from "@/components/site/VideoTour";
+import { business, propertySpaces, whatsappUrl } from "@/lib/business";
 import { fallbackPhotos, fetchPhotos } from "@/lib/photos";
 import { useI18n } from "@/lib/i18n";
 
@@ -34,7 +35,7 @@ const jsonLd = {
   email: business.email,
   address: {
     "@type": "PostalAddress",
-    streetAddress: "Plot No. 18 & 20, Golden Beach Road, Injambakkam, ECR",
+    streetAddress: "Plot No. 18, Golden Beach Road, Injambakkam, ECR",
     addressLocality: "Chennai",
     postalCode: "600115",
     addressRegion: "Tamil Nadu",
@@ -47,21 +48,21 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       {
-        title: "Cinewood Film Studios & Shooting House - Chennai",
+        title: "Cinewood Film Shooting Villa - Single Property Movie House in Chennai",
       },
       {
         name: "description",
         content:
-          "Rent premium movie shooting houses, Chettinad heritage mansions, modern luxury villas, police station and courtroom sets in Chennai. 100 KVA silent generator, 4 AC vanity suites, 50+ van parking.",
+          "Exclusive 7,500 sq.ft. movie shooting villa in Chennai on ECR. Double-height living hall, master suite, island kitchen, lawn, skyline terrace, 100 KVA generator, and AC vanity green room.",
       },
       {
         property: "og:title",
-        content: "Cinewood Studios - Movie Shooting House & Standing Sets in Chennai",
+        content: "Cinewood Film Shooting Villa - Single Property Movie House in Chennai",
       },
       {
         property: "og:description",
         content:
-          "Multi-set film shooting bungalow and studios in Chennai for feature films, web series & commercials.",
+          "Private luxury film shooting bungalow in Chennai for movies, web series, and commercials.",
       },
     ],
     scripts: [{ type: "application/ld+json", children: JSON.stringify(jsonLd) }],
@@ -79,71 +80,80 @@ function Index() {
     initialData: fallbackPhotos,
   });
 
-  const latestPhotos = photos.slice(0, 8);
-
   return (
     <div>
       {/* Cinematic Hero */}
-      <section className="relative h-[82vh] min-h-[520px] overflow-hidden">
-        <HeroSlideshow photos={photos} />
-        {/* Dark film-grade overlay */}
-        <div className="absolute inset-0 bg-gradient-to-t from-background via-black/60 to-black/80" />
+      <section className="relative min-h-[580px] overflow-hidden bg-black py-20 lg:min-h-[640px] flex items-center">
+        {/* Background Property Image */}
+        <div className="absolute inset-0">
+          <img
+            src="/property/hero.jpg"
+            alt="Cinewood Shooting Villa"
+            className="h-full w-full object-cover opacity-35 animate-ken-burns"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-background via-black/70 to-black/85" />
+        </div>
 
-        <div className="absolute inset-0 z-10 flex items-center">
-          <div className="mx-auto w-full max-w-6xl px-4 text-center">
-            <div className="inline-flex items-center gap-2 rounded-full border border-amber-500/40 bg-black/60 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-amber-400 backdrop-blur-md">
-              <Film className="h-3.5 w-3.5 text-amber-400" />
-              <span>{t("heroBadge")}</span>
-            </div>
+        <div className="relative z-10 mx-auto w-full max-w-6xl px-4 text-center">
+          <div className="inline-flex items-center gap-2 rounded-full border border-amber-500/40 bg-black/60 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-amber-400 backdrop-blur-md">
+            <Film className="h-3.5 w-3.5 text-amber-400" />
+            <span>{t("heroBadge")}</span>
+          </div>
 
-            <h1 className="mt-5 font-display text-3xl font-extrabold tracking-tight text-white sm:text-5xl md:text-6xl lg:text-7xl">
-              {t("heroTitle")}
-            </h1>
+          <h1 className="mt-5 font-display text-3xl font-extrabold tracking-tight text-white sm:text-5xl md:text-6xl lg:text-7xl">
+            {t("heroTitle")}
+          </h1>
 
-            <p className="mx-auto mt-6 max-w-3xl text-sm font-medium leading-relaxed text-zinc-300 sm:text-base md:text-lg">
-              {t("heroSubtitle")}
-            </p>
+          <p className="mx-auto mt-6 max-w-3xl text-sm font-medium leading-relaxed text-zinc-300 sm:text-base md:text-lg">
+            {t("heroSubtitle")}
+          </p>
 
-            <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
-              <Link
-                to="/services"
-                className="inline-flex items-center gap-2 rounded-md bg-amber-500 px-6 py-3.5 text-sm font-bold uppercase tracking-wide text-black shadow-lg transition-transform hover:-translate-y-0.5 hover:bg-amber-400"
-              >
-                <Clapperboard className="h-4 w-4" />
-                {t("viewOurWork")}
-              </Link>
-              <Link
-                to="/contact"
-                className="inline-flex items-center gap-2 rounded-md border border-amber-500/60 bg-black/50 px-6 py-3.5 text-sm font-bold uppercase tracking-wide text-white backdrop-blur-md transition-all hover:border-amber-400 hover:bg-black/70"
-              >
-                <CalendarCheck className="h-4 w-4 text-amber-400" />
-                {t("bookRecce")}
-              </Link>
-            </div>
+          <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
+            <a
+              href="#video-tour"
+              className="inline-flex items-center gap-2 rounded-md bg-amber-500 px-6 py-3.5 text-sm font-bold uppercase tracking-wide text-black shadow-lg transition-transform hover:-translate-y-0.5 hover:bg-amber-400"
+            >
+              <Play className="h-4 w-4 fill-black" />
+              {t("watchVideo")}
+            </a>
+            <a
+              href="#property-spaces"
+              className="inline-flex items-center gap-2 rounded-md border border-border bg-black/60 px-6 py-3.5 text-sm font-bold uppercase tracking-wide text-white backdrop-blur-md transition-colors hover:border-amber-400 hover:bg-black/80"
+            >
+              <Home className="h-4 w-4 text-amber-400" />
+              {t("viewOurWork")}
+            </a>
+            <Link
+              to="/contact"
+              className="inline-flex items-center gap-2 rounded-md border border-amber-500/60 bg-amber-500/10 px-6 py-3.5 text-sm font-bold uppercase tracking-wide text-amber-300 backdrop-blur-md transition-all hover:bg-amber-500 hover:text-black"
+            >
+              <CalendarCheck className="h-4 w-4" />
+              {t("bookRecce")}
+            </Link>
+          </div>
 
-            {/* Quick feature pills */}
-            <div className="mt-10 hidden flex-wrap items-center justify-center gap-6 text-xs font-medium text-zinc-300 md:flex">
-              <span className="flex items-center gap-1.5">
-                <Zap className="h-4 w-4 text-amber-400" /> 100 KVA Silent Generator
-              </span>
-              <span className="h-1 w-1 rounded-full bg-zinc-600" />
-              <span className="flex items-center gap-1.5">
-                <VolumeX className="h-4 w-4 text-amber-400" /> Sync-Sound Approved
-              </span>
-              <span className="h-1 w-1 rounded-full bg-zinc-600" />
-              <span className="flex items-center gap-1.5">
-                <Truck className="h-4 w-4 text-amber-400" /> 50+ Crew Van Parking
-              </span>
-              <span className="h-1 w-1 rounded-full bg-zinc-600" />
-              <span className="flex items-center gap-1.5">
-                <ShieldCheck className="h-4 w-4 text-amber-400" /> Single-Window Shooting NOC
-              </span>
-            </div>
+          {/* Quick feature pills */}
+          <div className="mt-10 hidden flex-wrap items-center justify-center gap-6 text-xs font-medium text-zinc-300 md:flex">
+            <span className="flex items-center gap-1.5">
+              <Zap className="h-4 w-4 text-amber-400" /> 100 KVA Silent Generator
+            </span>
+            <span className="h-1 w-1 rounded-full bg-zinc-600" />
+            <span className="flex items-center gap-1.5">
+              <VolumeX className="h-4 w-4 text-amber-400" /> Sync-Sound Approved
+            </span>
+            <span className="h-1 w-1 rounded-full bg-zinc-600" />
+            <span className="flex items-center gap-1.5">
+              <Truck className="h-4 w-4 text-amber-400" /> 15+ Production Vans Parking
+            </span>
+            <span className="h-1 w-1 rounded-full bg-zinc-600" />
+            <span className="flex items-center gap-1.5">
+              <ShieldCheck className="h-4 w-4 text-amber-400" /> Private Gated Compound
+            </span>
           </div>
         </div>
       </section>
 
-      {/* Production Specs Bar */}
+      {/* Production Specs Bar (Fixed: no NaN) */}
       <section className="border-b border-border bg-card py-6">
         <div className="mx-auto grid max-w-6xl grid-cols-2 gap-4 px-4 text-center md:grid-cols-4">
           <div className="border-r border-border/60 last:border-0">
@@ -156,21 +166,13 @@ function Index() {
           </div>
           <div className="border-r border-border/60 last:border-0">
             <p className="font-display text-3xl font-black text-amber-500 md:text-4xl">
-              <CountUp end={15000} suffix=" sq.ft." />
+              <CountUp end={7500} suffix=" sq.ft." />
             </p>
             <p className="mt-1 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
-              Usable Shoot Footprint
+              Total Property Plot
             </p>
           </div>
           <div className="border-r border-border/60 last:border-0">
-            <p className="font-display text-3xl font-black text-amber-500 md:text-4xl">
-              <CountUp end={8} suffix="+ Standing Sets" />
-            </p>
-            <p className="mt-1 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
-              Pre-Rigged & Ready
-            </p>
-          </div>
-          <div>
             <p className="font-display text-3xl font-black text-amber-500 md:text-4xl">
               <CountUp end={100} suffix=" KVA" />
             </p>
@@ -178,61 +180,82 @@ function Index() {
               Silent Genset Backup
             </p>
           </div>
+          <div>
+            <p className="font-display text-3xl font-black text-amber-500 md:text-4xl">
+              <CountUp end={15} suffix="+ Vans" />
+            </p>
+            <p className="mt-1 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+              Gated Compound Parking
+            </p>
+          </div>
         </div>
       </section>
 
-      {/* Featured Sets & Spaces Showcase */}
-      <section className="py-16 md:py-20">
+      {/* Video Tour Section */}
+      <section id="video-tour" className="scroll-mt-20 border-b border-border bg-card/50 py-16">
         <div className="mx-auto max-w-6xl px-4">
           <SectionHeading
-            title="Standing Sets & Shooting Spaces"
-            subtitle="Explore our diverse range of fully-dressed, ready-to-shoot locations designed specifically for film, OTT, and commercial productions."
+            title="Property Video Tour"
+            subtitle="Watch a complete video walkthrough of the house, living areas, bedroom suites, kitchen, garden, and open terrace."
+          />
+          <div className="mt-10">
+            <VideoTour />
+          </div>
+        </div>
+      </section>
+
+      {/* Spaces Inside This Property */}
+      <section id="property-spaces" className="scroll-mt-20 py-16 md:py-20">
+        <div className="mx-auto max-w-6xl px-4">
+          <SectionHeading
+            title="Spaces Inside This Property"
+            subtitle="Detailed look at the interior and exterior shooting zones inside this private two-storey villa."
           />
 
           <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-            {services.slice(0, 6).map((s, idx) => (
-              <Reveal key={s.title} delay={idx * 80}>
-                <article className="group flex h-full flex-col overflow-hidden rounded-lg border border-border bg-card shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-amber-500/50 hover:shadow-xl">
+            {propertySpaces.map((space, idx) => (
+              <Reveal key={space.id} delay={idx * 70}>
+                <article className="group flex h-full flex-col overflow-hidden rounded-xl border border-border bg-card shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-amber-500/50 hover:shadow-xl">
+                  {/* Property Image */}
                   <div className="relative h-60 w-full overflow-hidden bg-muted">
                     <img
-                      src={s.image}
-                      alt={s.title}
+                      src={space.image}
+                      alt={space.title}
                       width={1200}
                       height={800}
                       loading="lazy"
                       className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                     />
                     <div className="absolute left-3 top-3 rounded bg-black/80 px-2.5 py-1 text-[11px] font-bold uppercase tracking-wider text-amber-400 backdrop-blur">
-                      {s.category}
+                      {space.area}
                     </div>
                   </div>
 
+                  {/* Details */}
                   <div className="flex flex-1 flex-col p-5">
                     <h3 className="font-display text-lg font-bold text-foreground group-hover:text-amber-500 transition-colors">
-                      {s.title}
+                      {space.title}
                     </h3>
                     <p className="mt-2 text-xs leading-relaxed text-muted-foreground">
-                      {s.description}
+                      {space.description}
                     </p>
 
-                    <div className="mt-4 grid grid-cols-2 gap-2 rounded bg-muted/60 p-2.5 text-[11px]">
-                      <div>
-                        <span className="text-muted-foreground">Area:</span>{" "}
-                        <strong className="text-foreground">{s.specs.area}</strong>
-                      </div>
-                      <div>
-                        <span className="text-muted-foreground">Ceiling:</span>{" "}
-                        <strong className="text-foreground">{s.specs.ceiling}</strong>
-                      </div>
-                      <div>
-                        <span className="text-muted-foreground">Power:</span>{" "}
-                        <strong className="text-foreground">{s.specs.power}</strong>
-                      </div>
-                      <div>
-                        <span className="text-muted-foreground">Audio:</span>{" "}
-                        <strong className="text-foreground">{s.specs.sound}</strong>
-                      </div>
+                    <div className="mt-4 rounded bg-muted/60 p-2.5 text-[11px]">
+                      <span className="font-semibold text-foreground">Ceiling Clearance:</span>{" "}
+                      <span className="text-muted-foreground">{space.ceiling}</span>
+                      <br />
+                      <span className="font-semibold text-foreground">Best For:</span>{" "}
+                      <span className="text-muted-foreground">{space.suitableScenes}</span>
                     </div>
+
+                    <ul className="mt-4 space-y-1 text-[11px] text-muted-foreground">
+                      {space.features.slice(0, 2).map((f) => (
+                        <li key={f} className="flex items-center gap-1.5">
+                          <CheckCircle2 className="h-3 w-3 text-amber-500 shrink-0" />
+                          <span>{f}</span>
+                        </li>
+                      ))}
+                    </ul>
 
                     <div className="mt-5 flex items-center justify-between border-t border-border pt-4">
                       <Link
@@ -245,7 +268,7 @@ function Index() {
                         to="/services"
                         className="text-[11px] font-medium text-muted-foreground hover:text-foreground"
                       >
-                        View Set Specs
+                        All Room Specs
                       </Link>
                     </div>
                   </div>
@@ -259,13 +282,13 @@ function Index() {
               to="/services"
               className="inline-flex items-center gap-2 rounded-md border border-amber-500 bg-amber-500/10 px-6 py-3 text-sm font-bold text-amber-500 transition-colors hover:bg-amber-500 hover:text-black"
             >
-              View All 8+ Sets & Detailed Specs <ArrowRight className="h-4 w-4" />
+              View Complete Property Floor Plan & Dimensions <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
         </div>
       </section>
 
-      {/* Production Infrastructure Advantages */}
+      {/* Film-Friendly Infrastructure */}
       <section className="border-y border-border bg-card py-16">
         <div className="mx-auto max-w-6xl px-4">
           <SectionHeading
@@ -287,17 +310,17 @@ function Index() {
               },
               {
                 icon: Sparkles,
-                title: "4 Luxury Star Vanity Suites",
-                desc: "Air-conditioned green rooms equipped with 5500K daylight-balanced vanity mirrors, private attached washrooms, and wardrobe hanging racks for lead artists.",
+                title: "Luxury Star Vanity Suite",
+                desc: "Air-conditioned green room equipped with 5500K daylight-balanced vanity mirrors, private attached washrooms, and wardrobe hanging racks for lead artists.",
               },
               {
                 icon: Users,
-                title: "100-Crew Catering & Dining Mess",
-                desc: "Dedicated covered dining area with washing counters and prep pantry to comfortably serve lunch and dinner for large film and serial crews.",
+                title: "Crew Catering & Dining Space",
+                desc: "Dedicated shaded dining area with washing counters and prep pantry to comfortably serve lunch and dinner for production crews.",
               },
               {
                 icon: Truck,
-                title: "50+ Production Vans & Equipment Bay",
+                title: "15+ Production Vans & Equipment Bay",
                 desc: "Gated private compound with wide entrance gates for large generator lorries, camera vanity vans, and equipment truck offloading ramps.",
               },
               {
@@ -322,7 +345,7 @@ function Index() {
         </div>
       </section>
 
-      {/* Shooting Shifts & Availability */}
+      {/* Flexible Shooting Shifts */}
       <section className="py-16">
         <div className="mx-auto max-w-6xl px-4">
           <SectionHeading
@@ -339,15 +362,15 @@ function Index() {
                 06:00 AM – 06:00 PM
               </h3>
               <p className="mt-2 text-xs text-muted-foreground">
-                12-hour daytime shooting block. Ideal for natural light courtyard sequences, modern
-                villa poolside, and office scenes.
+                12-hour daytime shooting block. Ideal for natural light living hall sequences, lawn,
+                and dining scenes.
               </p>
               <ul className="mt-4 space-y-1.5 text-xs text-foreground">
                 <li className="flex items-center gap-1.5">
                   <CheckCircle2 className="h-3.5 w-3.5 text-amber-500" /> 100 KVA Generator Included
                 </li>
                 <li className="flex items-center gap-1.5">
-                  <CheckCircle2 className="h-3.5 w-3.5 text-amber-500" /> 2 Air-Conditioned Green Rooms
+                  <CheckCircle2 className="h-3.5 w-3.5 text-amber-500" /> Air-Conditioned Green Room
                 </li>
                 <li className="flex items-center gap-1.5">
                   <CheckCircle2 className="h-3.5 w-3.5 text-amber-500" /> Crew Mess Area Access
@@ -366,8 +389,8 @@ function Index() {
                 06:00 PM – 06:00 AM
               </h3>
               <p className="mt-2 text-xs text-muted-foreground">
-                12-hour overnight shooting block. Perfect for thriller scenes, night action, police
-                interrogations, and mood lighting.
+                12-hour overnight shooting block. Perfect for mood lighting, night bedroom sequences,
+                and terrace sunset/night tracks.
               </p>
               <ul className="mt-4 space-y-1.5 text-xs text-foreground">
                 <li className="flex items-center gap-1.5">
@@ -391,14 +414,14 @@ function Index() {
               </h3>
               <p className="mt-2 text-xs text-muted-foreground">
                 Continuous non-stop shooting schedule. Lock the premises for consecutive days
-                without dismantling your art department sets.
+                without dismantling your art department setups.
               </p>
               <ul className="mt-4 space-y-1.5 text-xs text-foreground">
                 <li className="flex items-center gap-1.5">
                   <CheckCircle2 className="h-3.5 w-3.5 text-amber-500" /> Set Dressed Overnights Allowed
                 </li>
                 <li className="flex items-center gap-1.5">
-                  <CheckCircle2 className="h-3.5 w-3.5 text-amber-500" /> All 4 Vanity Green Rooms Included
+                  <CheckCircle2 className="h-3.5 w-3.5 text-amber-500" /> Full House & Vanity Suite Access
                 </li>
                 <li className="flex items-center gap-1.5">
                   <CheckCircle2 className="h-3.5 w-3.5 text-amber-500" /> Discounted Multi-Day Packages
@@ -409,18 +432,18 @@ function Index() {
         </div>
       </section>
 
-      {/* Photo Gallery Strip */}
+      {/* Property Photo Gallery Strip */}
       <section className="border-t border-border bg-card py-16">
         <div className="mx-auto max-w-6xl px-4">
           <SectionHeading
-            title="Location Gallery"
-            subtitle="A glimpse of recent shooting locations and sets dressed across our floors."
+            title="Property Photo Gallery"
+            subtitle="Click any photo for a full-screen high-resolution view of the shooting villa."
           />
 
           <div className="mt-10 grid gap-4 sm:grid-cols-2 md:grid-cols-4">
-            {latestPhotos.map((photo, i) => (
+            {photos.map((photo, i) => (
               <div
-                key={photo.id}
+                key={photo.id || i}
                 onClick={() => setOpenIndex(i)}
                 className="group relative h-48 cursor-pointer overflow-hidden rounded-md border border-border bg-muted"
               >
@@ -442,7 +465,7 @@ function Index() {
               to="/gallery"
               className="inline-flex items-center gap-2 rounded-md bg-foreground px-5 py-2.5 text-xs font-bold uppercase tracking-wide text-background transition-colors hover:bg-amber-500 hover:text-black"
             >
-              Browse Complete Gallery <ArrowRight className="h-3.5 w-3.5" />
+              Browse Complete Photo Gallery <ArrowRight className="h-3.5 w-3.5" />
             </Link>
           </div>
         </div>
@@ -459,14 +482,14 @@ function Index() {
         </div>
       </section>
 
-      {/* Call to Action Banner */}
+      {/* Recce CTA Banner */}
       <section className="mx-4 my-12 rounded-xl border border-amber-500/40 bg-gradient-to-r from-amber-500/10 via-card to-amber-500/10 p-8 text-center sm:p-12 md:mx-auto md:max-w-6xl">
         <h2 className="font-display text-2xl font-black text-foreground sm:text-3xl md:text-4xl">
-          Ready to Recce Your Next Film Location?
+          Schedule a Walkthrough of This Property
         </h2>
         <p className="mx-auto mt-3 max-w-2xl text-xs leading-relaxed text-muted-foreground sm:text-sm">
-          Call or message our Location Manager to schedule an in-person walkthrough, inspect the
-          electrical grid, and lock your production dates.
+          Call or message our Location Manager to book an in-person recce, inspect the electrical
+          distribution panels, and check date availability for your production.
         </p>
         <div className="mt-6 flex flex-wrap justify-center gap-4">
           <Link
@@ -489,7 +512,7 @@ function Index() {
       {/* Lightbox for gallery view */}
       {openIndex !== null && (
         <Lightbox
-          photos={latestPhotos}
+          photos={photos}
           index={openIndex}
           onClose={() => setOpenIndex(null)}
           onNavigate={(newIdx) => setOpenIndex(newIdx)}
