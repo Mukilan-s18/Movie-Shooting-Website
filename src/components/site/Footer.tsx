@@ -5,7 +5,7 @@ import { Logo } from "./Logo";
 
 export function Footer() {
   return (
-    <footer className="mt-20 border-t-2 border-amber-500/40 bg-card text-card-foreground">
+    <footer className="mt-20 border-t border-border bg-card text-card-foreground">
       <div className="mx-auto grid max-w-6xl gap-10 px-4 py-12 md:grid-cols-4">
         <div className="md:col-span-1">
           <Logo compact />
@@ -16,7 +16,7 @@ export function Footer() {
         </div>
 
         <div>
-          <h4 className="font-display text-sm font-bold uppercase tracking-wider text-amber-500">
+          <h4 className="font-display text-sm font-bold uppercase tracking-wider text-primary">
             Quick Links
           </h4>
           <ul className="mt-4 space-y-2 text-xs">
@@ -39,7 +39,7 @@ export function Footer() {
         </div>
 
         <div>
-          <h4 className="font-display text-sm font-bold uppercase tracking-wider text-amber-500">
+          <h4 className="font-display text-sm font-bold uppercase tracking-wider text-primary">
             Property Details
           </h4>
           <ul className="mt-4 space-y-2 text-xs text-muted-foreground">
@@ -67,7 +67,7 @@ export function Footer() {
         </div>
 
         <div>
-          <h4 className="font-display text-sm font-bold uppercase tracking-wider text-amber-500">
+          <h4 className="font-display text-sm font-bold uppercase tracking-wider text-primary">
             Contact
           </h4>
           <ul className="mt-4 space-y-3 text-xs text-muted-foreground">

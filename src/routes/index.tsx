@@ -353,8 +353,8 @@ function Index() {
       </section>
 
       {/* Recce CTA Banner */}
-      <section className="mx-4 my-12 rounded-xl border border-amber-500/40 bg-gradient-to-r from-amber-500/10 via-card to-amber-500/10 p-8 text-center sm:p-12 md:mx-auto md:max-w-6xl">
-        <h2 className="font-display text-2xl font-bold text-foreground sm:text-3xl">
+      <section className="mx-4 my-12 rounded-xl border border-border bg-muted p-8 text-center sm:p-12 md:mx-auto md:max-w-6xl shadow-sm">
+        <h2 className="font-display text-2xl font-bold text-primary sm:text-3xl">
           Interested in Shooting Here?
         </h2>
         <p className="mx-auto mt-2 max-w-xl text-xs leading-relaxed text-muted-foreground sm:text-sm">
@@ -363,7 +363,7 @@ function Index() {
         <div className="mt-6 flex flex-wrap justify-center gap-4">
           <Link
             to="/contact"
-            className="inline-flex items-center gap-2 rounded-md bg-amber-500 px-6 py-3 text-sm font-bold text-black transition-colors hover:bg-amber-400"
+            className="inline-flex items-center gap-2 rounded-md bg-accent px-6 py-3 text-sm font-semibold text-accent-foreground shadow-sm transition-transform hover:-translate-y-0.5 hover:opacity-90"
           >
             <CalendarCheck className="h-4 w-4" /> Book a Recce Visit
           </Link>
@@ -371,7 +371,7 @@ function Index() {
             href={whatsappUrl}
             target="_blank"
             rel="noreferrer"
-            className="inline-flex items-center gap-2 rounded-md border border-border bg-card px-6 py-3 text-sm font-semibold text-foreground transition-colors hover:border-amber-500"
+            className="inline-flex items-center gap-2 rounded-md border border-primary px-6 py-3 text-sm font-semibold text-primary transition-colors hover:bg-primary hover:text-primary-foreground"
           >
             WhatsApp for Recce
           </a>

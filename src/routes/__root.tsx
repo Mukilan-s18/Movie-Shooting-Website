@@ -132,7 +132,7 @@ function RootShell({ children }: { children: ReactNode }) {
           dangerouslySetInnerHTML={{
             __html: `
               try {
-                document.documentElement.classList.add('dark');
+                document.documentElement.classList.remove('dark');
               } catch (_) {}
             `,
           }}
