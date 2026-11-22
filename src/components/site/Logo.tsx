@@ -1,14 +1,14 @@
-import { Clapperboard } from "lucide-react";
-
 export function Logo({ compact = false }: { compact?: boolean }) {
   return (
     <div className="flex items-center gap-3">
       <div
         className={`flex items-center justify-center rounded-md bg-gradient-to-br from-amber-500 to-amber-700 text-black shadow-md ${
-          compact ? "h-10 w-10" : "h-12 w-12"
+          compact ? "h-10 w-10 text-xl" : "h-12 w-12 text-2xl"
         }`}
       >
-        <Clapperboard className={compact ? "h-5 w-5" : "h-6 w-6"} />
+        <span role="img" aria-label="Movie Camera" className="leading-none select-none">
+          🎥
+        </span>
       </div>
       <div className="flex flex-col">
         <span

@@ -1,5 +1,3 @@
-import { Clapperboard } from "lucide-react";
-
 export function SectionHeading({
   title,
   subtitle,
@@ -14,7 +12,9 @@ export function SectionHeading({
       </h2>
       <div className="mt-3 flex items-center justify-center gap-2 text-amber-500">
         <div className="h-px w-10 bg-amber-500/30" />
-        <Clapperboard className="h-4 w-4" />
+        <span role="img" aria-label="Movie Camera" className="text-sm select-none">
+          🎥
+        </span>
         <div className="h-px w-10 bg-amber-500/30" />
       </div>
       {subtitle ? (
