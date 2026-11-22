@@ -13,7 +13,7 @@ export default defineConfig({
     react(),
     tailwindcss(),
     tsConfigPaths({ projects: ["./tsconfig.json"] }),
-    nitro({ defaultPreset: "cloudflare-module" })
+    nitro({ defaultPreset: "cloudflare-module" }),
   ],
   server: {
     port: 8080,

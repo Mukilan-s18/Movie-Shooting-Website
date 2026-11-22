@@ -17,7 +17,14 @@ import { SectionHeading } from "@/components/site/SectionHeading";
 import { Reveal } from "@/components/site/Reveal";
 import { Lightbox } from "@/components/site/Lightbox";
 import { VideoTour } from "@/components/site/VideoTour";
-import { business, propertySpaces, propertyGallery, movieReferences, allGalleryMedia, whatsappUrl } from "@/lib/business";
+import {
+  business,
+  propertySpaces,
+  propertyGallery,
+  movieReferences,
+  allGalleryMedia,
+  whatsappUrl,
+} from "@/lib/business";
 import { useI18n } from "@/lib/i18n";
 
 export const Route = createFileRoute("/")({
@@ -215,7 +222,8 @@ function Index() {
                 4/5 Varghese Avenue, Ashok Nagar, Vadapalani, Chennai
               </h3>
               <p className="mt-1 text-xs text-muted-foreground">
-                Conveniently located in Vadapalani / Ashok Nagar, Chennai's primary film production district.
+                Conveniently located in Vadapalani / Ashok Nagar, Chennai's primary film production
+                district.
               </p>
               <div className="mt-3 flex flex-wrap gap-4 text-xs">
                 <span>
@@ -320,7 +328,6 @@ function Index() {
         </div>
       </section>
 
-
       {/* Property Photo Gallery Strip */}
       <section className="border-t border-border bg-card py-16">
         <div className="mx-auto max-w-6xl px-4">
@@ -366,7 +373,8 @@ function Index() {
           Interested in Shooting Here?
         </h2>
         <p className="mx-auto mt-2 max-w-xl text-xs leading-relaxed text-muted-foreground sm:text-sm">
-          Call <strong>70108 33853</strong> / <strong>883504143</strong> to schedule an in-person recce at 4/5 Varghese Avenue, Ashok Nagar, Vadapalani.
+          Call <strong>70108 33853</strong> / <strong>883504143</strong> to schedule an in-person
+          recce at 4/5 Varghese Avenue, Ashok Nagar, Vadapalani.
         </p>
         <div className="mt-6 flex flex-wrap justify-center gap-4">
           <Link

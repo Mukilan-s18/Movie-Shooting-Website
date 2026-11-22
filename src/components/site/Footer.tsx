@@ -127,8 +127,25 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-border px-4 py-4 text-center text-xs text-muted-foreground">
-          © {new Date().getFullYear()} {business.name}. All rights reserved.
+        <div className="border-t border-border px-4 py-5 text-xs text-muted-foreground">
+          <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-3 sm:flex-row text-center sm:text-left">
+            <p>
+              © {new Date().getFullYear()} {business.name}. All rights reserved.
+            </p>
+            <div className="flex flex-wrap items-center justify-center gap-4 text-[11px]">
+              <Link to="/privacy" className="transition-colors hover:text-primary">
+                Privacy Policy
+              </Link>
+              <span>·</span>
+              <Link to="/terms" className="transition-colors hover:text-primary">
+                Terms of Service
+              </Link>
+              <span>·</span>
+              <Link to="/cookies" className="transition-colors hover:text-primary">
+                Cookie Policy
+              </Link>
+            </div>
+          </div>
         </div>
       </footer>
       <ProductionPortalModal isOpen={portalOpen} onClose={() => setPortalOpen(false)} />

@@ -20,7 +20,9 @@ export const Route = createFileRoute("/sitemap.xml")({
               baseUrl = parsed.origin;
             }
           }
-        } catch (_) {}
+        } catch {
+          baseUrl = "https://vadapalanishootinghouse.com";
+        }
 
         const today = new Date().toISOString().split("T")[0];
 
@@ -30,6 +32,9 @@ export const Route = createFileRoute("/sitemap.xml")({
           { path: "/gallery", lastmod: today, changefreq: "weekly", priority: "0.9" },
           { path: "/about", lastmod: today, changefreq: "monthly", priority: "0.8" },
           { path: "/contact", lastmod: today, changefreq: "monthly", priority: "0.8" },
+          { path: "/privacy", lastmod: today, changefreq: "yearly", priority: "0.5" },
+          { path: "/terms", lastmod: today, changefreq: "yearly", priority: "0.5" },
+          { path: "/cookies", lastmod: today, changefreq: "yearly", priority: "0.5" },
         ];
 
         const urls = entries.map((e) =>

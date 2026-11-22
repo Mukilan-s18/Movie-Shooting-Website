@@ -3,7 +3,7 @@ import { useState } from "react";
 import { Menu, Phone, X, CalendarCheck, Play } from "lucide-react";
 import { Logo } from "./Logo";
 import { business } from "@/lib/business";
-import { useI18n } from "@/lib/i18n";
+import { useI18n, type TranslationKey } from "@/lib/i18n";
 
 const linkKeys = [
   { to: "/", key: "home" },
@@ -33,7 +33,7 @@ export function Header() {
               activeProps={{ className: "text-primary font-bold" }}
               className="text-xs font-semibold uppercase tracking-wider text-foreground/80 whitespace-nowrap transition-colors hover:text-primary"
             >
-              {t(l.key as any)}
+              {t(l.key as TranslationKey)}
             </Link>
           ))}
 
@@ -84,7 +84,7 @@ export function Header() {
               activeProps={{ className: "text-primary font-bold" }}
               className="block border-b border-border/60 py-3 text-sm font-semibold uppercase tracking-wide text-foreground/80 last:border-0"
             >
-              {t(l.key as any)}
+              {t(l.key as TranslationKey)}
             </Link>
           ))}
           <a

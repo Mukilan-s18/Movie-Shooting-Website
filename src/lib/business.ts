@@ -2,21 +2,18 @@ export const business = {
   name: "Vadapalani Shooting House",
   shortName: "Vadapalani Shooting House",
   owner: "Location Coordinator",
-  tagline: "2-Floor Independent House with Empty Big Entrance · 2 BHK Each Floor · Suitable for Middle Class to Rich House Setups",
+  tagline:
+    "2-Floor Independent House with Empty Big Entrance · 2 BHK Each Floor · Suitable for Middle Class to Rich House Setups",
   phonePrimary: "7010833853",
   phonePrimaryDisplay: "70108 33853",
   phoneSecondary: "883504143",
   phoneSecondaryDisplay: "883504143",
   email: "Pranav280806@gmail.com",
-  addressLines: [
-    "4/5 Varghese Avenue, Ashok Nagar,",
-    "Vadapalani, Chennai.",
-  ],
+  addressLines: ["4/5 Varghese Avenue, Ashok Nagar,", "Vadapalani, Chennai."],
   city: "Chennai",
   area: "Ashok Nagar / Vadapalani",
   state: "Tamil Nadu",
-  mapsUrl:
-    "https://www.google.com/maps?q=13.04668865005922,80.21520652988471",
+  mapsUrl: "https://www.google.com/maps?q=13.04668865005922,80.21520652988471",
   mapsEmbedUrl:
     "https://www.google.com/maps/embed?pb=!4v1795364848659!6m8!1m7!1saPt1k-cXkk-VRvGfh2dYSQ!2m2!1d13.04668865005922!2d80.21520652988471!3f4.329979762354583!4f-1.283103089948952!5f0.7820865974627469",
   videoTour: {
@@ -51,28 +48,32 @@ export const propertySpaces: PropertySpace[] = [
     id: "exterior-facade",
     title: "Empty Big Entrance & Facade",
     subtitle: "Spacious Front Entrance",
-    description: "Wide empty entrance area providing plenty of clearance for camera positioning, equipment loading, vehicle arrival shots, and exterior scenes.",
+    description:
+      "Wide empty entrance area providing plenty of clearance for camera positioning, equipment loading, vehicle arrival shots, and exterior scenes.",
     image: "/property/exterior-facade.jpeg",
   },
   {
     id: "living-hall",
     title: "Living Hall",
     subtitle: "Adaptable for Middle Class to Rich Setups",
-    description: "Spacious hall on the 2 BHK floor layout. Easily dressable to represent authentic middle-class family homes or upscale rich household interiors.",
+    description:
+      "Spacious hall on the 2 BHK floor layout. Easily dressable to represent authentic middle-class family homes or upscale rich household interiors.",
     image: "/property/living-hall.jpeg",
   },
   {
     id: "dining-hall",
     title: "Dining Hall",
     subtitle: "Connected Gathering Space",
-    description: "Dedicated dining area connecting the hall and kitchen, ideal for conversation scenes, family dining moments, and casual dialogue sequences.",
+    description:
+      "Dedicated dining area connecting the hall and kitchen, ideal for conversation scenes, family dining moments, and casual dialogue sequences.",
     image: "/property/dining-hall.jpeg",
   },
   {
     id: "kitchen",
     title: "Kitchen",
     subtitle: "Complete Kitchen Setup",
-    description: "Functional kitchen space with cooking countertops, storage cabinets, and natural window lighting for authentic domestic and cooking scenes.",
+    description:
+      "Functional kitchen space with cooking countertops, storage cabinets, and natural window lighting for authentic domestic and cooking scenes.",
     image: "/property/kitchen.jpeg",
   },
 ];

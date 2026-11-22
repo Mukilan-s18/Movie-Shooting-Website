@@ -37,9 +37,7 @@ function GalleryPage() {
   const [active, setActive] = useState("All");
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
-  const shown = allGalleryMedia.filter(
-    (g) => active === "All" || g.category === active,
-  );
+  const shown = allGalleryMedia.filter((g) => active === "All" || g.category === active);
 
   return (
     <div>

@@ -9,6 +9,19 @@ type Translations = {
   };
 };
 
+export type TranslationKey =
+  | "home"
+  | "services"
+  | "gallery"
+  | "about"
+  | "contact"
+  | "heroBadge"
+  | "heroTitle"
+  | "heroSubtitle"
+  | "watchVideo"
+  | "viewOurWork"
+  | "bookRecce";
+
 export const translations: Translations = {
   home: { en: "Home", ta: "முகப்பு" },
   services: { en: "Spaces", ta: "வீட்டின் இடங்கள்" },
@@ -64,9 +77,7 @@ export function I18nProvider({ children }: { children: ReactNode }) {
   };
 
   return (
-    <I18nContext.Provider value={{ lang, setLang: changeLang, t }}>
-      {children}
-    </I18nContext.Provider>
+    <I18nContext.Provider value={{ lang, setLang: changeLang, t }}>{children}</I18nContext.Provider>
   );
 }
 

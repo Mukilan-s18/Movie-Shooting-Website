@@ -15,23 +15,39 @@ import { Header } from "@/components/site/Header";
 import { Footer } from "@/components/site/Footer";
 import { MobileCallBar } from "@/components/site/MobileCallBar";
 import { FloatingWhatsApp } from "@/components/site/FloatingWhatsApp";
+import { CookieConsent } from "@/components/site/CookieConsent";
 import { Toaster } from "@/components/ui/sonner";
 
 function NotFoundComponent() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background px-4">
-      <div className="max-w-md text-center">
-        <h1 className="text-7xl font-bold text-foreground">404</h1>
-        <h2 className="mt-4 text-xl font-semibold text-foreground">Location Not Found</h2>
-        <p className="mt-2 text-sm text-muted-foreground">
-          The shooting floor or set you are looking for does not exist or has been moved.
+    <div className="flex min-h-[60vh] flex-col items-center justify-center px-4 py-20 text-center">
+      <div className="max-w-md rounded-xl border border-border bg-card p-8 shadow-sm">
+        <span className="rounded bg-primary/10 px-3 py-1 font-mono text-xs font-bold text-primary">
+          404 ERROR
+        </span>
+        <h1 className="mt-4 font-display text-3xl font-bold text-foreground">Location Not Found</h1>
+        <p className="mt-3 text-xs leading-relaxed text-muted-foreground">
+          The shooting floor, room, or scene view you requested does not exist or has been
+          relocated.
         </p>
-        <div className="mt-6">
+        <div className="mt-6 flex flex-wrap justify-center gap-3">
           <Link
             to="/"
-            className="inline-flex items-center justify-center rounded bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground transition-colors hover:opacity-90"
+            className="inline-flex items-center gap-1.5 rounded bg-primary px-4 py-2 text-xs font-bold uppercase tracking-wider text-primary-foreground shadow-sm transition-all hover:opacity-90"
           >
             Back to Home
+          </Link>
+          <Link
+            to="/services"
+            className="inline-flex items-center gap-1.5 rounded border border-border px-4 py-2 text-xs font-semibold text-foreground transition-colors hover:bg-muted hover:text-primary"
+          >
+            View Spaces
+          </Link>
+          <Link
+            to="/contact"
+            className="inline-flex items-center gap-1.5 rounded bg-amber-500 px-4 py-2 text-xs font-bold uppercase tracking-wider text-black transition-colors hover:bg-amber-400"
+          >
+            Contact Manager
           </Link>
         </div>
       </div>
@@ -80,46 +96,38 @@ const rootJsonLd = {
     {
       "@type": "LocalBusiness",
       "@id": "https://vadapalanishootinghouse.com/#business",
-      "name": "Vadapalani Shooting House",
-      "alternateName": "Vadapalani Movie Shooting House",
-      "description":
+      name: "Vadapalani Shooting House",
+      alternateName: "Vadapalani Movie Shooting House",
+      description:
         "2-floor independent movie shooting house at 4/5 Varghese Avenue, Ashok Nagar, Vadapalani, Chennai. Empty wide entrance, 2 BHK each floor, filming location for Tourist Family and Parimala and Co.",
-      "url": "https://vadapalanishootinghouse.com",
-      "telephone": ["+917010833853", "+91883504143"],
-      "email": "Pranav280806@gmail.com",
-      "priceRange": "₹₹",
-      "currenciesAccepted": "INR",
-      "paymentAccepted": "Cash, Bank Transfer, UPI",
-      "address": {
+      url: "https://vadapalanishootinghouse.com",
+      telephone: ["+917010833853", "+91883504143"],
+      email: "Pranav280806@gmail.com",
+      priceRange: "₹₹",
+      currenciesAccepted: "INR",
+      paymentAccepted: "Cash, Bank Transfer, UPI",
+      address: {
         "@type": "PostalAddress",
-        "streetAddress": "4/5 Varghese Avenue, Ashok Nagar",
-        "addressLocality": "Vadapalani, Chennai",
-        "addressRegion": "Tamil Nadu",
-        "postalCode": "600083",
-        "addressCountry": "IN",
+        streetAddress: "4/5 Varghese Avenue, Ashok Nagar",
+        addressLocality: "Vadapalani, Chennai",
+        addressRegion: "Tamil Nadu",
+        postalCode: "600083",
+        addressCountry: "IN",
       },
-      "geo": {
+      geo: {
         "@type": "GeoCoordinates",
-        "latitude": 13.0336,
-        "longitude": 80.2114,
+        latitude: 13.0336,
+        longitude: 80.2114,
       },
-      "openingHoursSpecification": [
+      openingHoursSpecification: [
         {
           "@type": "OpeningHoursSpecification",
-          "dayOfWeek": [
-            "Monday",
-            "Tuesday",
-            "Wednesday",
-            "Thursday",
-            "Friday",
-            "Saturday",
-            "Sunday",
-          ],
-          "opens": "00:00",
-          "closes": "23:59",
+          dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+          opens: "00:00",
+          closes: "23:59",
         },
       ],
-      "image": [
+      image: [
         "https://vadapalanishootinghouse.com/property/hero-bg.jpg",
         "https://vadapalanishootinghouse.com/property/exterior-facade.jpeg",
         "https://vadapalanishootinghouse.com/property/living-hall.jpeg",
@@ -128,41 +136,37 @@ const rootJsonLd = {
     {
       "@type": "FAQPage",
       "@id": "https://vadapalanishootinghouse.com/#faq",
-      "mainEntity": [
+      mainEntity: [
         {
           "@type": "Question",
-          "name": "Where is Vadapalani Shooting House located in Chennai?",
-          "acceptedAnswer": {
+          name: "Where is Vadapalani Shooting House located in Chennai?",
+          acceptedAnswer: {
             "@type": "Answer",
-            "text":
-              "The shooting house is located at 4/5 Varghese Avenue, Ashok Nagar, Vadapalani, Chennai, within Chennai's central cinema production zone.",
+            text: "The shooting house is located at 4/5 Varghese Avenue, Ashok Nagar, Vadapalani, Chennai, within Chennai's central cinema production zone.",
           },
         },
         {
           "@type": "Question",
-          "name": "Which Tamil films and series were filmed here?",
-          "acceptedAnswer": {
+          name: "Which Tamil films and series were filmed here?",
+          acceptedAnswer: {
             "@type": "Answer",
-            "text":
-              "The house was the verified filming location for the Tamil feature film Tourist Family (starring M. Sasikumar and Simran), the Tamil film Parimala & Co, and the JioHotstar web series Brothers and Sisters.",
+            text: "The house was the verified filming location for the Tamil feature film Tourist Family (starring M. Sasikumar and Simran), the Tamil film Parimala & Co, and the JioHotstar web series Brothers and Sisters.",
           },
         },
         {
           "@type": "Question",
-          "name": "What are the property layout specifications?",
-          "acceptedAnswer": {
+          name: "What are the property layout specifications?",
+          acceptedAnswer: {
             "@type": "Answer",
-            "text":
-              "The property is an independent 2-floor house featuring a wide empty front entrance area for crew vehicles and camera equipment, with 2 BHK floor plans on each floor suitable for middle-class to rich home setups.",
+            text: "The property is an independent 2-floor house featuring a wide empty front entrance area for crew vehicles and camera equipment, with 2 BHK floor plans on each floor suitable for middle-class to rich home setups.",
           },
         },
         {
           "@type": "Question",
-          "name": "How do I schedule an in-person recce walkthrough?",
-          "acceptedAnswer": {
+          name: "How do I schedule an in-person recce walkthrough?",
+          acceptedAnswer: {
             "@type": "Answer",
-            "text":
-              "You can schedule an in-person recce walkthrough by calling 70108 33853 or 883504143, or by messaging our location manager directly on WhatsApp.",
+            text: "You can schedule an in-person recce walkthrough by calling 70108 33853 or 883504143, or by messaging our location manager directly on WhatsApp.",
           },
         },
       ],
@@ -194,7 +198,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           "movie shooting house chennai, vadapalani shooting house, film shooting house rental chennai, shooting house ashok nagar, 2 floor shooting house chennai, tourist family movie house, parimala and co film house, brothers and sisters shooting location, film shooting sets chennai, shooting house for rent in chennai",
       },
       { name: "author", content: "Vadapalani Shooting House" },
-      { name: "robots", content: "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" },
+      {
+        name: "robots",
+        content: "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      },
       { name: "geo.region", content: "IN-TN" },
       { name: "geo.placename", content: "Chennai, Vadapalani, Ashok Nagar" },
       { name: "geo.position", content: "13.0336;80.2114" },
@@ -296,6 +303,7 @@ function RootComponent() {
           <Footer />
           <MobileCallBar />
           <FloatingWhatsApp />
+          <CookieConsent />
           <Toaster position="top-center" />
         </div>
       </I18nProvider>

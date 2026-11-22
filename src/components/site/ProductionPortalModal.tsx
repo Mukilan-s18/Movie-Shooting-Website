@@ -17,7 +17,9 @@ export function ProductionPortalModal({
     if (saved) {
       try {
         setUser(JSON.parse(saved));
-      } catch (_) {}
+      } catch {
+        setUser(null);
+      }
     }
   }, []);
 
@@ -85,7 +87,9 @@ export function ProductionPortalModal({
                 <ShieldCheck className="h-4 w-4" /> Verified SSO Session
               </div>
               <p className="mt-1 text-foreground font-medium">{user.name}</p>
-              <p className="text-[11px] text-muted-foreground">{user.email} · {user.role}</p>
+              <p className="text-[11px] text-muted-foreground">
+                {user.email} · {user.role}
+              </p>
             </div>
 
             <div className="space-y-2 text-xs">
@@ -127,7 +131,8 @@ export function ProductionPortalModal({
         ) : (
           <div className="mt-6 space-y-4 text-xs">
             <p className="text-muted-foreground leading-relaxed">
-              Sign in with your production Google account to download structural schematics, equipment guidelines, and verified shoot contracts.
+              Sign in with your production Google account to download structural schematics,
+              equipment guidelines, and verified shoot contracts.
             </p>
 
             <button
@@ -159,7 +164,10 @@ export function ProductionPortalModal({
 
             <div className="flex items-center gap-2 pt-2 text-[11px] text-muted-foreground">
               <CheckCircle2 className="h-3.5 w-3.5 text-gold shrink-0" />
-              <span>Public booking & recce visits require zero login. Instant phone & WhatsApp available.</span>
+              <span>
+                Public booking & recce visits require zero login. Instant phone & WhatsApp
+                available.
+              </span>
             </div>
           </div>
         )}

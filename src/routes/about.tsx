@@ -68,26 +68,38 @@ function AboutPage() {
           </h2>
           <div className="mt-4 space-y-3 text-xs leading-relaxed text-muted-foreground sm:text-sm">
             <p>
-              Located at <strong className="text-foreground">4/5 Varghese Avenue, Ashok Nagar, Vadapalani, Chennai</strong>,
-              this independent house is situated in the prime cinema production district of Chennai.
+              Located at{" "}
+              <strong className="text-foreground">
+                4/5 Varghese Avenue, Ashok Nagar, Vadapalani, Chennai
+              </strong>
+              , this independent house is situated in the prime cinema production district of
+              Chennai.
             </p>
             <p>
-              The property features a <strong className="text-foreground">2-floor structure</strong> with
-              an <strong className="text-foreground">empty big entrance</strong> providing generous room for camera placement,
-              equipment offloading, vehicle entry, and exterior sequences.
+              The property features a <strong className="text-foreground">2-floor structure</strong>{" "}
+              with an <strong className="text-foreground">empty big entrance</strong> providing
+              generous room for camera placement, equipment offloading, vehicle entry, and exterior
+              sequences.
             </p>
             <p>
-              Each floor is designed as a <strong className="text-foreground">2 BHK layout</strong>, allowing productions to shoot across
-              multiple rooms, halls, and kitchens without having to shift companies.
+              Each floor is designed as a <strong className="text-foreground">2 BHK layout</strong>,
+              allowing productions to shoot across multiple rooms, halls, and kitchens without
+              having to shift companies.
             </p>
             <p>
-              The interior architecture is highly versatile, making it <strong className="text-foreground">suitable for middle class to rich house setups</strong> for
-              feature films, television serials, OTT series, and advertisement commercials.
+              The interior architecture is highly versatile, making it{" "}
+              <strong className="text-foreground">
+                suitable for middle class to rich house setups
+              </strong>{" "}
+              for feature films, television serials, OTT series, and advertisement commercials.
             </p>
             <p>
-              The house has a proven production track record, having been chosen as the filming location for
-              popular Tamil productions including the feature films <strong className="text-foreground">Tourist Family</strong> (starring M. Sasikumar and Simran)
-              and <strong className="text-foreground">Parimala & Co</strong>, alongside the JioHotstar web series <strong className="text-foreground">Brothers and Sisters</strong>.
+              The house has a proven production track record, having been chosen as the filming
+              location for popular Tamil productions including the feature films{" "}
+              <strong className="text-foreground">Tourist Family</strong> (starring M. Sasikumar and
+              Simran) and <strong className="text-foreground">Parimala & Co</strong>, alongside the
+              JioHotstar web series{" "}
+              <strong className="text-foreground">Brothers and Sisters</strong>.
             </p>
           </div>
 
@@ -116,22 +128,30 @@ function AboutPage() {
             <div className="rounded-lg border border-border bg-background p-4">
               <Building className="h-5 w-5 text-amber-500" />
               <h3 className="mt-2 text-sm font-bold text-foreground">2 Floors</h3>
-              <p className="mt-1 text-xs text-muted-foreground">Ground floor plus first floor independent structure.</p>
+              <p className="mt-1 text-xs text-muted-foreground">
+                Ground floor plus first floor independent structure.
+              </p>
             </div>
             <div className="rounded-lg border border-border bg-background p-4">
               <DoorOpen className="h-5 w-5 text-amber-500" />
               <h3 className="mt-2 text-sm font-bold text-foreground">Empty Big Entrance</h3>
-              <p className="mt-1 text-xs text-muted-foreground">Spacious front entrance area for camera & crew ease.</p>
+              <p className="mt-1 text-xs text-muted-foreground">
+                Spacious front entrance area for camera & crew ease.
+              </p>
             </div>
             <div className="rounded-lg border border-border bg-background p-4">
               <Home className="h-5 w-5 text-amber-500" />
               <h3 className="mt-2 text-sm font-bold text-foreground">2 BHK Each Floor</h3>
-              <p className="mt-1 text-xs text-muted-foreground">Dual 2 BHK floor layouts for multi-scene shoots.</p>
+              <p className="mt-1 text-xs text-muted-foreground">
+                Dual 2 BHK floor layouts for multi-scene shoots.
+              </p>
             </div>
             <div className="rounded-lg border border-border bg-background p-4">
               <Sparkles className="h-5 w-5 text-amber-500" />
               <h3 className="mt-2 text-sm font-bold text-foreground">Middle Class to Rich</h3>
-              <p className="mt-1 text-xs text-muted-foreground">Easily adaptable for diverse economic story setups.</p>
+              <p className="mt-1 text-xs text-muted-foreground">
+                Easily adaptable for diverse economic story setups.
+              </p>
             </div>
           </div>
         </div>
@@ -162,7 +182,10 @@ function AboutPage() {
             </p>
             <p className="mt-2">
               Email:{" "}
-              <a href={`mailto:${business.email}`} className="font-bold text-amber-500 hover:underline">
+              <a
+                href={`mailto:${business.email}`}
+                className="font-bold text-amber-500 hover:underline"
+              >
                 {business.email}
               </a>
             </p>

@@ -23,7 +23,7 @@ export function Lightbox({
         onIndexChange(newIndex);
       }
     },
-    [onNavigate, onIndexChange]
+    [onNavigate, onIndexChange],
   );
 
   useEffect(() => {

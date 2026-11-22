@@ -118,7 +118,7 @@ function ContactPage() {
         spacesRequired: [],
         message: "",
       });
-    } catch (err: any) {
+    } catch (err: unknown) {
       console.error(err);
       toast.error("Notice: Please connect via WhatsApp or Phone", {
         description: "Call 70108 33853 or message directly on WhatsApp.",
@@ -169,17 +169,11 @@ function ContactPage() {
                 <Phone className="mt-0.5 h-4 w-4 shrink-0 text-amber-500" />
                 <div>
                   <strong className="block text-foreground">Contact for Recce & Booking:</strong>
-                  <a
-                    href="tel:7010833853"
-                    className="font-bold text-amber-500 hover:underline"
-                  >
+                  <a href="tel:7010833853" className="font-bold text-amber-500 hover:underline">
                     70108 33853
                   </a>
                   {" · "}
-                  <a
-                    href="tel:883504143"
-                    className="font-bold text-amber-500 hover:underline"
-                  >
+                  <a href="tel:883504143" className="font-bold text-amber-500 hover:underline">
                     883504143
                   </a>
                 </div>
@@ -327,9 +321,7 @@ function ContactPage() {
                   <option value="Full Day Shoot">Full Day Shoot</option>
                   <option value="Half Day Shoot">Half Day Shoot</option>
                   <option value="Multi-Day Schedule">Multi-Day Schedule</option>
-                  <option value="Location Recce (Walkthrough)">
-                    Location Recce (Walkthrough)
-                  </option>
+                  <option value="Location Recce (Walkthrough)">Location Recce (Walkthrough)</option>
                 </select>
               </div>
             </div>
@@ -384,7 +376,11 @@ function ContactPage() {
                 disabled={loading}
                 className="inline-flex items-center gap-2 rounded bg-primary px-6 py-3 text-xs font-bold uppercase tracking-wide text-primary-foreground shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:opacity-95 disabled:opacity-50"
               >
-                {loading ? <Loader2 className="h-4 w-4 animate-spin" /> : <CalendarCheck className="h-4 w-4" />}
+                {loading ? (
+                  <Loader2 className="h-4 w-4 animate-spin" />
+                ) : (
+                  <CalendarCheck className="h-4 w-4" />
+                )}
                 Submit Request
               </button>
             </div>
