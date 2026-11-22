@@ -13,7 +13,6 @@ import {
 import { toast } from "sonner";
 import { SectionHeading } from "@/components/site/SectionHeading";
 import { business, whatsappUrl } from "@/lib/business";
-import { supabase } from "@/integrations/supabase/client";
 
 const jsonLd = {
   "@context": "https://schema.org",
@@ -76,22 +75,25 @@ function ContactPage() {
     setLoading(true);
 
     try {
-      const formattedMessage = `Production: ${form.productionHouse || "Independent"} | Type: ${form.projectType} | Requirement: ${form.requirement} | Spaces: ${form.spacesRequired.join(", ") || "Full House"} | Notes: ${form.message}`;
+      const summaryText = `Hello, I would like to enquire about booking the movie shooting house at 4/5 Varghese Avenue, Ashok Nagar, Vadapalani, Chennai:
 
-      const { error } = await supabase.from("contact_messages").insert({
-        name: form.name,
-        phone: form.phone,
-        date: form.date || null,
-        message: formattedMessage,
-      });
+• Name: ${form.name}
+• Phone: ${form.phone}
+• Email: ${form.email || "Not provided"}
+• Production House / Banner: ${form.productionHouse || "Independent / Individual"}
+• Project Format: ${form.projectType}
+• Requirement: ${form.requirement}
+• Preferred Date: ${form.date || "To be discussed"}
+• Spaces Required: ${form.spacesRequired.join(", ") || "Full House (All Spaces)"}
+• Additional Notes: ${form.message || "None"}`;
 
-      if (error) {
-        console.warn("Supabase insert note:", error);
-      }
+      const waEnquiryUrl = `https://wa.me/917010833853?text=${encodeURIComponent(summaryText)}`;
 
-      toast.success("Enquiry Received!", {
-        description:
-          "We will contact you shortly to confirm date availability.",
+      // Open WhatsApp with all the shoot parameters prefilled
+      window.open(waEnquiryUrl, "_blank");
+
+      toast.success("Enquiry Form Prepared!", {
+        description: "Connecting you directly to our Location Manager on WhatsApp.",
       });
 
       setForm({
@@ -107,8 +109,8 @@ function ContactPage() {
       });
     } catch (err: any) {
       console.error(err);
-      toast.error("Notice: Enquiry received or contact via WhatsApp", {
-        description: "You can also message directly on WhatsApp.",
+      toast.error("Notice: Please connect via WhatsApp or Phone", {
+        description: "Call 70108 33853 or message directly on WhatsApp.",
       });
     } finally {
       setLoading(false);
