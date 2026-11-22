@@ -7,7 +7,7 @@ export const business = {
   phonePrimaryDisplay: "70108 33853",
   phoneSecondary: "883504143",
   phoneSecondaryDisplay: "883504143",
-  email: "shootinghouse.chennai@gmail.com",
+  email: "Pranav280806@gmail.com",
   addressLines: [
     "4/5 Varghese Avenue, Ashok Nagar,",
     "Vadapalani, Chennai.",

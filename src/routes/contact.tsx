@@ -173,6 +173,19 @@ function ContactPage() {
               </li>
 
               <li className="flex gap-3">
+                <Mail className="mt-0.5 h-4 w-4 shrink-0 text-amber-500" />
+                <div>
+                  <strong className="block text-foreground">Email:</strong>
+                  <a
+                    href={`mailto:${business.email}`}
+                    className="font-bold text-amber-500 hover:underline"
+                  >
+                    {business.email}
+                  </a>
+                </div>
+              </li>
+
+              <li className="flex gap-3">
                 <Building className="mt-0.5 h-4 w-4 shrink-0 text-amber-500" />
                 <div>
                   <strong className="block text-foreground">Property Details:</strong>

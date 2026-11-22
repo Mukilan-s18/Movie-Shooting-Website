@@ -147,6 +147,12 @@ function AboutPage() {
                 883504143
               </a>
             </p>
+            <p className="mt-2">
+              Email:{" "}
+              <a href={`mailto:${business.email}`} className="font-bold text-amber-500 hover:underline">
+                {business.email}
+              </a>
+            </p>
           </div>
 
           {/* Embedded Google Map */}
