@@ -97,8 +97,11 @@ function ContactPage() {
 
       const waEnquiryUrl = `https://wa.me/917010833853?text=${encodeURIComponent(summaryText)}`;
 
-      // Open WhatsApp with all the shoot parameters prefilled
-      window.open(waEnquiryUrl, "_blank");
+      // Open WhatsApp with all shoot parameters prefilled (with fallback if popups are blocked)
+      const popup = window.open(waEnquiryUrl, "_blank", "noopener,noreferrer");
+      if (!popup || popup.closed || typeof popup.closed === "undefined") {
+        window.location.href = waEnquiryUrl;
+      }
 
       toast.success("Enquiry Form Prepared!", {
         description: "Connecting you directly to our Location Manager on WhatsApp.",
@@ -301,13 +304,12 @@ function ContactPage() {
 
               <div>
                 <label className="text-[11px] font-bold uppercase tracking-wider text-muted-foreground">
-                  Shoot Date *
+                  Preferred Shoot Date
                 </label>
                 <input
                   type="date"
                   value={form.date}
                   onChange={(e) => setForm({ ...form, date: e.target.value })}
-                  required
                   className={field}
                 />
               </div>

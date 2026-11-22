@@ -17,9 +17,9 @@ export function FloatingWhatsApp() {
   }, []);
 
   return (
-    <div className="fixed bottom-24 right-4 z-50 flex flex-col items-end gap-2 md:bottom-10 md:right-10 mb-[env(safe-area-inset-bottom)]">
+    <div className="fixed bottom-10 right-10 z-50 hidden md:flex flex-col items-end gap-2 pointer-events-none">
       {showTooltip && (
-        <div className="animate-in fade-in slide-in-from-bottom-2 relative rounded-lg bg-card p-3 text-sm shadow-xl ring-1 ring-border max-w-[240px] text-left">
+        <div className="animate-in fade-in slide-in-from-bottom-2 pointer-events-auto relative rounded-lg bg-card p-3 text-sm shadow-xl ring-1 ring-border max-w-[240px] text-left">
           <p className="font-semibold text-foreground">Planning a film shoot or recce?</p>
           <p className="text-xs text-muted-foreground mt-0.5">
             Chat instantly with our Location Manager
@@ -33,7 +33,7 @@ export function FloatingWhatsApp() {
         rel="noreferrer"
         aria-label="Chat with our Location Manager on WhatsApp"
         onMouseEnter={() => setShowTooltip(true)}
-        className="group flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-xl transition-transform hover:-translate-y-1 hover:shadow-2xl focus:outline-none focus:ring-2 focus:ring-[#25D366] focus:ring-offset-2"
+        className="group pointer-events-auto flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-xl transition-transform hover:-translate-y-1 hover:shadow-2xl focus:outline-none focus:ring-2 focus:ring-[#25D366] focus:ring-offset-2"
       >
         <MessageCircle className="h-7 w-7" />
       </a>

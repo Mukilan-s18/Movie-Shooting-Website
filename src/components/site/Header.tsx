@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { useState } from "react";
-import { Menu, Phone, X, CalendarCheck, Play, Languages } from "lucide-react";
+import { Menu, Phone, X, CalendarCheck, Play } from "lucide-react";
 import { Logo } from "./Logo";
 import { business } from "@/lib/business";
 import { useI18n } from "@/lib/i18n";
@@ -15,7 +15,7 @@ const linkKeys = [
 
 export function Header() {
   const [open, setOpen] = useState(false);
-  const { t, lang, setLang } = useI18n();
+  const { t } = useI18n();
 
   return (
     <header className="sticky top-0 z-40 border-b border-border bg-background/95 backdrop-blur-md">
@@ -24,7 +24,7 @@ export function Header() {
           <Logo compact />
         </Link>
 
-        <nav className="hidden items-center gap-3 lg:gap-4 xl:gap-5 md:flex shrink-0">
+        <nav className="hidden items-center gap-3 lg:gap-4 xl:gap-5 lg:flex shrink-0">
           {linkKeys.map((l) => (
             <Link
               key={l.to}
@@ -44,16 +44,6 @@ export function Header() {
             <Play className="h-2.5 w-2.5 fill-primary" /> Video Tour
           </a>
 
-          <button
-            type="button"
-            onClick={() => setLang(lang === "en" ? "ta" : "en")}
-            className="inline-flex items-center gap-1 rounded border border-border bg-card px-2 py-1 text-[11px] font-semibold text-foreground transition-colors hover:border-gold hover:text-primary"
-            aria-label="Toggle language between English and Tamil"
-          >
-            <Languages className="h-3 w-3 text-gold" />
-            <span>{lang === "en" ? "தமிழ்" : "English"}</span>
-          </button>
-
           <Link
             to="/contact"
             className="inline-flex items-center gap-1.5 rounded bg-primary px-3 py-1.5 text-xs font-bold uppercase tracking-wider text-primary-foreground shadow-sm whitespace-nowrap transition-all duration-300 hover:-translate-y-0.5 hover:opacity-95"
@@ -64,23 +54,14 @@ export function Header() {
 
           <a
             href="tel:7010833853"
-            className="hidden lg:inline-flex items-center gap-1.5 text-xs font-bold text-foreground whitespace-nowrap transition-colors hover:text-primary"
+            className="hidden xl:inline-flex items-center gap-1.5 text-xs font-bold text-foreground whitespace-nowrap transition-colors hover:text-primary"
           >
             <Phone className="h-3.5 w-3.5 text-gold" />
             70108 33853
           </a>
         </nav>
 
-        <div className="flex items-center gap-2 md:hidden">
-          <button
-            type="button"
-            onClick={() => setLang(lang === "en" ? "ta" : "en")}
-            className="inline-flex items-center gap-1 rounded border border-border bg-card px-2 py-1 text-[11px] font-semibold text-foreground"
-            aria-label="Toggle language between English and Tamil"
-          >
-            <Languages className="h-3 w-3 text-gold" />
-            <span>{lang === "en" ? "தமிழ்" : "English"}</span>
-          </button>
+        <div className="flex items-center gap-2 lg:hidden">
           <button
             type="button"
             onClick={() => setOpen((v) => !v)}
@@ -93,7 +74,7 @@ export function Header() {
       </div>
 
       {open ? (
-        <nav className="border-t border-border bg-card px-4 py-3 md:hidden">
+        <nav className="border-t border-border bg-card px-4 py-3 lg:hidden">
           {linkKeys.map((l) => (
             <Link
               key={l.to}
