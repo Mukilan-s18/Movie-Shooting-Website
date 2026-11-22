@@ -7,14 +7,14 @@
 /*
  * Design system definition.
  *
- * Palette: Cinematic Obsidian & Theater Dark
- * - Backside / Background: Deep Obsidian Film Slate (oklch(0.13 0.02 260))
- * - Card / Section Surface: Charcoal Film Stage (oklch(0.17 0.02 260))
+ * Option 2: Warm Heritage Sand & Film Studio Cream
+ * - Backside / Background: Sunlit Sandstone Cream (oklch(0.935 0.022 85) / #F0E9D9)
+ * - Card / Section Surface: Crisp Warm White (oklch(0.985 0.008 85) / #FDFAF4)
  * - Primary Accent: Radiant Golden Amber (#F59E0B / oklch(0.72 0.18 65))
  * - Secondary Accent: Sunset Coral (#FF5722 / oklch(0.66 0.22 38))
- * - Typography: Crisp Off-White (oklch(0.96 0.01 85))
- * - Muted Typography: Silver Slate (oklch(0.68 0.02 85))
- * - Borders: Polished Dark Charcoal (oklch(0.26 0.02 260))
+ * - Typography Foreground: Deep Film Slate Black (oklch(0.18 0.02 260) / #18181B)
+ * - Muted Typography: Studio Slate Gray (oklch(0.46 0.02 260) / #64646C)
+ * - Borders: Subtle Warm Sandstone Dune (oklch(0.86 0.02 85) / #D7D0C3)
  */
 
 @theme inline {
@@ -68,25 +68,25 @@
 
 :root {
   --radius: 0.375rem;
-  --background: oklch(0.13 0.02 260);
-  --foreground: oklch(0.96 0.01 85);
-  --card: oklch(0.17 0.02 260);
-  --card-foreground: oklch(0.96 0.01 85);
-  --popover: oklch(0.17 0.02 260);
-  --popover-foreground: oklch(0.96 0.01 85);
+  --background: oklch(0.935 0.022 85);
+  --foreground: oklch(0.18 0.02 260);
+  --card: oklch(0.985 0.008 85);
+  --card-foreground: oklch(0.18 0.02 260);
+  --popover: oklch(0.985 0.008 85);
+  --popover-foreground: oklch(0.18 0.02 260);
   --primary: oklch(0.72 0.18 65);
   --primary-foreground: oklch(0.12 0.02 260);
   --secondary: oklch(0.24 0.03 260);
-  --secondary-foreground: oklch(0.96 0.01 85);
-  --muted: oklch(0.20 0.02 260);
-  --muted-foreground: oklch(0.68 0.02 85);
+  --secondary-foreground: oklch(0.985 0.005 85);
+  --muted: oklch(0.89 0.02 85);
+  --muted-foreground: oklch(0.46 0.02 260);
   --accent: oklch(0.78 0.18 75);
-  --accent-foreground: oklch(0.12 0.02 260);
+  --accent-foreground: oklch(0.15 0.02 260);
   --coral: oklch(0.66 0.22 38);
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.984 0.003 247.858);
-  --border: oklch(0.26 0.02 260);
-  --input: oklch(0.26 0.02 260);
+  --border: oklch(0.86 0.02 85);
+  --input: oklch(0.86 0.02 85);
   --ring: oklch(0.72 0.18 65);
   --gold: oklch(0.78 0.18 75);
   --gold-foreground: oklch(0.15 0.02 260);
@@ -96,13 +96,13 @@
   --chart-3: oklch(0.78 0.18 75);
   --chart-4: oklch(0.828 0.189 84.429);
   --chart-5: oklch(0.769 0.188 70.08);
-  --sidebar: oklch(0.14 0.02 260);
-  --sidebar-foreground: oklch(0.96 0.01 85);
+  --sidebar: oklch(0.935 0.022 85);
+  --sidebar-foreground: oklch(0.18 0.02 260);
   --sidebar-primary: oklch(0.72 0.18 65);
   --sidebar-primary-foreground: oklch(0.12 0.02 260);
-  --sidebar-accent: oklch(0.20 0.02 260);
-  --sidebar-accent-foreground: oklch(0.96 0.01 85);
-  --sidebar-border: oklch(0.26 0.02 260);
+  --sidebar-accent: oklch(0.89 0.02 85);
+  --sidebar-accent-foreground: oklch(0.18 0.02 260);
+  --sidebar-border: oklch(0.86 0.02 85);
   --sidebar-ring: oklch(0.72 0.18 65);
   --font-display: "Cinzel", "Playfair Display", Georgia, serif;
   --font-body: "Inter", system-ui, sans-serif;
@@ -156,7 +156,7 @@
     background-color: var(--color-background);
     color: var(--color-foreground);
     font-family: var(--font-body);
-    color-scheme: dark;
+    color-scheme: light;
   }
 
   .dark body {
