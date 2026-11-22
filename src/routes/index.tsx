@@ -42,16 +42,16 @@ function Index() {
 
   return (
     <div>
-      {/* Cinematic Hero with Real Exterior Facade */}
+      {/* Cinematic Hero with Real Filming Stills */}
       <section className="relative min-h-[580px] overflow-hidden bg-black py-20 lg:min-h-[660px] flex items-center">
         <div className="absolute inset-0">
           <img
-            src="/property/exterior-facade.jpeg"
-            alt="Shooting House Exterior Facade"
+            src="/property/hero-bg.jpg"
+            alt="Tourist Family Movie Filming Location - Vadapalani Shooting House"
             className="h-full w-full object-cover object-center"
           />
-          {/* High transparency gradient: removes heavy foggy bottom overlay and keeps the exterior facade, gate, and trees fully bright and visible */}
-          <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/20 via-50% to-transparent" />
+          {/* High transparency gradient: keeps the film cast and house clear and bright while ensuring text legibility */}
+          <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/25 via-50% to-transparent" />
         </div>
 
         <div className="relative z-10 mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
