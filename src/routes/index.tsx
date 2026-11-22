@@ -72,23 +72,23 @@ function Index() {
             <div className="mt-8 flex flex-wrap items-center justify-start gap-4">
               <a
                 href="#video-tour"
-                className="inline-flex items-center gap-2 rounded-md bg-amber-500 px-6 py-3.5 text-sm font-bold uppercase tracking-wide text-black shadow-lg transition-transform hover:-translate-y-0.5 hover:bg-amber-400"
+                className="inline-flex items-center gap-2 rounded-md bg-amber-500 px-6 py-3.5 text-sm font-bold uppercase tracking-wide text-black shadow-lg transition-all duration-300 hover:-translate-y-0.5 hover:bg-amber-400 hover:shadow-xl"
               >
                 <Play className="h-4 w-4 fill-black" />
                 {t("watchVideo")}
               </a>
               <a
                 href="#property-spaces"
-                className="inline-flex items-center gap-2 rounded-md border border-white/20 bg-black/70 px-6 py-3.5 text-sm font-bold uppercase tracking-wide text-white backdrop-blur-md transition-colors hover:border-amber-400 hover:bg-black/90"
+                className="group inline-flex items-center gap-2 rounded-md border border-white/30 bg-black/70 px-6 py-3.5 text-sm font-bold uppercase tracking-wide text-white backdrop-blur-md shadow-lg transition-all duration-300 hover:-translate-y-0.5 hover:border-amber-500 hover:bg-amber-500 hover:text-black hover:shadow-xl"
               >
-                <Home className="h-4 w-4 text-amber-400" />
+                <Home className="h-4 w-4 text-amber-400 transition-colors duration-300 group-hover:text-black" />
                 {t("viewOurWork")}
               </a>
               <Link
                 to="/contact"
-                className="inline-flex items-center gap-2 rounded-md border border-amber-500/60 bg-amber-500/20 px-6 py-3.5 text-sm font-bold uppercase tracking-wide text-amber-300 backdrop-blur-md transition-all hover:bg-amber-500 hover:text-black"
+                className="group inline-flex items-center gap-2 rounded-md border border-amber-500/60 bg-amber-500/20 px-6 py-3.5 text-sm font-bold uppercase tracking-wide text-amber-300 backdrop-blur-md shadow-lg transition-all duration-300 hover:-translate-y-0.5 hover:border-amber-500 hover:bg-amber-500 hover:text-black hover:shadow-xl"
               >
-                <CalendarCheck className="h-4 w-4" />
+                <CalendarCheck className="h-4 w-4 transition-colors duration-300 group-hover:text-black" />
                 {t("bookRecce")}
               </Link>
             </div>
