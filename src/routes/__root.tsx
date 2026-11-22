@@ -80,23 +80,23 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       {
-        title: "Cinewood Film Shooting Villa - Movie House in Chennai",
+        title: "Movie Shooting House Rental - Chennai",
       },
       {
         name: "description",
         content:
-          "Rent an exclusive 7,500 sq.ft. private movie shooting villa in Chennai on ECR with double-height living room, master suite, island kitchen, lawn, skyline terrace, 100 KVA generator, and star vanity room.",
+          "Private movie shooting house in Chennai available for feature films, web series, television serials, and commercial shoots.",
       },
-      { name: "author", content: "Cinewood Film Shooting Villa" },
+      { name: "author", content: "Movie Shooting House" },
       { property: "og:type", content: "website" },
       {
         property: "og:title",
-        content: "Cinewood Film Shooting Villa - Single Property Movie House in Chennai",
+        content: "Movie Shooting House Rental - Chennai",
       },
       {
         property: "og:description",
         content:
-          "Private luxury film shooting house in Chennai for feature films, OTT web series & commercials.",
+          "Private residential property in Chennai available for film and commercial shoots.",
       },
       { name: "twitter:card", content: "summary_large_image" },
     ],

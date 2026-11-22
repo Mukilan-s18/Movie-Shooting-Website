@@ -16,14 +16,14 @@ export function Logo({ compact = false }: { compact?: boolean }) {
             compact ? "text-base md:text-lg" : "text-xl md:text-2xl"
           }`}
         >
-          CINE<span className="text-amber-500">WOOD</span>
+          SHOOTING <span className="text-amber-500">HOUSE</span>
         </span>
         <span
           className={`font-semibold uppercase tracking-widest text-muted-foreground ${
             compact ? "text-[9px]" : "text-[11px]"
           }`}
         >
-          Film Villa & Shooting Sets · Chennai
+          Movie & Film Shoot Property · Chennai
         </span>
       </div>
     </div>

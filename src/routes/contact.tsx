@@ -374,13 +374,11 @@ function ContactPage() {
               </label>
               <div className="mt-2 grid grid-cols-2 gap-2 text-xs sm:grid-cols-3">
                 {[
-                  "Entire Villa (Full House)",
-                  "Double-Height Living Hall",
-                  "Master Bedroom & Balcony",
-                  "Island Kitchen & Dining",
-                  "Lawn, Verandah & Porch",
-                  "Skyline Rooftop Terrace",
-                  "AC Star Vanity Green Room",
+                  "Entire Property",
+                  "Exterior Facade",
+                  "Living Hall",
+                  "Dining Hall",
+                  "Kitchen",
                 ].map((s) => (
                   <label
                     key={s}
