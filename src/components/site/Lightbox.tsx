@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useCallback } from "react";
 import { ChevronLeft, ChevronRight, X } from "lucide-react";
 import type { Photo } from "@/lib/photos";
 
@@ -6,19 +6,32 @@ export function Lightbox({
   photos,
   index,
   onClose,
+  onNavigate,
   onIndexChange,
 }: {
   photos: Photo[];
   index: number | null;
   onClose: () => void;
-  onIndexChange: (i: number) => void;
+  onNavigate?: (i: number) => void;
+  onIndexChange?: (i: number) => void;
 }) {
+  const changeIndex = useCallback(
+    (newIndex: number) => {
+      if (onNavigate) {
+        onNavigate(newIndex);
+      } else if (onIndexChange) {
+        onIndexChange(newIndex);
+      }
+    },
+    [onNavigate, onIndexChange]
+  );
+
   useEffect(() => {
     if (index === null) return;
     const onKey = (e: KeyboardEvent) => {
       if (e.key === "Escape") onClose();
-      if (e.key === "ArrowRight") onIndexChange((index + 1) % photos.length);
-      if (e.key === "ArrowLeft") onIndexChange((index - 1 + photos.length) % photos.length);
+      if (e.key === "ArrowRight") changeIndex((index + 1) % photos.length);
+      if (e.key === "ArrowLeft") changeIndex((index - 1 + photos.length) % photos.length);
     };
     window.addEventListener("keydown", onKey);
     document.body.style.overflow = "hidden";
@@ -26,7 +39,7 @@ export function Lightbox({
       window.removeEventListener("keydown", onKey);
       document.body.style.overflow = "";
     };
-  }, [index, photos.length, onClose, onIndexChange]);
+  }, [index, photos.length, onClose, changeIndex]);
 
   if (index === null) return null;
   const photo = photos[index];
@@ -37,14 +50,14 @@ export function Lightbox({
       role="dialog"
       aria-modal="true"
       aria-label={photo.title}
-      className="fixed inset-0 z-50 flex items-center justify-center bg-maroon-deep/95 p-4 backdrop-blur-sm"
+      className="fixed inset-0 z-50 flex items-center justify-center bg-black/95 p-4 backdrop-blur-md select-none"
       onClick={onClose}
     >
       <button
         type="button"
         aria-label="Close"
         onClick={onClose}
-        className="absolute right-4 top-4 rounded-sm border border-background/30 p-2 text-background hover:bg-background/10"
+        className="absolute right-4 top-4 z-50 rounded-full border border-white/30 bg-black/60 p-2.5 text-white transition-all hover:bg-black/90 hover:scale-105"
       >
         <X className="h-5 w-5" />
       </button>
@@ -54,9 +67,9 @@ export function Lightbox({
         aria-label="Previous photo"
         onClick={(e) => {
           e.stopPropagation();
-          onIndexChange((index - 1 + photos.length) % photos.length);
+          changeIndex((index - 1 + photos.length) % photos.length);
         }}
-        className="absolute left-3 rounded-full border border-background/30 p-2 text-background hover:bg-background/10 md:left-8"
+        className="absolute left-3 z-50 rounded-full border border-white/30 bg-black/60 p-3 text-white transition-all hover:bg-amber-500 hover:text-black hover:scale-110 md:left-8"
       >
         <ChevronLeft className="h-6 w-6" />
       </button>
@@ -68,18 +81,18 @@ export function Lightbox({
             controls
             autoPlay
             loop
-            className="max-h-[75vh] w-full rounded-sm object-contain"
+            className="max-h-[75vh] w-full rounded-md object-contain"
           />
         ) : (
           <img
             src={photo.image}
-            alt={`${photo.title} - flower decoration at ${photo.place}`}
-            className="max-h-[75vh] w-full rounded-sm object-contain"
+            alt={`${photo.title} - ${photo.place}`}
+            className="max-h-[75vh] w-full rounded-md object-contain shadow-2xl"
           />
         )}
-        <figcaption className="mt-4 text-center text-background">
-          <p className="font-display text-xl font-semibold">{photo.title}</p>
-          <p className="text-sm text-background/70">
+        <figcaption className="mt-4 text-center text-white">
+          <p className="font-display text-xl font-bold">{photo.title}</p>
+          <p className="text-sm text-zinc-300">
             {photo.place} · {index + 1} / {photos.length}
           </p>
         </figcaption>
@@ -90,9 +103,9 @@ export function Lightbox({
         aria-label="Next photo"
         onClick={(e) => {
           e.stopPropagation();
-          onIndexChange((index + 1) % photos.length);
+          changeIndex((index + 1) % photos.length);
         }}
-        className="absolute right-3 rounded-full border border-background/30 p-2 text-background hover:bg-background/10 md:right-8"
+        className="absolute right-3 z-50 rounded-full border border-white/30 bg-black/60 p-3 text-white transition-all hover:bg-amber-500 hover:text-black hover:scale-110 md:right-8"
       >
         <ChevronRight className="h-6 w-6" />
       </button>
