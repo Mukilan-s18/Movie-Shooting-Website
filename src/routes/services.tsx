@@ -94,6 +94,15 @@ function PropertySpacesPage() {
               <span className="text-muted-foreground">Versatile Setups</span>
             </div>
           </div>
+
+          <div className="mt-4 rounded-md border border-amber-500/30 bg-amber-500/5 p-3 text-xs text-muted-foreground flex flex-wrap items-center justify-between gap-3">
+            <span>
+              🎥 <strong className="text-foreground">Camera-Tested Track Record:</strong> Filming location for the popular web series <strong className="text-amber-500">Parimala & Co</strong> and multiple Tamil feature productions.
+            </span>
+            <Link to="/gallery" className="shrink-0 font-bold text-amber-500 hover:underline">
+              View Reference Stills →
+            </Link>
+          </div>
         </div>
 
         {/* Property Spaces List */}

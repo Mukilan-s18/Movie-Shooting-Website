@@ -1,4 +1,4 @@
-import { propertyGallery } from "@/lib/business";
+import { allGalleryMedia } from "@/lib/business";
 
 export type Photo = {
   id: string;
@@ -11,7 +11,7 @@ export type Photo = {
   sort_order?: number;
 };
 
-export const fallbackPhotos: Photo[] = propertyGallery.map((g) => ({
+export const fallbackPhotos: Photo[] = allGalleryMedia.map((g) => ({
   id: g.id,
   title: g.title,
   place: g.place,
@@ -22,6 +22,7 @@ export const fallbackPhotos: Photo[] = propertyGallery.map((g) => ({
 
 export const photoCategories = [
   "Video Tour",
+  "Movies & Series",
   "Entrance",
   "Living Hall",
   "Dining Hall",

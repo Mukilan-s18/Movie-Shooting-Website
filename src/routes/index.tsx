@@ -17,7 +17,7 @@ import { SectionHeading } from "@/components/site/SectionHeading";
 import { Reveal } from "@/components/site/Reveal";
 import { Lightbox } from "@/components/site/Lightbox";
 import { VideoTour } from "@/components/site/VideoTour";
-import { business, propertySpaces, propertyGallery, whatsappUrl } from "@/lib/business";
+import { business, propertySpaces, propertyGallery, movieReferences, allGalleryMedia, whatsappUrl } from "@/lib/business";
 import { useI18n } from "@/lib/i18n";
 
 export const Route = createFileRoute("/")({
@@ -255,6 +255,60 @@ function Index() {
         </div>
       </section>
 
+      {/* Featured in Movies & Web Series */}
+      <section className="border-t border-border bg-card/40 py-16">
+        <div className="mx-auto max-w-6xl px-4">
+          <SectionHeading
+            title="Featured in Movies & Web Series"
+            subtitle="Actual Tamil films and web series shot on location at our house, including Parimala & Co."
+          />
+
+          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {movieReferences.slice(0, 6).map((item, idx) => (
+              <Reveal key={item.id} delay={idx * 70}>
+                <div
+                  onClick={() => {
+                    const foundIndex = allGalleryMedia.findIndex((g) => g.id === item.id);
+                    if (foundIndex !== -1) setOpenIndex(foundIndex);
+                  }}
+                  className="group relative cursor-pointer overflow-hidden rounded-xl border border-border bg-card shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-amber-500/50 hover:shadow-xl"
+                >
+                  <div className="relative h-56 w-full overflow-hidden bg-black">
+                    <img
+                      src={item.image}
+                      alt={item.title}
+                      loading="lazy"
+                      className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                    <div className="absolute left-3 top-3 rounded bg-amber-500 px-2 py-0.5 text-[10px] font-bold uppercase text-black">
+                      Filmed Here
+                    </div>
+                  </div>
+                  <div className="p-4">
+                    <h4 className="font-display text-base font-bold text-foreground group-hover:text-amber-500 transition-colors">
+                      {item.title}
+                    </h4>
+                    <p className="mt-1 text-xs text-muted-foreground">{item.place}</p>
+                    <span className="mt-2 inline-block text-[11px] font-medium text-amber-500/90">
+                      {item.note}
+                    </span>
+                  </div>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+
+          <div className="mt-10 text-center">
+            <Link
+              to="/gallery"
+              className="inline-flex items-center gap-2 rounded-md bg-amber-500 px-6 py-3 text-xs font-bold uppercase tracking-wider text-black transition-colors hover:bg-amber-400"
+            >
+              View All 9 Reference Images in Gallery <ArrowRight className="h-4 w-4" />
+            </Link>
+          </div>
+        </div>
+      </section>
+
 
       {/* Property Photo Gallery Strip */}
       <section className="border-t border-border bg-card py-16">
@@ -324,7 +378,7 @@ function Index() {
       {/* Lightbox for gallery view */}
       {openIndex !== null && (
         <Lightbox
-          photos={propertyGallery}
+          photos={allGalleryMedia}
           index={openIndex}
           onClose={() => setOpenIndex(null)}
           onNavigate={(newIdx) => setOpenIndex(newIdx)}

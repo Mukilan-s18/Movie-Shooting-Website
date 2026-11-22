@@ -76,6 +76,11 @@ function AboutPage() {
               The interior architecture is highly versatile, making it <strong className="text-foreground">suitable for middle class to rich house setups</strong> for
               feature films, television serials, OTT series, and advertisement commercials.
             </p>
+            <p>
+              The house has a proven production track record, having been chosen as the filming location for
+              popular Tamil projects including the acclaimed web series <strong className="text-foreground">Parimala & Co</strong> as well
+              as multiple feature films and OTT productions.
+            </p>
           </div>
 
           <div className="mt-6 flex flex-wrap gap-3">

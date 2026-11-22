@@ -5,7 +5,7 @@ import { SectionHeading } from "@/components/site/SectionHeading";
 import { Reveal } from "@/components/site/Reveal";
 import { Lightbox } from "@/components/site/Lightbox";
 import { VideoTour } from "@/components/site/VideoTour";
-import { propertyGallery } from "@/lib/business";
+import { allGalleryMedia } from "@/lib/business";
 import { photoCategories } from "@/lib/photos";
 
 export const Route = createFileRoute("/gallery")({
@@ -29,7 +29,7 @@ function GalleryPage() {
   const [active, setActive] = useState("All");
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
-  const shown = propertyGallery.filter(
+  const shown = allGalleryMedia.filter(
     (g) => active === "All" || g.category === active,
   );
 

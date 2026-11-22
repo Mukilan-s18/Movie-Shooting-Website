@@ -107,3 +107,80 @@ export const propertyGallery = [
     image: "/property/kitchen.jpeg",
   },
 ];
+
+export const movieReferences = [
+  {
+    id: "m-parimala-banner",
+    title: "Parimala & Co",
+    place: "Popular OTT Web Series",
+    category: "Movies & Series",
+    image: "/references/parimala.jpg",
+    note: "Featured On-Screen House",
+  },
+  {
+    id: "m-parimala-still",
+    title: "Parimala & Co Scene Still",
+    place: "Web Series Shoot",
+    category: "Movies & Series",
+    image: "/references/parimala-and-co.jpg",
+    note: "House Interior Sequence",
+  },
+  {
+    id: "m-scene-hd",
+    title: "Feature Film Scene",
+    place: "Tamil Feature Production",
+    category: "Movies & Series",
+    image: "/references/1780038231503-i.jpg",
+    note: "Living Room Scene Setup",
+  },
+  {
+    id: "m-scene-still-2",
+    title: "Movie Scene Capture",
+    place: "Cinema Shoot Reference",
+    category: "Movies & Series",
+    image: "/references/120755032.jpg",
+    note: "Interior Shooting Still",
+  },
+  {
+    id: "m-still-2",
+    title: "Film Production Still",
+    place: "On-Location Shoot",
+    category: "Movies & Series",
+    image: "/references/images-2.jpg",
+    note: "Domestic Scene Setting",
+  },
+  {
+    id: "m-poster-3",
+    title: "Film Production Reference",
+    place: "Tamil Cinema Project",
+    category: "Movies & Series",
+    image: "/references/images-3.jpg",
+    note: "House Sequence",
+  },
+  {
+    id: "m-poster-4",
+    title: "Film Scene Reference",
+    place: "Feature Film Production",
+    category: "Movies & Series",
+    image: "/references/images-4.jpg",
+    note: "Character Sequence Setup",
+  },
+  {
+    id: "m-poster-5",
+    title: "Production Reference Still",
+    place: "Movie & Series Setup",
+    category: "Movies & Series",
+    image: "/references/images-5.jpg",
+    note: "Shot on Location",
+  },
+  {
+    id: "m-poster-1",
+    title: "Screen Appearance Reference",
+    place: "Web Series & Film Shoot",
+    category: "Movies & Series",
+    image: "/references/images.jpg",
+    note: "4/5 Varghese Ave House",
+  },
+];
+
+export const allGalleryMedia = [...propertyGallery, ...movieReferences];
