@@ -1,14 +1,14 @@
-import { Film } from "lucide-react";
-
 export function Logo({ compact = false }: { compact?: boolean }) {
   return (
     <div className="flex items-center gap-2.5">
       <div
-        className={`flex items-center justify-center rounded border border-border bg-card text-primary shrink-0 ${
-          compact ? "h-8 w-8" : "h-10 w-10"
+        className={`flex items-center justify-center rounded border border-border bg-card shrink-0 select-none ${
+          compact ? "h-8 w-8 text-sm sm:text-base" : "h-10 w-10 text-lg sm:text-xl"
         }`}
       >
-        <Film className={compact ? "h-4 w-4" : "h-5 w-5"} />
+        <span role="img" aria-label="Movie Camera">
+          🎥
+        </span>
       </div>
       <div className="flex flex-col">
         <span
