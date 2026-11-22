@@ -1,8 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { useState } from "react";
-import { Menu, Phone, X, Languages, CalendarCheck, Play } from "lucide-react";
+import { Menu, Phone, X, CalendarCheck, Play } from "lucide-react";
 import { Logo } from "./Logo";
-import { ThemeToggle } from "./ThemeToggle";
 import { business } from "@/lib/business";
 import { useI18n } from "@/lib/i18n";
 
@@ -16,7 +15,7 @@ const linkKeys = [
 
 export function Header() {
   const [open, setOpen] = useState(false);
-  const { lang, setLang, t } = useI18n();
+  const { t } = useI18n();
 
   return (
     <header className="sticky top-0 z-40 border-b border-border bg-background/90 backdrop-blur-md">
@@ -45,17 +44,6 @@ export function Header() {
             <Play className="h-3 w-3 fill-amber-500" /> Video Tour
           </a>
 
-          <button
-            onClick={() => setLang(lang === "en" ? "ta" : "en")}
-            className="inline-flex h-9 items-center justify-center gap-1.5 rounded-md border border-border px-2.5 text-xs font-semibold text-foreground transition-colors hover:bg-muted"
-            aria-label="Toggle language"
-          >
-            <Languages className="h-3.5 w-3.5 text-amber-500" />{" "}
-            {lang === "en" ? "தமிழ்" : "English"}
-          </button>
-
-          <ThemeToggle />
-
           <Link
             to="/contact"
             className="inline-flex items-center gap-1.5 rounded-md bg-amber-500 px-3.5 py-2 text-xs font-bold uppercase tracking-wide text-black shadow-sm transition-opacity hover:opacity-95"
@@ -74,14 +62,6 @@ export function Header() {
         </nav>
 
         <div className="flex items-center gap-2 md:hidden">
-          <button
-            onClick={() => setLang(lang === "en" ? "ta" : "en")}
-            className="flex h-9 w-9 items-center justify-center rounded-md border border-border transition-colors hover:bg-muted"
-            aria-label="Toggle language"
-          >
-            <Languages className="h-4 w-4 text-amber-500" />
-          </button>
-          <ThemeToggle />
           <button
             type="button"
             onClick={() => setOpen((v) => !v)}
