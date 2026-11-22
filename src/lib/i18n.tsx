@@ -20,7 +20,7 @@ export const translations: Translations = {
     ta: "வடபழனி · அசோக் நகர், சென்னை",
   },
   heroTitle: {
-    en: "Movie Shooting House in Vadapalani",
+    en: "Vadapalani Shooting House",
     ta: "வடபழனி திரைப்பட படப்பிடிப்பு இல்லம்",
   },
   heroSubtitle: {

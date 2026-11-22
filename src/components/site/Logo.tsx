@@ -12,11 +12,11 @@ export function Logo({ compact = false }: { compact?: boolean }) {
       </span>
       <div className="flex flex-col">
         <span
-          className={`font-display font-extrabold tracking-wider text-foreground ${
-            compact ? "text-base md:text-lg" : "text-xl md:text-2xl"
+          className={`font-display font-extrabold tracking-wider text-foreground leading-tight ${
+            compact ? "text-sm sm:text-base md:text-lg" : "text-base sm:text-xl md:text-2xl"
           }`}
         >
-          SHOOTING <span className="text-amber-500">HOUSE</span>
+          VADAPALANI <span className="text-amber-500 whitespace-nowrap">SHOOTING HOUSE</span>
         </span>
         <span
           className={`font-semibold uppercase tracking-widest text-muted-foreground ${

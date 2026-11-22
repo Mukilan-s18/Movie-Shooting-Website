@@ -12,7 +12,7 @@ export const Route = createFileRoute("/gallery")({
   head: () => ({
     meta: [
       {
-        title: "Photo & Video Gallery - Movie Shooting House",
+        title: "Photo & Video Gallery - Vadapalani Shooting House",
       },
       {
         name: "description",

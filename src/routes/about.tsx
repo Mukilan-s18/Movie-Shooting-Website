@@ -17,7 +17,7 @@ export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
       {
-        title: "About The Property - Movie Shooting House Vadapalani",
+        title: "About The Property - Vadapalani Shooting House",
       },
       {
         name: "description",

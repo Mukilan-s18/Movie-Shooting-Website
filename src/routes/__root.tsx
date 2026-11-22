@@ -80,18 +80,18 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       {
-        title: "Movie Shooting House Rental - Vadapalani, Chennai",
+        title: "Vadapalani Shooting House - Movie & Film Shoot Rental, Chennai",
       },
       {
         name: "description",
         content:
           "2-floor movie shooting house at 4/5 Varghese Avenue, Ashok Nagar, Vadapalani, Chennai. Empty big entrance, 2 BHK on each floor, suitable for middle class to rich house setups.",
       },
-      { name: "author", content: "Movie Shooting House" },
+      { name: "author", content: "Vadapalani Shooting House" },
       { property: "og:type", content: "website" },
       {
         property: "og:title",
-        content: "Movie Shooting House Rental - Vadapalani, Chennai",
+        content: "Vadapalani Shooting House - Movie & Film Shoot Rental, Chennai",
       },
       {
         property: "og:description",

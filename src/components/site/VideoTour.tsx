@@ -10,7 +10,7 @@ export function VideoTour({ className = "" }: { className?: string }) {
       <div className="relative aspect-video w-full overflow-hidden rounded-xl border border-amber-500/40 bg-black shadow-2xl">
         <iframe
           src={embedUrl}
-          title="Property Video Tour - Movie Shooting House Vadapalani"
+          title="Property Video Tour - Vadapalani Shooting House"
           className="h-full w-full"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           allowFullScreen

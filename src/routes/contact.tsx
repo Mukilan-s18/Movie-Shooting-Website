@@ -34,7 +34,7 @@ export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
       {
-        title: "Contact & Recce Booking - Movie Shooting House Vadapalani",
+        title: "Contact & Recce Booking - Vadapalani Shooting House",
       },
       {
         name: "description",

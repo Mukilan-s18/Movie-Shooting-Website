@@ -24,7 +24,7 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       {
-        title: "Movie Shooting House - Vadapalani, Ashok Nagar, Chennai",
+        title: "Vadapalani Shooting House - Ashok Nagar, Chennai",
       },
       {
         name: "description",

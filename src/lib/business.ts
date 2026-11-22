@@ -1,6 +1,6 @@
 export const business = {
-  name: "Movie Shooting House",
-  shortName: "Shooting House",
+  name: "Vadapalani Shooting House",
+  shortName: "Vadapalani Shooting House",
   owner: "Location Coordinator",
   tagline: "2-Floor Independent House with Empty Big Entrance · 2 BHK Each Floor · Suitable for Middle Class to Rich House Setups",
   phonePrimary: "7010833853",
