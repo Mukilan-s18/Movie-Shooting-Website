@@ -1,15 +1,15 @@
 export function Logo({ compact = false }: { compact?: boolean }) {
   return (
-    <div className="flex items-center gap-3">
-      <div
-        className={`flex items-center justify-center rounded-md bg-gradient-to-br from-amber-500 to-amber-700 text-black shadow-md ${
-          compact ? "h-10 w-10 text-xl" : "h-12 w-12 text-2xl"
+    <div className="flex items-center gap-2.5">
+      <span
+        role="img"
+        aria-label="Movie Camera"
+        className={`leading-none select-none ${
+          compact ? "text-2xl md:text-3xl" : "text-3xl md:text-4xl"
         }`}
       >
-        <span role="img" aria-label="Movie Camera" className="leading-none select-none">
-          🎥
-        </span>
-      </div>
+        🎥
+      </span>
       <div className="flex flex-col">
         <span
           className={`font-display font-extrabold tracking-wider text-foreground ${
