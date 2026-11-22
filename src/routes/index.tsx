@@ -240,65 +240,6 @@ function Index() {
         </div>
       </section>
 
-      {/* House Details & Filming Features */}
-      <section className="border-t border-border bg-card/60 py-16">
-        <div className="mx-auto max-w-6xl px-4">
-          <SectionHeading
-            title="House Details & Features"
-            subtitle="Spacious 2-floor layout tailored for film, television serial, and web series productions."
-          />
-
-          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            <div className="rounded-xl border border-border bg-card p-6 shadow-sm">
-              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-amber-500/10 text-amber-500">
-                <Building className="h-5 w-5" />
-              </div>
-              <h3 className="mt-4 font-display text-lg font-bold text-foreground">
-                2 Floors Structure
-              </h3>
-              <p className="mt-2 text-xs leading-relaxed text-muted-foreground">
-                Independent Ground + 1st floor building offering ample depth and multi-angle scene setups.
-              </p>
-            </div>
-
-            <div className="rounded-xl border border-border bg-card p-6 shadow-sm">
-              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-amber-500/10 text-amber-500">
-                <DoorOpen className="h-5 w-5" />
-              </div>
-              <h3 className="mt-4 font-display text-lg font-bold text-foreground">
-                Empty Big Entrance
-              </h3>
-              <p className="mt-2 text-xs leading-relaxed text-muted-foreground">
-                Wide open frontage and entrance area for camera tracks, lighting gear, vehicle arrival, and exterior scenes.
-              </p>
-            </div>
-
-            <div className="rounded-xl border border-border bg-card p-6 shadow-sm">
-              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-amber-500/10 text-amber-500">
-                <Home className="h-5 w-5" />
-              </div>
-              <h3 className="mt-4 font-display text-lg font-bold text-foreground">
-                2 BHK Each Floor
-              </h3>
-              <p className="mt-2 text-xs leading-relaxed text-muted-foreground">
-                Two separate 2 BHK units (living hall, dining area, kitchen, rooms) for parallel scene setups.
-              </p>
-            </div>
-
-            <div className="rounded-xl border border-border bg-card p-6 shadow-sm">
-              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-amber-500/10 text-amber-500">
-                <Sparkles className="h-5 w-5" />
-              </div>
-              <h3 className="mt-4 font-display text-lg font-bold text-foreground">
-                Middle Class to Rich Setups
-              </h3>
-              <p className="mt-2 text-xs leading-relaxed text-muted-foreground">
-                Highly adaptable interior aesthetic that easily dresses for modest middle-class homes or upscale affluent houses.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* Property Photo Gallery Strip */}
       <section className="border-t border-border bg-card py-16">
