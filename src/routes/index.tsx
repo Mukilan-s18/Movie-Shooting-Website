@@ -50,23 +50,22 @@ function Index() {
             alt="Shooting House Exterior Facade"
             className="h-full w-full object-cover object-center"
           />
-          {/* Directional left gradient ensures high text contrast on the left while leaving the house and entrance vivid and visible on the center and right */}
-          <div className="absolute inset-0 bg-gradient-to-r from-black/95 via-black/60 via-45% to-transparent" />
-          <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-transparent to-black/30" />
+          {/* High transparency gradient: removes heavy foggy bottom overlay and keeps the exterior facade, gate, and trees fully bright and visible */}
+          <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/20 via-50% to-transparent" />
         </div>
 
         <div className="relative z-10 mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-xl text-left">
-            <div className="inline-flex items-center gap-2 rounded-full border border-amber-500/40 bg-black/70 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-amber-400 backdrop-blur-md shadow-md">
+            <div className="inline-flex items-center gap-2 rounded-full border border-amber-500/50 bg-black/60 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-amber-400 backdrop-blur-md shadow-lg">
               <MapPin className="h-3.5 w-3.5 text-amber-400" />
               <span>4/5 Varghese Avenue, Ashok Nagar, Vadapalani</span>
             </div>
 
-            <h1 className="mt-5 font-display text-3xl font-extrabold tracking-tight text-white drop-shadow-md sm:text-5xl md:text-6xl leading-[1.1]">
+            <h1 className="mt-5 font-display text-3xl font-extrabold tracking-tight text-white [text-shadow:_0_3px_14px_rgba(0,0,0,0.9)] sm:text-5xl md:text-6xl leading-[1.1]">
               {t("heroTitle")}
             </h1>
 
-            <p className="mt-5 max-w-lg text-sm font-medium leading-relaxed text-zinc-200 drop-shadow sm:text-base">
+            <p className="mt-5 max-w-lg text-sm font-medium leading-relaxed text-white [text-shadow:_0_2px_8px_rgba(0,0,0,0.9)] sm:text-base">
               {t("heroSubtitle")}
             </p>
 
@@ -80,7 +79,7 @@ function Index() {
               </a>
               <a
                 href="#property-spaces"
-                className="inline-flex items-center gap-2 rounded-md border border-border bg-black/70 px-6 py-3.5 text-sm font-bold uppercase tracking-wide text-white backdrop-blur-md transition-colors hover:border-amber-400 hover:bg-black/90"
+                className="inline-flex items-center gap-2 rounded-md border border-white/20 bg-black/70 px-6 py-3.5 text-sm font-bold uppercase tracking-wide text-white backdrop-blur-md transition-colors hover:border-amber-400 hover:bg-black/90"
               >
                 <Home className="h-4 w-4 text-amber-400" />
                 {t("viewOurWork")}
