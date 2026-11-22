@@ -29,7 +29,7 @@ function NotFoundComponent() {
         <div className="mt-6">
           <Link
             to="/"
-            className="inline-flex items-center justify-center rounded-md bg-amber-500 px-4 py-2 text-sm font-semibold text-black transition-colors hover:bg-amber-600"
+            className="inline-flex items-center justify-center rounded bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground transition-colors hover:opacity-90"
           >
             Back to Home
           </Link>
@@ -58,13 +58,13 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
               router.invalidate();
               reset();
             }}
-            className="inline-flex items-center justify-center rounded-md bg-amber-500 px-4 py-2 text-sm font-semibold text-black transition-colors hover:bg-amber-600"
+            className="inline-flex items-center justify-center rounded bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground transition-colors hover:opacity-90"
           >
             Try again
           </button>
           <a
             href="/"
-            className="inline-flex items-center justify-center rounded-md border border-input bg-background px-4 py-2 text-sm font-medium text-foreground transition-colors hover:bg-accent"
+            className="inline-flex items-center justify-center rounded border border-border bg-card px-4 py-2 text-sm font-medium text-foreground transition-colors hover:bg-muted"
           >
             Back to Home
           </a>
@@ -74,31 +74,162 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   );
 }
 
+const rootJsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "LocalBusiness",
+      "@id": "https://vadapalanishootinghouse.com/#business",
+      "name": "Vadapalani Shooting House",
+      "alternateName": "Vadapalani Movie Shooting House",
+      "description":
+        "2-floor independent movie shooting house at 4/5 Varghese Avenue, Ashok Nagar, Vadapalani, Chennai. Empty wide entrance, 2 BHK each floor, filming location for Tourist Family and Parimala and Co.",
+      "url": "https://vadapalanishootinghouse.com",
+      "telephone": ["+917010833853", "+91883504143"],
+      "email": "Pranav280806@gmail.com",
+      "priceRange": "₹₹",
+      "currenciesAccepted": "INR",
+      "paymentAccepted": "Cash, Bank Transfer, UPI",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "4/5 Varghese Avenue, Ashok Nagar",
+        "addressLocality": "Vadapalani, Chennai",
+        "addressRegion": "Tamil Nadu",
+        "postalCode": "600083",
+        "addressCountry": "IN",
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 13.0336,
+        "longitude": 80.2114,
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday",
+            "Sunday",
+          ],
+          "opens": "00:00",
+          "closes": "23:59",
+        },
+      ],
+      "image": [
+        "https://vadapalanishootinghouse.com/property/hero-bg.jpg",
+        "https://vadapalanishootinghouse.com/property/exterior-facade.jpeg",
+        "https://vadapalanishootinghouse.com/property/living-hall.jpeg",
+      ],
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://vadapalanishootinghouse.com/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Where is Vadapalani Shooting House located in Chennai?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text":
+              "The shooting house is located at 4/5 Varghese Avenue, Ashok Nagar, Vadapalani, Chennai, within Chennai's central cinema production zone.",
+          },
+        },
+        {
+          "@type": "Question",
+          "name": "Which Tamil films and series were filmed here?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text":
+              "The house was the verified filming location for the Tamil feature film Tourist Family (starring M. Sasikumar and Simran), the Tamil film Parimala & Co, and the JioHotstar web series Brothers and Sisters.",
+          },
+        },
+        {
+          "@type": "Question",
+          "name": "What are the property layout specifications?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text":
+              "The property is an independent 2-floor house featuring a wide empty front entrance area for crew vehicles and camera equipment, with 2 BHK floor plans on each floor suitable for middle-class to rich home setups.",
+          },
+        },
+        {
+          "@type": "Question",
+          "name": "How do I schedule an in-person recce walkthrough?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text":
+              "You can schedule an in-person recce walkthrough by calling 70108 33853 or 883504143, or by messaging our location manager directly on WhatsApp.",
+          },
+        },
+      ],
+    },
+  ],
+};
+
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
   head: () => ({
     meta: [
       { charSet: "utf-8" },
-      { name: "viewport", content: "width=device-width, initial-scale=1" },
+      { name: "viewport", content: "width=device-width, initial-scale=1, viewport-fit=cover" },
+      { name: "theme-color", content: "#FDF8D6" },
+      { name: "format-detection", content: "telephone=no" },
+      { name: "apple-mobile-web-app-capable", content: "yes" },
+      { name: "apple-mobile-web-app-status-bar-style", content: "default" },
+      { name: "apple-mobile-web-app-title", content: "Shooting House" },
       {
-        title: "Vadapalani Shooting House - Movie & Film Shoot Rental, Chennai",
+        title: "Vadapalani Shooting House Chennai | 2-Floor Movie & Film Shoot Rental",
       },
       {
         name: "description",
         content:
-          "2-floor movie shooting house at 4/5 Varghese Avenue, Ashok Nagar, Vadapalani, Chennai. Empty big entrance, 2 BHK on each floor, suitable for middle class to rich house setups.",
+          "Private 2-floor movie shooting house at 4/5 Varghese Avenue, Ashok Nagar, Vadapalani, Chennai. Empty big entrance, 2 BHK on each floor, filming location for Tourist Family & Parimala and Co. Call 70108 33853 / 883504143.",
+      },
+      {
+        name: "keywords",
+        content:
+          "movie shooting house chennai, vadapalani shooting house, film shooting house rental chennai, shooting house ashok nagar, 2 floor shooting house chennai, tourist family movie house, parimala and co film house, brothers and sisters shooting location, film shooting sets chennai, shooting house for rent in chennai",
       },
       { name: "author", content: "Vadapalani Shooting House" },
+      { name: "robots", content: "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" },
+      { name: "geo.region", content: "IN-TN" },
+      { name: "geo.placename", content: "Chennai, Vadapalani, Ashok Nagar" },
+      { name: "geo.position", content: "13.0336;80.2114" },
+      { name: "ICBM", content: "13.0336, 80.2114" },
       { property: "og:type", content: "website" },
+      { property: "og:site_name", content: "Vadapalani Shooting House" },
+      { property: "og:locale", content: "en_IN" },
       {
         property: "og:title",
-        content: "Vadapalani Shooting House - Movie & Film Shoot Rental, Chennai",
+        content: "Vadapalani Shooting House Chennai | Movie & Film Shoot Rental",
       },
       {
         property: "og:description",
         content:
-          "2-floor independent house in Vadapalani / Ashok Nagar with empty big entrance, 2 BHK each floor, suitable for middle class to rich house setups.",
+          "2-floor independent movie shooting house in Vadapalani / Ashok Nagar, Chennai. Empty wide entrance, 2 BHK per floor. Verified location for Tourist Family, Parimala & Co, Brothers and Sisters.",
       },
+      { property: "og:image", content: "/property/hero-bg.jpg" },
+      { property: "og:image:alt", content: "Vadapalani Shooting House Chennai" },
       { name: "twitter:card", content: "summary_large_image" },
+      {
+        name: "twitter:title",
+        content: "Vadapalani Shooting House Chennai | Film Shoot House Rental",
+      },
+      {
+        name: "twitter:description",
+        content:
+          "Private 2-floor film shooting house in Vadapalani / Ashok Nagar, Chennai. Empty big entrance, 2 BHK each floor. Call 70108 33853.",
+      },
+      { name: "twitter:image", content: "/property/hero-bg.jpg" },
+    ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify(rootJsonLd),
+      },
     ],
     links: [
       {
@@ -154,7 +285,7 @@ function RootComponent() {
       <I18nProvider>
         <div className="flex min-h-screen flex-col">
           <Header />
-          <main className="flex-1 pb-14 md:pb-0">
+          <main className="flex-1 pb-20 md:pb-0">
             <Outlet />
           </main>
           <Footer />

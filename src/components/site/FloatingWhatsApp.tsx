@@ -17,9 +17,9 @@ export function FloatingWhatsApp() {
   }, []);
 
   return (
-    <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-2 md:bottom-10 md:right-10">
+    <div className="fixed bottom-24 right-4 z-50 flex flex-col items-end gap-2 md:bottom-10 md:right-10 mb-[env(safe-area-inset-bottom)]">
       {showTooltip && (
-        <div className="animate-in fade-in slide-in-from-bottom-2 relative rounded-lg bg-card p-3 text-sm shadow-xl ring-1 ring-border">
+        <div className="animate-in fade-in slide-in-from-bottom-2 relative rounded-lg bg-card p-3 text-sm shadow-xl ring-1 ring-border max-w-[240px] text-left">
           <p className="font-semibold text-foreground">Planning a film shoot or recce?</p>
           <p className="text-xs text-muted-foreground mt-0.5">
             Chat instantly with our Location Manager

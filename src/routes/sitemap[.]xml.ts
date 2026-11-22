@@ -1,9 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import type {} from "@tanstack/react-start";
 
-// TODO: replace with your project URL once a project name or custom domain is set.
-const BASE_URL = "";
-
 interface SitemapEntry {
   path: string;
   lastmod?: string;
@@ -14,19 +11,31 @@ interface SitemapEntry {
 export const Route = createFileRoute("/sitemap.xml")({
   server: {
     handlers: {
-      GET: async () => {
+      GET: async ({ request }) => {
+        let baseUrl = "https://vadapalanishootinghouse.com";
+        try {
+          if (request?.url) {
+            const parsed = new URL(request.url);
+            if (parsed.origin && !parsed.origin.includes("localhost")) {
+              baseUrl = parsed.origin;
+            }
+          }
+        } catch (_) {}
+
+        const today = new Date().toISOString().split("T")[0];
+
         const entries: SitemapEntry[] = [
-          { path: "/", changefreq: "weekly", priority: "1.0" },
-          { path: "/about", changefreq: "monthly", priority: "0.8" },
-          { path: "/services", changefreq: "monthly", priority: "0.9" },
-          { path: "/gallery", changefreq: "weekly", priority: "0.9" },
-          { path: "/contact", changefreq: "monthly", priority: "0.8" },
+          { path: "/", lastmod: today, changefreq: "weekly", priority: "1.0" },
+          { path: "/services", lastmod: today, changefreq: "weekly", priority: "0.9" },
+          { path: "/gallery", lastmod: today, changefreq: "weekly", priority: "0.9" },
+          { path: "/about", lastmod: today, changefreq: "monthly", priority: "0.8" },
+          { path: "/contact", lastmod: today, changefreq: "monthly", priority: "0.8" },
         ];
 
         const urls = entries.map((e) =>
           [
             `  <url>`,
-            `    <loc>${BASE_URL}${e.path}</loc>`,
+            `    <loc>${baseUrl}${e.path}</loc>`,
             e.lastmod ? `    <lastmod>${e.lastmod}</lastmod>` : null,
             e.changefreq ? `    <changefreq>${e.changefreq}</changefreq>` : null,
             e.priority ? `    <priority>${e.priority}</priority>` : null,
@@ -45,7 +54,7 @@ export const Route = createFileRoute("/sitemap.xml")({
 
         return new Response(xml, {
           headers: {
-            "Content-Type": "application/xml",
+            "Content-Type": "application/xml; charset=utf-8",
             "Cache-Control": "public, max-age=3600",
           },
         });
