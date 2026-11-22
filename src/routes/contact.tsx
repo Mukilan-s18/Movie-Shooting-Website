@@ -364,6 +364,44 @@ function ContactPage() {
           </form>
         </div>
       </div>
+
+      {/* Interactive Location Map */}
+      <div className="mx-auto mt-12 max-w-6xl px-4">
+        <div className="overflow-hidden rounded-xl border border-border bg-card p-4 shadow-sm md:p-6">
+          <div className="mb-4 flex flex-wrap items-center justify-between gap-4">
+            <div>
+              <span className="text-[10px] font-bold uppercase tracking-wider text-amber-500">
+                Location Map & Street View
+              </span>
+              <h3 className="font-display text-lg font-bold text-foreground">
+                4/5 Varghese Avenue, Ashok Nagar, Vadapalani, Chennai
+              </h3>
+            </div>
+            <a
+              href={business.mapsUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-1.5 rounded-md border border-border px-3 py-1.5 text-xs font-semibold text-foreground hover:bg-muted"
+            >
+              <MapPin className="h-3.5 w-3.5 text-amber-500" /> Open in Google Maps
+            </a>
+          </div>
+
+          <div className="overflow-hidden rounded-lg border border-border bg-muted shadow-inner">
+            <iframe
+              src={business.mapsEmbedUrl}
+              width="100%"
+              height="380"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="strict-origin-when-cross-origin"
+              title="Property Location Map"
+              className="w-full"
+            />
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

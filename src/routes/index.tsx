@@ -192,8 +192,8 @@ function Index() {
         </div>
       </section>
 
-      {/* Location Callout Banner */}
-      <section className="border-y border-border bg-card py-12">
+      {/* Location Callout Banner & Google Map */}
+      <section className="border-y border-border bg-card py-14">
         <div className="mx-auto max-w-5xl px-4">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6 rounded-xl border border-amber-500/30 bg-background p-6 shadow-sm">
             <div>
@@ -236,6 +236,21 @@ function Index() {
                 <CalendarCheck className="h-4 w-4" /> Book Recce
               </Link>
             </div>
+          </div>
+
+          {/* Embedded Google Map */}
+          <div className="mt-6 overflow-hidden rounded-xl border border-border bg-muted shadow-md">
+            <iframe
+              src={business.mapsEmbedUrl}
+              width="100%"
+              height="420"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="strict-origin-when-cross-origin"
+              title="Google Maps Location - 4/5 Varghese Avenue, Ashok Nagar, Vadapalani, Chennai"
+              className="w-full"
+            />
           </div>
         </div>
       </section>

@@ -16,7 +16,9 @@ export const business = {
   area: "Ashok Nagar / Vadapalani",
   state: "Tamil Nadu",
   mapsUrl:
-    "https://www.google.com/maps/search/?api=1&query=4%2F5+Varghese+Avenue+Ashok+Nagar+Vadapalani+Chennai",
+    "https://www.google.com/maps?q=13.04668865005922,80.21520652988471",
+  mapsEmbedUrl:
+    "https://www.google.com/maps/embed?pb=!4v1795364848659!6m8!1m7!1saPt1k-cXkk-VRvGfh2dYSQ!2m2!1d13.04668865005922!2d80.21520652988471!3f4.329979762354583!4f-1.283103089948952!5f0.7820865974627469",
   videoTour: {
     localSrc: "/video/tour.mp4",
     youtubeUrl: "",

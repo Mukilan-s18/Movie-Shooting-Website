@@ -149,6 +149,21 @@ function AboutPage() {
             </p>
           </div>
 
+          {/* Embedded Google Map */}
+          <div className="mt-6 overflow-hidden rounded-xl border border-border bg-muted shadow-md">
+            <iframe
+              src={business.mapsEmbedUrl}
+              width="100%"
+              height="380"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="strict-origin-when-cross-origin"
+              title="Google Maps Location - 4/5 Varghese Avenue, Ashok Nagar, Vadapalani, Chennai"
+              className="w-full"
+            />
+          </div>
+
           <div className="mt-8 flex justify-center gap-3">
             <a
               href={business.mapsUrl}
