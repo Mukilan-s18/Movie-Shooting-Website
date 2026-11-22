@@ -87,8 +87,8 @@ function Index() {
         {/* Background Property Image */}
         <div className="absolute inset-0">
           <img
-            src="/property/hero.jpg"
-            alt="Cinewood Shooting Villa"
+            src="/property/exterior-facade.jpeg"
+            alt="Cinewood Shooting Villa Facade"
             className="h-full w-full object-cover opacity-35 animate-ken-burns"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-background via-black/70 to-black/85" />

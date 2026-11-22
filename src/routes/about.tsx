@@ -63,8 +63,8 @@ function AboutPage() {
       <section className="mx-auto grid max-w-6xl items-center gap-10 px-4 py-14 md:grid-cols-2">
         <div className="relative overflow-hidden rounded-xl bg-muted shadow-md">
           <img
-            src="/property/hero.jpg"
-            alt="Cinewood Shooting Villa Exterior"
+            src="/property/exterior-facade.jpeg"
+            alt="Cinewood Shooting Villa Exterior Facade"
             width={1200}
             height={800}
             loading="lazy"

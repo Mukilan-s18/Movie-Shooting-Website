@@ -19,9 +19,9 @@ export const business = {
   videoTour: {
     // Local video placed at public/video/tour.mp4
     localSrc: "/video/tour.mp4",
-    // Or paste a YouTube / Vimeo embed URL here (e.g. "https://www.youtube.com/embed/dQw4w9WgXcQ")
+    // Optional external YouTube/Vimeo embed URL
     youtubeUrl: "",
-    duration: "3:45 mins Walkthrough",
+    duration: "Property Walkthrough Video",
   },
   propertySpecs: {
     plotArea: "7,500 sq.ft.",
@@ -51,19 +51,67 @@ export type PropertySpace = {
 
 export const propertySpaces: PropertySpace[] = [
   {
-    id: "living-hall",
-    title: "Grand Double-Height Living Hall",
-    area: "1,600 sq.ft.",
-    ceiling: "16 ft clearance",
+    id: "exterior-facade",
+    title: "Exterior Facade & Gated Compound",
+    area: "2,500 sq.ft. Frontage",
+    ceiling: "Open Sky",
     description:
-      "Expansive central hall featuring 16-foot high ceilings, designer chandelier, floating wooden staircase, polished marble flooring, and floor-to-ceiling glass walls providing rich natural fill light.",
-    image: "/property/living-hall.jpg",
-    suitableScenes: "Family drama, rich protagonist home, confrontation scenes, party sequences",
+      "Striking private villa facade with distinct architectural design, private compound gate, driveway for car arrival shots, and spacious clearance for camera cranes, jib arms, and heavy lighting setups.",
+    image: "/property/exterior-facade.jpeg",
+    suitableScenes: "Hero/Heroine arrival shots, exterior confrontations, compound gate dialogues, luxury estate establishers",
     features: [
-      "16 ft high ceiling for overhead light grids",
-      "Large double doors for dolly tracks & jibs",
+      "Wide gated driveway accommodating luxury cars and vans",
+      "Direct outdoor 3-phase power drop sockets for HMIs",
+      "Private compound walls ensuring complete shoot privacy",
+      "Clear exterior sightlines with zero visual distractions",
+    ],
+  },
+  {
+    id: "living-hall",
+    title: "Grand Living Hall & Lounge",
+    area: "1,600 sq.ft.",
+    ceiling: "14 ft clearance",
+    description:
+      "Spacious main hall with clean tiled flooring, wide wall angles, multiple entry/exit points for actor blocking, and expansive space for tracks, dolly movements, and large indoor crews.",
+    image: "/property/living-hall.jpeg",
+    suitableScenes: "Family conversations, rich home interior dialogues, party sequences, intense confrontation scenes",
+    features: [
+      "High ceiling clearance suitable for light stands and boom mics",
+      "Multiple camera turnaround angles and wide doorways",
       "Silent inverter AC units for sync-sound recording",
-      "Multiple 32A power drop sockets",
+      "Clean power distribution sockets across all corners",
+    ],
+  },
+  {
+    id: "dining-hall",
+    title: "Dining Hall & Gathering Area",
+    area: "600 sq.ft.",
+    ceiling: "12 ft clearance",
+    description:
+      "Dedicated dining and gathering hall connecting the living room and kitchen. Perfect for family meal dialogues, formal dinner scenes, or company conference table setups.",
+    image: "/property/dining-hall.jpeg",
+    suitableScenes: "Breakfast conversations, family dining conflicts, serious discussions, party catering setups",
+    features: [
+      "Accommodates 8 to 12-seater dining table configurations",
+      "Wide 360-degree camera clearance around the table",
+      "Direct access to both living room and kitchen for continuous takes",
+      "Soft ambient overhead lighting setup",
+    ],
+  },
+  {
+    id: "kitchen",
+    title: "Contemporary Kitchen Setup",
+    area: "450 sq.ft.",
+    ceiling: "11 ft clearance",
+    description:
+      "Functional modern kitchen featuring clean countertops, storage cabinets, sink area, and wide standing space for camera operators, lights, and actors.",
+    image: "/property/kitchen.jpeg",
+    suitableScenes: "Cooking scenes, mother-child emotional talks, casual breakfast conversations, domestic drama",
+    features: [
+      "Functional kitchen slab with clean backdrop tiles",
+      "Spacious enough for two-camera setups and sound boom",
+      "Dedicated ventilation and power outlets",
+      "Natural daylight window for warm fill light",
     ],
   },
   {
@@ -72,7 +120,7 @@ export const propertySpaces: PropertySpace[] = [
     area: "650 sq.ft.",
     ceiling: "11 ft clearance",
     description:
-      "Spacious master bedroom with modern king-size wooden bed, warm ambient cove lighting, wooden paneling, private dressing closet, and wide sliding doors opening to an airy private balcony.",
+      "Spacious master bedroom with modern king-size wooden bed, warm ambient cove lighting, wooden paneling, private dressing area, and wide sliding doors opening to an airy private balcony.",
     image: "/property/master-bedroom.jpg",
     suitableScenes: "Romantic scenes, bedroom conversations, song tracks, emotional moments",
     features: [
@@ -80,38 +128,6 @@ export const propertySpaces: PropertySpace[] = [
       "Natural morning & evening diffused light",
       "Attached luxury bathroom with modern bathtub",
       "Sound-damped doors and windows",
-    ],
-  },
-  {
-    id: "kitchen-dining",
-    title: "Open Island Kitchen & Dining Space",
-    area: "550 sq.ft.",
-    ceiling: "11 ft clearance",
-    description:
-      "Contemporary open-plan kitchen with granite central island, designer bar stools, chimney, modern cabinetry, and an adjoining 8-seater wooden dining table setup.",
-    image: "/property/kitchen-dining.jpg",
-    suitableScenes: "Breakfast conversations, mother-child dialogues, cooking scenes, casual arguments",
-    features: [
-      "Functional cooking island with clean countertops",
-      "Wide camera turnaround space around the dining table",
-      "Soft down-lighting with dimmer controls",
-      "Pantry storage area for props",
-    ],
-  },
-  {
-    id: "lawn-garden",
-    title: "Lawn, Verandah & Front Porch",
-    area: "2,500 sq.ft.",
-    ceiling: "Open Sky",
-    description:
-      "Beautifully manicured lush green lawn bordered by tropical palms, stone walkways, wide covered car porch for hero/heroine vehicle arrival shots, and a relaxed sitting verandah.",
-    image: "/property/lawn-garden.jpg",
-    suitableScenes: "Car arrival shots, walking conversations, garden fights, outdoor party setups",
-    features: [
-      "Wide porch accommodating luxury cars for drive-in shots",
-      "Direct power drops for outdoor HMI daylight fixtures",
-      "Privacy compound wall preventing bystander interference",
-      "Clean stone paved walkways for track & dolly",
     ],
   },
   {
@@ -150,18 +166,32 @@ export const propertySpaces: PropertySpace[] = [
 
 export const propertyGallery = [
   {
-    id: "g-hero",
-    title: "Villa Front View & Private Compound",
-    place: "Exterior Facade",
+    id: "g-facade",
+    title: "Exterior Facade & Gated Compound",
+    place: "Front Entrance",
     category: "Exterior & Lawn",
-    image: "/property/hero.jpg",
+    image: "/property/exterior-facade.jpeg",
   },
   {
     id: "g-living",
-    title: "Double-Height Living Room",
+    title: "Main Living Hall & Lounge",
     place: "Ground Floor",
     category: "Living Hall",
-    image: "/property/living-hall.jpg",
+    image: "/property/living-hall.jpeg",
+  },
+  {
+    id: "g-dining",
+    title: "Dining Hall & Gathering Space",
+    place: "Ground Floor",
+    category: "Kitchen & Dining",
+    image: "/property/dining-hall.jpeg",
+  },
+  {
+    id: "g-kitchen",
+    title: "Contemporary Kitchen Setup",
+    place: "Ground Floor",
+    category: "Kitchen & Dining",
+    image: "/property/kitchen.jpeg",
   },
   {
     id: "g-bed",
@@ -169,13 +199,6 @@ export const propertyGallery = [
     place: "First Floor",
     category: "Bedrooms",
     image: "/property/master-bedroom.jpg",
-  },
-  {
-    id: "g-kitchen",
-    title: "Modern Island Kitchen & Dining",
-    place: "Ground Floor",
-    category: "Kitchen & Dining",
-    image: "/property/kitchen-dining.jpg",
   },
   {
     id: "g-lawn",
