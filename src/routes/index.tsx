@@ -283,7 +283,7 @@ function Index() {
                       loading="lazy"
                       className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                     />
-                    <div className="absolute left-3 top-3 rounded bg-amber-500 px-2 py-0.5 text-[10px] font-bold uppercase text-black">
+                    <div className="absolute left-3 top-3 rounded bg-gradient-to-r from-amber-500 to-orange-500 px-2.5 py-0.5 text-[10px] font-extrabold uppercase text-black shadow-md">
                       Filmed Here
                     </div>
                   </div>
@@ -304,7 +304,7 @@ function Index() {
           <div className="mt-10 text-center">
             <Link
               to="/gallery"
-              className="inline-flex items-center gap-2 rounded-md bg-amber-500 px-6 py-3 text-xs font-bold uppercase tracking-wider text-black transition-colors hover:bg-amber-400"
+              className="inline-flex items-center gap-2 rounded-md bg-gradient-to-r from-amber-500 to-amber-600 px-6 py-3 text-xs font-bold uppercase tracking-wider text-black shadow-md transition-all hover:from-amber-400 hover:to-amber-500"
             >
               View All 9 Reference Images in Gallery <ArrowRight className="h-4 w-4" />
             </Link>
