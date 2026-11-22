@@ -17,6 +17,8 @@ import { MobileCallBar } from "@/components/site/MobileCallBar";
 import { FloatingWhatsApp } from "@/components/site/FloatingWhatsApp";
 import { CookieConsent } from "@/components/site/CookieConsent";
 import { Toaster } from "@/components/ui/sonner";
+import { SpeedInsights } from "@vercel/speed-insights/react";
+import { Analytics } from "@vercel/analytics/react";
 
 function NotFoundComponent() {
   return (
@@ -305,6 +307,8 @@ function RootComponent() {
           <FloatingWhatsApp />
           <CookieConsent />
           <Toaster position="top-center" />
+          <SpeedInsights />
+          <Analytics />
         </div>
       </I18nProvider>
     </QueryClientProvider>
