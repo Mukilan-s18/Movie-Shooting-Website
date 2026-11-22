@@ -11,10 +11,10 @@ type Translations = {
 
 export const translations: Translations = {
   home: { en: "Home", ta: "முகப்பு" },
-  services: { en: "Property Spaces", ta: "வீட்டின் இடங்கள்" },
-  gallery: { en: "Photo Gallery", ta: "புகைப்படங்கள்" },
+  services: { en: "Spaces", ta: "வீட்டின் இடங்கள்" },
+  gallery: { en: "Gallery", ta: "புகைப்படங்கள்" },
   about: { en: "About", ta: "எங்களை பற்றி" },
-  contact: { en: "Book Shoot / Recce", ta: "முன்பதிவு செய்ய" },
+  contact: { en: "Contact", ta: "தொடர்பு" },
   heroBadge: {
     en: "Vadapalani · Ashok Nagar, Chennai",
     ta: "வடபழனி · அசோக் நகர், சென்னை",

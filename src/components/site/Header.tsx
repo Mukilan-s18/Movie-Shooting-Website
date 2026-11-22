@@ -19,19 +19,19 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-40 border-b border-border bg-background/90 backdrop-blur-md">
-      <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3">
-        <Link to="/" onClick={() => setOpen(false)} aria-label={business.name}>
+      <div className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-2 md:py-2.5">
+        <Link to="/" onClick={() => setOpen(false)} aria-label={business.name} className="shrink-0">
           <Logo compact />
         </Link>
 
-        <nav className="hidden items-center gap-6 md:flex">
+        <nav className="hidden items-center gap-3 lg:gap-4 xl:gap-5 md:flex shrink-0">
           {linkKeys.map((l) => (
             <Link
               key={l.to}
               to={l.to}
               activeOptions={{ exact: l.to === "/" }}
               activeProps={{ className: "text-amber-500 font-bold" }}
-              className="text-sm font-semibold uppercase tracking-wide text-foreground/80 transition-colors hover:text-amber-500"
+              className="text-xs font-semibold uppercase tracking-wider text-foreground/80 whitespace-nowrap transition-colors hover:text-amber-500"
             >
               {t(l.key as any)}
             </Link>
@@ -39,22 +39,22 @@ export function Header() {
 
           <a
             href="/#video-tour"
-            className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wide text-amber-500 transition-colors hover:text-amber-400"
+            className="inline-flex items-center gap-1 text-xs font-bold uppercase tracking-wider text-amber-500 whitespace-nowrap transition-colors hover:text-amber-400"
           >
-            <Play className="h-3 w-3 fill-amber-500" /> Video Tour
+            <Play className="h-2.5 w-2.5 fill-amber-500" /> Video Tour
           </a>
 
           <Link
             to="/contact"
-            className="inline-flex items-center gap-1.5 rounded-md bg-amber-500 px-3.5 py-2 text-xs font-bold uppercase tracking-wide text-black shadow-sm transition-opacity hover:opacity-95"
+            className="inline-flex items-center gap-1.5 rounded-md bg-amber-500 px-3 py-1.5 text-xs font-bold uppercase tracking-wider text-black shadow-sm whitespace-nowrap transition-opacity hover:opacity-95"
           >
-            <CalendarCheck className="h-4 w-4" />
+            <CalendarCheck className="h-3.5 w-3.5" />
             Book Recce
           </Link>
 
           <a
             href="tel:7010833853"
-            className="inline-flex items-center gap-1.5 text-xs font-bold text-foreground transition-colors hover:text-amber-500"
+            className="hidden lg:inline-flex items-center gap-1.5 text-xs font-bold text-foreground whitespace-nowrap transition-colors hover:text-amber-500"
           >
             <Phone className="h-3.5 w-3.5 text-amber-500" />
             70108 33853
