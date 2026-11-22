@@ -110,12 +110,20 @@ export const propertyGallery = [
 
 export const movieReferences = [
   {
-    id: "m-tourist-family",
+    id: "m-tourist-family-1",
     title: "Tourist Family",
     place: "Tamil Feature Film (M. Sasikumar & Simran)",
     category: "Movies & Series",
     image: "/references/120755032.jpg",
     note: "Featured Movie Filming Location Still",
+  },
+  {
+    id: "m-tourist-family-2",
+    title: "Tourist Family",
+    place: "Tamil Feature Film (M. Sasikumar & Simran)",
+    category: "Movies & Series",
+    image: "/references/images.jpg",
+    note: "Official Poster and House Entrance",
   },
   {
     id: "m-parimala-banner",
@@ -172,14 +180,6 @@ export const movieReferences = [
     category: "Movies & Series",
     image: "/references/images-5.jpg",
     note: "Series Episode Filming Still",
-  },
-  {
-    id: "m-brothers-sisters-3",
-    title: "Brothers and Sisters",
-    place: "JioHotstar Web Series",
-    category: "Movies & Series",
-    image: "/references/images.jpg",
-    note: "Ponmalar House Interior",
   },
 ];
 
