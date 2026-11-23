@@ -17,6 +17,7 @@ import { SectionHeading } from "@/components/site/SectionHeading";
 import { Reveal } from "@/components/site/Reveal";
 import { Lightbox } from "@/components/site/Lightbox";
 import { VideoTour } from "@/components/site/VideoTour";
+import { GoogleMapEmbed } from "@/components/site/GoogleMapEmbed";
 import {
   business,
   propertySpaces,
@@ -258,18 +259,8 @@ function Index() {
           </div>
 
           {/* Embedded Google Map */}
-          <div className="mt-6 overflow-hidden rounded-xl border border-border bg-muted shadow-md">
-            <iframe
-              src={business.mapsEmbedUrl}
-              width="100%"
-              height="420"
-              style={{ border: 0 }}
-              allowFullScreen
-              loading="lazy"
-              referrerPolicy="strict-origin-when-cross-origin"
-              title="Google Maps Location - 4/5 Varghese Avenue, Ashok Nagar, Vadapalani, Chennai"
-              className="w-full"
-            />
+          <div className="mt-6">
+            <GoogleMapEmbed height={420} />
           </div>
         </div>
       </section>

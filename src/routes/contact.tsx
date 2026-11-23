@@ -13,6 +13,7 @@ import {
 import { toast } from "sonner";
 import { SectionHeading } from "@/components/site/SectionHeading";
 import { business, whatsappUrl } from "@/lib/business";
+import { GoogleMapEmbed } from "@/components/site/GoogleMapEmbed";
 
 const jsonLd = {
   "@context": "https://schema.org",
@@ -410,18 +411,8 @@ function ContactPage() {
             </a>
           </div>
 
-          <div className="overflow-hidden rounded-lg border border-border bg-muted shadow-inner">
-            <iframe
-              src={business.mapsEmbedUrl}
-              width="100%"
-              height="380"
-              style={{ border: 0 }}
-              allowFullScreen
-              loading="lazy"
-              referrerPolicy="strict-origin-when-cross-origin"
-              title="Property Location Map"
-              className="w-full"
-            />
+          <div className="mt-4">
+            <GoogleMapEmbed height={380} title="Property Location Map" />
           </div>
         </div>
       </div>

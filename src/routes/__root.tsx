@@ -256,6 +256,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
+      { rel: "dns-prefetch", href: "https://maps.google.com" },
+      { rel: "dns-prefetch", href: "https://www.google.com" },
+      { rel: "dns-prefetch", href: "https://img.youtube.com" },
+      { rel: "dns-prefetch", href: "https://www.youtube.com" },
       {
         rel: "stylesheet",
         href: "https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Inter:wght@400;500;600;700&display=swap",
