@@ -171,6 +171,30 @@ const rootJsonLd = {
             text: "You can schedule an in-person recce walkthrough by calling 88385 04143 or 70108 33853, or by messaging our location manager directly on WhatsApp.",
           },
         },
+        {
+          "@type": "Question",
+          name: "Can we do night shoots at Vadapalani Shooting House?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Yes, overnight and continuous 24-hour shoot schedules are permitted with prior coordination. The independent 2-floor structure and spacious front entrance allow quiet indoor night filming and low-impact exterior lighting without disturbance.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "What are the parking permissions on Varghese Avenue?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "The property features a wide, empty front entrance area accommodating generator vans (up to 125 KVA), camera equipment trucks, and crew vehicles. Additional unit vehicles and vanity vans can be parked along the wide, quiet residential stretch of Varghese Avenue.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Is advance recce walkthrough free?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Yes, in-person location recce walkthroughs for directors, cinematographers, art directors, and line producers are completely complimentary. Call 88385 04143 or 70108 33853 or message directly on WhatsApp to coordinate recce timing.",
+          },
+        },
       ],
     },
   ],
@@ -186,6 +210,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "apple-mobile-web-app-capable", content: "yes" },
       { name: "apple-mobile-web-app-status-bar-style", content: "default" },
       { name: "apple-mobile-web-app-title", content: "Shooting House" },
+      { name: "mobile-web-app-capable", content: "yes" },
+      { name: "application-name", content: "Vadapalani Shooting House" },
       {
         title: "Vadapalani Shooting House Chennai | 2-Floor Movie & Film Shoot Rental",
       },
@@ -245,6 +271,27 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       {
         rel: "canonical",
         href: "https://vadapalanishootinghouse.com/",
+      },
+      {
+        rel: "manifest",
+        href: "/manifest.json",
+      },
+      {
+        rel: "apple-touch-icon",
+        sizes: "180x180",
+        href: "/apple-touch-icon.png",
+      },
+      {
+        rel: "icon",
+        type: "image/png",
+        sizes: "32x32",
+        href: "/favicon-32x32.png",
+      },
+      {
+        rel: "icon",
+        type: "image/png",
+        sizes: "16x16",
+        href: "/favicon-16x16.png",
       },
       {
         rel: "icon",

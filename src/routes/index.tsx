@@ -12,6 +12,7 @@ import {
   Building,
   DoorOpen,
   Sparkles,
+  HelpCircle,
 } from "lucide-react";
 import { SectionHeading } from "@/components/site/SectionHeading";
 import { Reveal } from "@/components/site/Reveal";
@@ -354,6 +355,62 @@ function Index() {
             >
               Browse Complete Photo Gallery <ArrowRight className="h-3.5 w-3.5" />
             </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Film Production FAQ Section (matches FAQPage Schema for Google Rich Snippets) */}
+      <section className="border-t border-border bg-background py-16">
+        <div className="mx-auto max-w-6xl px-4">
+          <SectionHeading
+            title="Film Production FAQ"
+            subtitle="Essential logistics, permissions, and booking details for directors and line producers."
+          />
+
+          <div className="mt-10 grid gap-6 md:grid-cols-2">
+            {[
+              {
+                q: "Can we do night shoots at Vadapalani Shooting House?",
+                a: "Yes, overnight and continuous 24-hour shoot schedules are permitted with prior coordination. The independent 2-floor structure and spacious front entrance allow quiet indoor night filming and low-impact exterior lighting without disturbance.",
+              },
+              {
+                q: "What are the parking permissions on Varghese Avenue?",
+                a: "The property features a wide, empty front entrance area accommodating generator vans (up to 125 KVA), camera equipment trucks, and crew vehicles. Additional unit vehicles and vanity vans can be parked along the wide, quiet residential stretch of Varghese Avenue.",
+              },
+              {
+                q: "Is advance recce walkthrough free?",
+                a: "Yes, in-person location recce walkthroughs for directors, cinematographers, art directors, and line producers are completely complimentary. Call 88385 04143 or 70108 33853 or message directly on WhatsApp to coordinate recce timing.",
+              },
+              {
+                q: "Where is Vadapalani Shooting House located in Chennai?",
+                a: "The shooting house is located at 4/5 Varghese Avenue, Ashok Nagar, Vadapalani, Chennai, within Chennai's central cinema production zone close to major editing suites and studios.",
+              },
+              {
+                q: "Which Tamil films and series were filmed here?",
+                a: "The house was the verified filming location for the Tamil feature film Tourist Family (starring M. Sasikumar and Simran), the Tamil film Parimala & Co, and the JioHotstar web series Brothers and Sisters.",
+              },
+              {
+                q: "What are the property layout specifications?",
+                a: "The property is an independent 2-floor house featuring a wide empty front entrance area for crew vehicles and camera equipment, with 2 BHK floor plans on each floor suitable for middle-class to rich home setups.",
+              },
+            ].map((faq, idx) => (
+              <div
+                key={idx}
+                className="rounded-lg border border-border/80 bg-card p-6 shadow-sm transition-all hover:border-amber-500/50"
+              >
+                <div className="flex items-start gap-3">
+                  <div className="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-amber-500/10 text-amber-500">
+                    <HelpCircle className="h-4 w-4" />
+                  </div>
+                  <div>
+                    <h3 className="font-display text-base font-bold text-foreground">{faq.q}</h3>
+                    <p className="mt-2 text-xs leading-relaxed text-muted-foreground sm:text-sm">
+                      {faq.a}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>

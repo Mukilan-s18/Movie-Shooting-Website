@@ -1,0 +1,32 @@
+{
+  "name": "Vadapalani Shooting House Chennai",
+  "short_name": "Shooting House",
+  "description": "2-Floor Independent Movie & Film Shoot Property at 4/5 Varghese Avenue, Ashok Nagar, Vadapalani, Chennai. Empty big entrance, 2 BHK each floor.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FDF8D6",
+  "theme_color": "#800020",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "categories": ["business", "entertainment"],
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}
