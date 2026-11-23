@@ -20,4 +20,4 @@ User-agent: *
 Allow: /
 
 Sitemap: https://movie-shooting-website.vercel.app/sitemap.xml
-Sitemap: https://vadapalanishootinghouse.com/sitemap.xml
+Sitemap: https://vadapalanishootinghouse.in/sitemap.xml

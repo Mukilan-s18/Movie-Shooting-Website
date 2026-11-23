@@ -24,12 +24,12 @@ export const Route = createFileRoute("/cookies")({
           "Cookie and storage policy for Vadapalani Shooting House website. We use zero third-party advertising cookies and respect visitor privacy.",
       },
       { property: "og:title", content: "Cookie Policy - Vadapalani Shooting House" },
-      { property: "og:url", content: "https://vadapalanishootinghouse.com/cookies" },
+      { property: "og:url", content: "https://vadapalanishootinghouse.in/cookies" },
     ],
     links: [
       {
         rel: "canonical",
-        href: "https://vadapalanishootinghouse.com/cookies",
+        href: "https://vadapalanishootinghouse.in/cookies",
       },
     ],
   }),

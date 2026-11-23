@@ -43,12 +43,12 @@ export const Route = createFileRoute("/contact")({
           "Book movie shoot dates or schedule a location recce at 4/5 Varghese Avenue, Ashok Nagar, Vadapalani, Chennai. Call 88385 04143 / 70108 33853.",
       },
       { property: "og:title", content: "Contact & Recce Booking - Vadapalani Shooting House" },
-      { property: "og:url", content: "https://vadapalanishootinghouse.com/contact" },
+      { property: "og:url", content: "https://vadapalanishootinghouse.in/contact" },
     ],
     links: [
       {
         rel: "canonical",
-        href: "https://vadapalanishootinghouse.com/contact",
+        href: "https://vadapalanishootinghouse.in/contact",
       },
     ],
     scripts: [{ type: "application/ld+json", children: JSON.stringify(jsonLd) }],

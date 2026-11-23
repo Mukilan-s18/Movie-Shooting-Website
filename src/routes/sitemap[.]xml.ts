@@ -12,7 +12,7 @@ export const Route = createFileRoute("/sitemap.xml")({
   server: {
     handlers: {
       GET: async ({ request }) => {
-        let baseUrl = "https://vadapalanishootinghouse.com";
+        let baseUrl = "https://vadapalanishootinghouse.in";
         try {
           if (request?.url) {
             const parsed = new URL(request.url);
@@ -21,7 +21,7 @@ export const Route = createFileRoute("/sitemap.xml")({
             }
           }
         } catch {
-          baseUrl = "https://vadapalanishootinghouse.com";
+          baseUrl = "https://vadapalanishootinghouse.in";
         }
 
         const today = new Date().toISOString().split("T")[0];

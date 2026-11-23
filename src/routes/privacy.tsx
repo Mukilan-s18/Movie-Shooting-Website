@@ -15,12 +15,12 @@ export const Route = createFileRoute("/privacy")({
           "Privacy policy for Vadapalani Shooting House film location rentals, booking enquiries, and crew data handling at 4/5 Varghese Avenue, Ashok Nagar, Vadapalani, Chennai.",
       },
       { property: "og:title", content: "Privacy Policy - Vadapalani Shooting House" },
-      { property: "og:url", content: "https://vadapalanishootinghouse.com/privacy" },
+      { property: "og:url", content: "https://vadapalanishootinghouse.in/privacy" },
     ],
     links: [
       {
         rel: "canonical",
-        href: "https://vadapalanishootinghouse.com/privacy",
+        href: "https://vadapalanishootinghouse.in/privacy",
       },
     ],
   }),

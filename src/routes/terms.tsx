@@ -25,12 +25,12 @@ export const Route = createFileRoute("/terms")({
           "Rental terms and conditions for film shooting house booking, recce protocol, generator guidelines, and production rules at 4/5 Varghese Avenue, Ashok Nagar, Vadapalani, Chennai.",
       },
       { property: "og:title", content: "Terms of Service - Vadapalani Shooting House" },
-      { property: "og:url", content: "https://vadapalanishootinghouse.com/terms" },
+      { property: "og:url", content: "https://vadapalanishootinghouse.in/terms" },
     ],
     links: [
       {
         rel: "canonical",
-        href: "https://vadapalanishootinghouse.com/terms",
+        href: "https://vadapalanishootinghouse.in/terms",
       },
     ],
   }),

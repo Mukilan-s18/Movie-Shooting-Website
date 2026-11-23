@@ -20,12 +20,12 @@ export const Route = createFileRoute("/gallery")({
           "Complete video tour walkthrough and photos of the movie shooting house in Vadapalani, Chennai: Empty Big Entrance, Living Hall, Dining Hall, and Kitchen.",
       },
       { property: "og:title", content: "Photo & Video Gallery - Vadapalani Shooting House" },
-      { property: "og:url", content: "https://vadapalanishootinghouse.com/gallery" },
+      { property: "og:url", content: "https://vadapalanishootinghouse.in/gallery" },
     ],
     links: [
       {
         rel: "canonical",
-        href: "https://vadapalanishootinghouse.com/gallery",
+        href: "https://vadapalanishootinghouse.in/gallery",
       },
     ],
   }),

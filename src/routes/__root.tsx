@@ -97,12 +97,12 @@ const rootJsonLd = {
   "@graph": [
     {
       "@type": "LocalBusiness",
-      "@id": "https://vadapalanishootinghouse.com/#business",
+      "@id": "https://vadapalanishootinghouse.in/#business",
       name: "Vadapalani Shooting House",
       alternateName: "Vadapalani Movie Shooting House",
       description:
         "2-floor independent movie shooting house at 4/5 Varghese Avenue, Ashok Nagar, Vadapalani, Chennai. Empty wide entrance, 2 BHK each floor, filming location for Tourist Family and Parimala and Co.",
-      url: "https://vadapalanishootinghouse.com",
+      url: "https://vadapalanishootinghouse.in",
       telephone: ["+918838504143", "+917010833853"],
       email: "Pranav280806@gmail.com",
       priceRange: "₹₹",
@@ -130,14 +130,14 @@ const rootJsonLd = {
         },
       ],
       image: [
-        "https://vadapalanishootinghouse.com/property/hero-bg.jpg",
-        "https://vadapalanishootinghouse.com/property/exterior-facade.jpeg",
-        "https://vadapalanishootinghouse.com/property/living-hall.jpeg",
+        "https://vadapalanishootinghouse.in/property/hero-bg.jpg",
+        "https://vadapalanishootinghouse.in/property/exterior-facade.jpeg",
+        "https://vadapalanishootinghouse.in/property/living-hall.jpeg",
       ],
     },
     {
       "@type": "FAQPage",
-      "@id": "https://vadapalanishootinghouse.com/#faq",
+      "@id": "https://vadapalanishootinghouse.in/#faq",
       mainEntity: [
         {
           "@type": "Question",
@@ -235,7 +235,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "geo.position", content: "13.0336;80.2114" },
       { name: "ICBM", content: "13.0336, 80.2114" },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: "https://vadapalanishootinghouse.com/" },
+      { property: "og:url", content: "https://vadapalanishootinghouse.in/" },
       { property: "og:site_name", content: "Vadapalani Shooting House" },
       { property: "og:locale", content: "en_IN" },
       {
@@ -270,7 +270,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     links: [
       {
         rel: "canonical",
-        href: "https://vadapalanishootinghouse.com/",
+        href: "https://vadapalanishootinghouse.in/",
       },
       {
         rel: "manifest",
