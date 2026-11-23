@@ -103,7 +103,7 @@ const rootJsonLd = {
       description:
         "2-floor independent movie shooting house at 4/5 Varghese Avenue, Ashok Nagar, Vadapalani, Chennai. Empty wide entrance, 2 BHK each floor, filming location for Tourist Family and Parimala and Co.",
       url: "https://vadapalanishootinghouse.com",
-      telephone: ["+917010833853", "+91883504143"],
+      telephone: ["+918838504143", "+917010833853"],
       email: "Pranav280806@gmail.com",
       priceRange: "₹₹",
       currenciesAccepted: "INR",
@@ -168,7 +168,7 @@ const rootJsonLd = {
           name: "How do I schedule an in-person recce walkthrough?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "You can schedule an in-person recce walkthrough by calling 70108 33853 or 883504143, or by messaging our location manager directly on WhatsApp.",
+            text: "You can schedule an in-person recce walkthrough by calling 88385 04143 or 70108 33853, or by messaging our location manager directly on WhatsApp.",
           },
         },
       ],
@@ -192,7 +192,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       {
         name: "description",
         content:
-          "Private 2-floor movie shooting house at 4/5 Varghese Avenue, Ashok Nagar, Vadapalani, Chennai. Empty big entrance, 2 BHK on each floor, filming location for Tourist Family & Parimala and Co. Call 70108 33853 / 883504143.",
+          "Private 2-floor movie shooting house at 4/5 Varghese Avenue, Ashok Nagar, Vadapalani, Chennai. Empty big entrance, 2 BHK on each floor, filming location for Tourist Family & Parimala and Co. Call 88385 04143 / 70108 33853.",
       },
       {
         name: "keywords",
@@ -231,7 +231,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       {
         name: "twitter:description",
         content:
-          "Private 2-floor film shooting house in Vadapalani / Ashok Nagar, Chennai. Empty big entrance, 2 BHK each floor. Call 70108 33853.",
+          "Private 2-floor film shooting house in Vadapalani / Ashok Nagar, Chennai. Empty big entrance, 2 BHK each floor. Call 88385 04143.",
       },
       { name: "twitter:image", content: "/property/hero-bg.jpg" },
     ],

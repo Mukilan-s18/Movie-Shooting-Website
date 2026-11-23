@@ -175,7 +175,7 @@ function TermsPage() {
                 <MapPin className="h-3.5 w-3.5 text-gold" /> {business.addressLines.join(", ")}
               </p>
               <p className="flex items-center gap-2">
-                <Phone className="h-3.5 w-3.5 text-gold" /> 70108 33853 / 883504143
+                <Phone className="h-3.5 w-3.5 text-gold" /> 88385 04143 / 70108 33853
               </p>
               <p className="flex items-center gap-2">
                 <Mail className="h-3.5 w-3.5 text-gold" /> {business.email}

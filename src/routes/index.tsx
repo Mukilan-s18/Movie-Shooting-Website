@@ -228,12 +228,12 @@ function Index() {
               <div className="mt-3 flex flex-wrap gap-4 text-xs">
                 <span>
                   <strong>Phone:</strong>{" "}
-                  <a href="tel:7010833853" className="text-amber-500 hover:underline">
-                    70108 33853
+                  <a href="tel:8838504143" className="text-amber-500 hover:underline">
+                    88385 04143
                   </a>
                   {" · "}
-                  <a href="tel:883504143" className="text-amber-500 hover:underline">
-                    883504143
+                  <a href="tel:7010833853" className="text-amber-500 hover:underline">
+                    70108 33853
                   </a>
                 </span>
               </div>
@@ -373,7 +373,7 @@ function Index() {
           Interested in Shooting Here?
         </h2>
         <p className="mx-auto mt-2 max-w-xl text-xs leading-relaxed text-muted-foreground sm:text-sm">
-          Call <strong>70108 33853</strong> / <strong>883504143</strong> to schedule an in-person
+          Call <strong>88385 04143</strong> / <strong>70108 33853</strong> to schedule an in-person
           recce at 4/5 Varghese Avenue, Ashok Nagar, Vadapalani.
         </p>
         <div className="mt-6 flex flex-wrap justify-center gap-4">

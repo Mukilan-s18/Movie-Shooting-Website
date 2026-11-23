@@ -4,10 +4,10 @@ export const business = {
   owner: "Location Coordinator",
   tagline:
     "2-Floor Independent House with Empty Big Entrance · 2 BHK Each Floor · Suitable for Middle Class to Rich House Setups",
-  phonePrimary: "7010833853",
-  phonePrimaryDisplay: "70108 33853",
-  phoneSecondary: "883504143",
-  phoneSecondaryDisplay: "883504143",
+  phonePrimary: "8838504143",
+  phonePrimaryDisplay: "88385 04143",
+  phoneSecondary: "7010833853",
+  phoneSecondaryDisplay: "70108 33853",
   email: "Pranav280806@gmail.com",
   addressLines: ["4/5 Varghese Avenue, Ashok Nagar,", "Vadapalani, Chennai."],
   city: "Chennai",
@@ -31,7 +31,7 @@ export const business = {
   },
 } as const;
 
-export const whatsappUrl = `https://wa.me/917010833853?text=${encodeURIComponent(
+export const whatsappUrl = `https://wa.me/918838504143?text=${encodeURIComponent(
   "Hello, I would like to enquire about shooting availability and recce for the movie shooting house at 4/5 Varghese Avenue, Ashok Nagar, Vadapalani, Chennai.",
 )}`;
 

@@ -172,12 +172,12 @@ function AboutPage() {
             </p>
             <p className="mt-3">
               Contact Numbers:{" "}
-              <a href="tel:7010833853" className="font-bold text-amber-500 hover:underline">
-                70108 33853
+              <a href="tel:8838504143" className="font-bold text-amber-500 hover:underline">
+                88385 04143
               </a>
               {" · "}
-              <a href="tel:883504143" className="font-bold text-amber-500 hover:underline">
-                883504143
+              <a href="tel:7010833853" className="font-bold text-amber-500 hover:underline">
+                70108 33853
               </a>
             </p>
             <p className="mt-2">

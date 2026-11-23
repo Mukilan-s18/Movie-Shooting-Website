@@ -39,7 +39,7 @@ export const Route = createFileRoute("/contact")({
       {
         name: "description",
         content:
-          "Book movie shoot dates or schedule a location recce at 4/5 Varghese Avenue, Ashok Nagar, Vadapalani, Chennai. Call 70108 33853 / 883504143.",
+          "Book movie shoot dates or schedule a location recce at 4/5 Varghese Avenue, Ashok Nagar, Vadapalani, Chennai. Call 88385 04143 / 70108 33853.",
       },
       { property: "og:title", content: "Contact & Recce Booking - Vadapalani Shooting House" },
       { property: "og:url", content: "https://vadapalanishootinghouse.com/contact" },
@@ -95,7 +95,7 @@ function ContactPage() {
 • Spaces Required: ${form.spacesRequired.join(", ") || "Full House (All Spaces)"}
 • Additional Notes: ${form.message || "None"}`;
 
-      const waEnquiryUrl = `https://wa.me/917010833853?text=${encodeURIComponent(summaryText)}`;
+      const waEnquiryUrl = `https://wa.me/918838504143?text=${encodeURIComponent(summaryText)}`;
 
       // Open WhatsApp with all shoot parameters prefilled (with fallback if popups are blocked)
       const popup = window.open(waEnquiryUrl, "_blank", "noopener,noreferrer");
@@ -121,7 +121,7 @@ function ContactPage() {
     } catch (err: unknown) {
       console.error(err);
       toast.error("Notice: Please connect via WhatsApp or Phone", {
-        description: "Call 70108 33853 or message directly on WhatsApp.",
+        description: "Call 88385 04143 or message directly on WhatsApp.",
       });
     } finally {
       setLoading(false);
@@ -169,12 +169,12 @@ function ContactPage() {
                 <Phone className="mt-0.5 h-4 w-4 shrink-0 text-amber-500" />
                 <div>
                   <strong className="block text-foreground">Contact for Recce & Booking:</strong>
-                  <a href="tel:7010833853" className="font-bold text-amber-500 hover:underline">
-                    70108 33853
+                  <a href="tel:8838504143" className="font-bold text-amber-500 hover:underline">
+                    88385 04143
                   </a>
                   {" · "}
-                  <a href="tel:883504143" className="font-bold text-amber-500 hover:underline">
-                    883504143
+                  <a href="tel:7010833853" className="font-bold text-amber-500 hover:underline">
+                    70108 33853
                   </a>
                 </div>
               </li>
@@ -214,7 +214,7 @@ function ContactPage() {
                 rel="noreferrer"
                 className="mt-4 flex w-full items-center justify-center gap-2 rounded-md bg-[#25D366] py-2.5 text-xs font-bold text-white shadow transition-transform hover:-translate-y-0.5"
               >
-                <MessageCircle className="h-4 w-4" /> WhatsApp: 70108 33853
+                <MessageCircle className="h-4 w-4" /> WhatsApp: 88385 04143
               </a>
             </div>
           </div>
@@ -286,7 +286,7 @@ function ContactPage() {
                 </label>
                 <input
                   type="tel"
-                  placeholder="e.g. 70108 33853"
+                  placeholder="e.g. 88385 04143"
                   value={form.phone}
                   onChange={(e) => setForm({ ...form, phone: e.target.value })}
                   pattern="[0-9+\s-]{10,15}"

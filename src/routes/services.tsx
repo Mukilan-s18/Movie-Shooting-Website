@@ -161,10 +161,10 @@ function PropertySpacesPage() {
                     <CalendarCheck className="h-3.5 w-3.5" /> Book Recce for This Space
                   </Link>
                   <a
-                    href="tel:7010833853"
+                    href="tel:8838504143"
                     className="inline-flex items-center gap-1.5 rounded-md border border-border px-4 py-2 text-xs font-semibold text-foreground transition-colors hover:bg-muted"
                   >
-                    <Phone className="h-3.5 w-3.5 text-amber-500" /> Call: 70108 33853
+                    <Phone className="h-3.5 w-3.5 text-amber-500" /> Call: 88385 04143
                   </a>
                 </div>
               </div>
@@ -180,7 +180,7 @@ function PropertySpacesPage() {
           <p className="mx-auto mt-2 max-w-xl text-xs leading-relaxed text-muted-foreground sm:text-sm">
             Address: 4/5 Varghese Avenue, Ashok Nagar, Vadapalani, Chennai.
             <br />
-            Contact: <strong>70108 33853</strong> / <strong>883504143</strong>
+            Contact: <strong>88385 04143</strong> / <strong>70108 33853</strong>
           </p>
           <div className="mt-6 flex flex-wrap justify-center gap-4">
             <Link

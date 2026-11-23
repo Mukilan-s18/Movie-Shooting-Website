@@ -53,11 +53,11 @@ export function Header() {
           </Link>
 
           <a
-            href="tel:7010833853"
+            href="tel:8838504143"
             className="hidden xl:inline-flex items-center gap-1.5 text-sm font-bold text-foreground whitespace-nowrap transition-colors hover:text-primary"
           >
             <Phone className="h-4 w-4 text-gold" />
-            70108 33853
+            88385 04143
           </a>
         </nav>
 
