@@ -24,7 +24,7 @@
   <a href="#-tech-stack">Tech Stack</a> •
   <a href="#-project-structure">Project Structure</a> •
   <a href="#-getting-started">Getting Started</a> •
-  <a href="#-github-repository-about-setup">GitHub About Setup</a> •
+  <a href="#-production-seo--pwa">SEO & PWA</a> •
   <a href="#-contact--booking">Contact & Booking</a>
 </p>
 
@@ -203,27 +203,6 @@ npm run lint
 - **Robots.txt**: [https://www.vadapalanishootinghouse.in/robots.txt](https://www.vadapalanishootinghouse.in/robots.txt)
 - **Web App Manifest**: [https://www.vadapalanishootinghouse.in/manifest.json](https://www.vadapalanishootinghouse.in/manifest.json)
 - **Google Search Console**: Verified via Domain Provider DNS with all 8 pages indexed and priority crawl enabled.
-
----
-
-## 📋 GitHub Repository "About" Setup
-
-To make your GitHub repository match the best open-source repositories in the world, update your repository sidebar (`About` section):
-
-1. Go to your repository on GitHub: [github.com/Mukilan-s18/Movie-Shooting-Website](https://github.com/Mukilan-s18/Movie-Shooting-Website)
-2. On the top right of the repository homepage, click the **cog icon** (`⚙️`) next to **About**.
-3. Fill in the fields:
-   - **Description**:
-     ```text
-     Official website for Vadapalani Shooting House: 2-floor independent movie shooting location in Ashok Nagar, Vadapalani, Chennai.
-     ```
-   - **Website**:
-     ```text
-     https://www.vadapalanishootinghouse.in
-     ```
-   - **Topics** (add these tags):
-     `movie-shooting-house`, `film-shooting-location`, `vadapalani`, `chennai-cinema`, `react19`, `tanstack-start`, `tailwindcss-v4`, `pwa`, `seo-optimized`, `local-seo`
-4. Click **Save changes**.
 
 ---
 
